@@ -125,53 +125,32 @@ quesCol <- c(
 )
 
 
-
-
-
-SSBcol <- c("Kjonn", "Alder", "sluttdato", "Yrkesstatus", "YrkStat2", "Siv",
-"SivStat", "Antpers", "AntBarn1", "AntBarn2", "Helse", "Helsepsyk",
-"Tob1", "Tob2", "Tob3", "Tob4a", "Tob5", "Tob13", "Tob14", "Tob20",
-"Tob21", "Tob22a", "Tob22b", "Tob22d", "Tob22q", "Tob22s", "Tob22r",
-"Tob23", "Tob30", "Tob31a", "Tob31b", "Tob31c", "Tob33", "Tob34",
-"Tob38", "Tob39", "Tob40", "Tob42a", "Tob42b", "Tob42d", "Tob42o",
-"Tob42m", "Tob42n", "Tob43", "Tob44", "Tobvan1", "Tob61", "Tob61b",
-"Tob62a", "Tob62e", "Tob62f", "Tob62g", "Tob62h", "TobE", "TobE1",
-"tobald", "TobE3", "TobE4", "Tob60", "Tob64a", "Tob64b", "Tob64c",
-"TobPrSn1", "TobPrSn2", "Tob66", "Tob68", "Tob69", "Tob69b",
-"Tob71", "tobsluttsn1", "tobsluttsn2", "Drukket1", "Drukk1b",
-"Drukket2", "Drukk2a", "Drukk2b", "Drukk2c", "Drukket3", "Type1",
-"Type2", "Type3", "Type4", "Type1a", "Typ1a_uk", "Typ1a_mn",
-"Type1b_a", "Type1b_b", "Type1b_1", "Type1b_2", "Type1c_a", "Type1c_b",
-"Type1c_1", "Type1c_2", "Type2a", "Typ2a_uk", "Typ2a_mn", "Type2b_a",
-"Type2b_b", "Type2b_1", "Type2b_2", "Type2c_a", "Type2c_b", "Type2c_1",
-"Type2c_2", "Type3a", "Typ3a_uk", "Typ3a_mn", "Type3b_a", "Type3b_b",
-"Type3b_1", "Type3b_2", "Type3c_a", "Type3c_b", "Type3c_1", "Type3c_2",
-"Type4a", "Typ4a_uk", "Typ4a_mn", "Type4b_a", "Type4b_b", "Type4b_1",
-"Type4b_2", "Type4c_a", "Type4c_b", "Type4c_1", "Type4c_2", "Beruset4",
-"AL2", "AL3", "AL4", "AL5", "Audit2", "Audit3", "Audit3_1", "Audit3_2",
-"Audit3_3", "Audit4", "Audit5", "Audit6", "Audit7", "Audit8",
-"Audit9_a", "Audit9_b", "Audit9_c", "Audit9a", "Audit9b", "Audit10",
-"Audit10a", "Arb_alk1", "Arb_alk1b", "Arb_alk2", "Arb_alk3",
-"Arb_alk4", "Arb_alk5", "Leg1", "Leg2", "Leg3", "Leg5", "Leg6",
-"Leg7", "Leg9", "Leg10", "Leg11", "Leg12", "Can1", "Can2", "Can3",
-"Can4", "Can5", "Can6", "Can6b", "Can7_a", "Can7_b", "Can7_c",
-"Can7_d", "Can7_e", "Can7sps", "Can8", "Can8sps", "Can9", "Can10",
-"Can11", "Can13", "Can14", "Ans1", "Ans2sps", "Ans2_a", "Ans2_b",
-"Ans2_c", "Ans2_d", "Ans2_e", "Ans2_f", "Ans2_g", "Ans2_x", "Ans2_y",
-"Ans2_h", "Ans3_1", "Ans3_2", "Ans3_3", "Ans3_4", "Ans3_5", "Ans3_6",
-"Ans3_7", "Ans3_x", "Ans3_y", "Ans3_8", "Ans_5", "Ans9", "Dop1",
-"Dop3_1", "NegKons1", "NegKons2", "NegKons3", "NegKons4", "NegKons4_1",
-"NegKons5", "NegKons6", "paaror1a", "paaror3", "paaror4", "paaror5",
-"Avslutt", "intslutt", "sluttintervjudato", "yrke", "paaror1b_a",
-"paaror1b_b", "paaror1b_c", "paaror2_a", "paaror2_b", "paaror2_c",
-"paaror2_d", "paaror2_e", "tobsit_a", "tobsit_b", "tobsit_c",
-"tobsit_d", "tobsit_e", "alkansk_a", "alkansk_b", "alkansk_c",
-"alkansk_d", "alkansk_e", "alkansk_f", "alkansk_g", "alkansk_h",
-"alkansk_i", "alkansk_j", "lopenr", "SIVILSTAND", "fylke_2025",
-"landsdel_2025", "alder1", "alder2", "Tett_spredt", "fodeland_IO",
-"fodeland_far", "fodeland_mor", "innt_hush", "innt_person", "Utdann_4gr",
-"vekt", "Sentralitet")
+SSBcol <- names(ssb)
 
 ## Finn manglende kolonner
 diffQues <- quesCol[!tolower(quesCol) %chin% tolower(SSBcol)]
 diffSSB <- SSBcol[!tolower(SSBcol) %chin% tolower(quesCol)]
+
+
+## Define variables
+source("define_variables.R")
+
+# Example: Generate HTML codebook
+dataMaid::makeCodebook(ssb, file = "rusus2025.html")
+# Example: Generate HTML data summary
+summarytools::dfSummary(ssb, file = "rusus2025.html", report.title = "Rusundersøkelsen 2025")
+
+
+## Check for missing value for vekting
+ssb[, vekt2 := as.numeric(sub(",", ".", vekt))]
+ssb[is.na(vekt2), .N]
+
+explore::explore(ssb)
+
+## Do-file
+library(haven)
+library(data.table)
+
+dofile <- file.path(Rususdata, "Rusus_2025", "rus2025_v1", "statads.dat" )
+dt2025 <- read_stata(dofile)
+setDT(dt2025)
