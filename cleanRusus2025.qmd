@@ -94,3 +94,32 @@ dt[can6 != 1,][ans1 != 1, .N, keyby = negkons6]
 dt[ans1 != 1,][can6 != 1, .N, keyby = negkons6]
 dt[can6 != 1 & ans1 != 1, .N, keyby = negkons6]
 ```
+
+# Metadata
+
+```{r meta}
+library(codebook)
+library(knitr)
+
+# Anta at dt er data.table
+dt <- as.data.table(ssb)
+
+# Metadata
+var_labels <- sapply(dt, function(x) attr(x, "label"))
+value_labels <- sapply(dt, function(x) attr(x, "labels"))
+
+metadata_dt <- data.table(
+  variable = names(dt),
+  var_label = var_labels,
+  value_labels = sapply(value_labels, function(lbls) {
+    if (!is.null(lbls)) paste(names(lbls), lbls, sep = "=", collapse = "; ") else NA
+  }),
+  var_type = sapply(dt, function(x) class(x)[1]),
+  missing_values = sapply(dt, function(x) sum(is.na(x)))
+)
+
+library(DT)
+# Vis tabellen
+## kable(metadata_dt, caption = "Metadata Summary")
+datatable(metadata_dt, caption = "Metadata Summary", options = list(pageLength = 10))
+```
