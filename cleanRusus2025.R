@@ -5,14 +5,14 @@ library("here")
 source("folder-path.R")
 source("setup.R")
 
-ssb2024 <- file.path(Rususdata, "Rusus_2024", "rus2024.rds")
-dt2024 <- readRDS(ssb2024)
+## ssb2024 <- file.path(Rususdata, "Rusus_2024", "rus2024.rds")
+## dt2024 <- readRDS(ssb2024)
 
-ssb2025 <- file.path(Rususdata, "Rusus_2025", "rus2025_v2", "rus2025_fhi_hdir.csv")
-ssb2025des <- file.path(Rususdata, "Rusus_2025", "rus2025_v2", "rus2025_fhi_hdir_desimaltall.csv")
+ssb2025 <- file.path(Rususdata, "Rusus_2025", "ORG/rus2025_fhi_hdir_v3/rus2025_fhi_hdir.csv")
+##ssb2025des <- file.path(Rususdata, "Rusus_2025", "rus2025_v2", "rus2025_fhi_hdir_desimaltall.csv")
 
 ssb <- fread(ssb2025)
-ssbDes <- fread(ssb2025des)
+## ssbDes <- fread(ssb2025des)
 
 ## Variabler fra spørreskjema
 ## --------------------------
@@ -127,30 +127,19 @@ quesCol <- c(
 
 SSBcol <- names(ssb)
 
-## Finn manglende kolonner
+## Kolonne fra spørreskjema, men ikke i datasettet
 diffQues <- quesCol[!tolower(quesCol) %chin% tolower(SSBcol)]
-diffSSB <- SSBcol[!tolower(SSBcol) %chin% tolower(quesCol)]
 
+## Kolonne i datasettet som ikke finnes i spørreskjema
+diffSSB <- SSBcol[!tolower(SSBcol) %chin% tolower(quesCol)]
 
 ## Define variables
 source("define_variables.R")
 
-# Example: Generate HTML codebook
-dataMaid::makeCodebook(ssb, file = "rusus2025.html")
-# Example: Generate HTML data summary
-summarytools::dfSummary(ssb, file = "rusus2025.html", report.title = "Rusundersøkelsen 2025")
+## Illegale rusmidler
+canInd <- which(quesCol == "Can1") #her fra er det TOIL vars
+canVars <- quesCol[canInd:length(quesCol)]
+ssbIrm <- ssb[, ..canVars]
 
-
-## Check for missing value for vekting
-ssb[, vekt2 := as.numeric(sub(",", ".", vekt))]
-ssb[is.na(vekt2), .N]
-
-explore::explore(ssb)
-
-## Do-file
-library(haven)
-library(data.table)
-
-dofile <- file.path(Rususdata, "Rusus_2025", "rus2025_v1", "statads.dat" )
-dt2025 <- read_stata(dofile)
-setDT(dt2025)
+dt <- copy(ssb)
+setnames(dt, names(dt), tolower(names(dt)))
