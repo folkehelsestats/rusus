@@ -1,0 +1,96 @@
+---
+title: "Rusundersøkelse 2024 Data Rensing"
+format:
+  html:
+    code-fold: true
+    toc: true
+    toc-title: "Innhold"
+    toc-location: right
+    toc-depth: 2
+    toc-expand: 1
+    number-sections: true
+execute:
+  echo: false
+---
+
+**Sist oppdatert:** `r format(Sys.Date(), "%d. %B %Y")`
+
+```{r setup}
+#| echo: false
+#| warning: false
+
+source("cleanRusus2025.R")
+
+```
+
+# Oversikt
+
+Kolonner i spørreskjema som ikke er i datasettet:
+
+```{r col1}
+diffQues
+```
+
+Kolonner i datasettet som ikke er i spørreskjema:
+
+```{r col2}
+diffSSB
+```
+NB! Flere *variabelnavn* avviker fra navnene brukt i spørreskjemaet.
+
+```{r oversikt}
+d <- dim(ssb)
+```
+N = **`r d[1]`** og antall variabler i datasettet er __`r d[2]`__
+
+# Illegale rusmidler
+
+Disse variablene gjelder for illegale rusmidler
+
+```{r rusvar}
+canVars
+```
+
+Disse må ha svar enten NA, 0 eller whitespace pga. filtreringen dvs. de som ikke skulle ha svart de spørsmålene.
+
+```{r na}
+### -------------------------
+### Cannabis
+### -------------------------
+
+## Disse må være 0 eller NA
+dt[can2 == 1, .N, keyby = can5]
+dt[can1 == 2 & can6 == 2, .N, keyby = can6b]
+
+dt[can6 == 2, .N, keyby = can7_a]
+dt[can6 == 2, .N, keyby = can7_b]
+dt[can6 == 2, .N, keyby = can7_c]
+dt[can6 == 2, .N, keyby = can7_d]
+dt[can6 == 2, .N, keyby = can7_e]
+dt[can6 == 2, .N, keyby = can9]
+dt[can6 == 2, .N, keyby = can10]
+dt[can10 == 2, .N, keyby = can11]
+dt[!(can2 %in% 4:5), .N, keyby = can14]
+
+ansVar1 <- paste("ans2", letters[1:8], sep = "_")
+ansVar2 <- paste("ans2", letters[24:25], sep = "_")
+ansVars <- c(ansVar1, ansVar2)
+
+for (i in ansVars){
+ x <- dt[ans1 == 2, .N, keyby = i]
+ print(x)
+ ## print(x[, sum(N)])
+}
+
+dt[ans2_h == 2, .N, keyby = ans2sps]
+dt[ans2_a == 2, .N, keyby = ans_5]
+dt[ans2_c == 2, .N, keyby = ans9]
+dt[dop1 == 2, .N, keyby = dop3_1]
+dt[drukket1 == 2, .N, keyby = negkons1]
+dt[drukket1 == 2, .N, keyby = negkons2]
+dt[!(negkons4 %in% 2:3), .N, keyby = negkons4_1]
+
+dt[can6 != 1,][ans1 != 1, .N, keyby = negkons6]
+dt[ans1 != 1,][can6 != 1, .N, keyby = negkons6]
+dt[can6 != 1 & ans1 != 1, .N, keyby = negkons6]
+```
