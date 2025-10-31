@@ -1,3 +1,4 @@
+Sys.setlocale("LC_ALL", "nb-NO.UTF-8")
 ## Clean data from SSB
 if (!requireNamespace("here", quietly = TRUE)) install.packages("here")
 library("here")
