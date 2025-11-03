@@ -8,7 +8,7 @@
 #' variables have `label` and `labels` attributes.
 #' @param page Integer. Number of rows to display per page in the interactive table. Default is 25.
 #' @param save Logical value. Default is FALSE
-#' @return A `DT::datatable` object that can be rendered in R Markdown or Shiny.
+#' @return A `DT::datatable` object that can be rendered in R Markdown or Shiny or a stand alone HTML file.
 #'
 #' @details
 #' The value labels are displayed on separate lines using HTML `<br>` tags.
@@ -25,7 +25,7 @@
 #' @examples
 #' \dontrun{
 #' library(haven)
-#' df <- read_spss("yourfile.sav")
+#' df <- read_dta("yourfile.dta")
 #' create_codebook(df)
 #' }
 #' @export
@@ -43,7 +43,8 @@ create_codebook <- function(d, page = 25, save = FALSE) {
                         ))
 
   if (save){
-    htmlwidgets::saveWidget(code, file = paste0(deparse(substitute(d)), ".html"),
+    htmlwidgets::saveWidget(code,
+                            file = paste0(deparse(substitute(d)), ".html"),
                             selfcontained = TRUE)
   } else {
     return(code)
@@ -57,7 +58,7 @@ create_codebook <- function(d, page = 25, save = FALSE) {
 #'
 #' @param d A data frame with attributes `label` and `labels` for each variable.
 #'
-#' @return A data frame with columns:
+#' @return A data.table with columns:
 #' \describe{
 #'   \item{name}{Variable name}
 #'   \item{label}{Variable label (question text)}
@@ -67,7 +68,7 @@ create_codebook <- function(d, page = 25, save = FALSE) {
 #' @details
 #' The function converts value labels into a single string separated by `<br>`
 #' tags for proper display in HTML tables. For example:
-#' \code{c("1 Yes", "2 No")} becomes \code{"1. Yes<br>2. No"}.
+#' \code{c("1 Yes", "2 No")} becomes \code{"1 Yes<br>2 No"}.
 #'
 #' @examples
 #' \dontrun{
