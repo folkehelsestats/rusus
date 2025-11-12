@@ -10,7 +10,6 @@ ssb[, .N, keyby = YrkStat2]
 ssb[, .N, keyby = .(Yrkesstatus, YrkStat2)]
 
 
-## dkb <- ssb[, -c("Can7sps", "Can8sps", "Ans2sps")] #Exclude free text coz create prob
 meta <- extract_attr(ssb)
 
 ## Integer var
@@ -24,7 +23,10 @@ ssb[, (catVars) := lapply(.SD, as.factor), .SDcols = catVars]
 ## Else some var labels being excluded when defining factors var.
 source("define_labels.R")
 
-dataReporter::makeDataReport(data = ssb,
+## Exclude problem variables with lots of text
+dkb <- ssb[, -c("Can7sps", "Can8sps", "Ans2sps")] #Exclude free text coz create prob
+
+dataReporter::makeDataReport(data = dkb,
                              output = "html",
                              mode = c("summarize",  "visualize", "check"),
                              smartNum = FALSE, #Treat few numerical as category
