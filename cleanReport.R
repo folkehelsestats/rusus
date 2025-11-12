@@ -29,7 +29,7 @@ dkb <- ssb[, -c("Can7sps", "Can8sps", "Ans2sps")] #Exclude free text coz create 
 dataReporter::makeDataReport(data = dkb,
                              output = "html",
                              mode = c("summarize",  "visualize", "check"),
-                             smartNum = FALSE, #Treat few numerical as category
+                             smartNum = TRUE, #Treat few numerical as category
                              render = TRUE,
                              file = "rusus_check2025.html",
                              ## checks = setChecks(c("missing", "unique", "numRange", "valueRange")),
