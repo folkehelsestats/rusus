@@ -3,7 +3,6 @@ source("fun-codebook.R")
 
 library(dataReporter)
 
-makeDataReport(ssb, output = "html", onlyProblematic = TRUE, file = "ssb_report")
 
 ssb[, .N, keyby = Yrkesstatus]
 ssb[, .N, keyby = YrkStat2]
@@ -18,22 +17,29 @@ meta <- extract_attr(dkb)
 intVars <- meta[value_labels == "", name]
 
 ## Categorical variable
-catVars <- setdiff(names(dkb), inVars)
+catVars <- setdiff(names(dkb), intVars)
 dkb[, (catVars) := lapply(.SD, as.factor), .SDcols = catVars]
 
 dataReporter::makeDataReport(data = dkb,
                              output = "html",
                              mode = c("summarize",  "visualize", "check"),
-                             smartNum = TRUE, #Treat few numerical as category
+                             smartNum = FALSE, #Treat few numerical as category
                              render = TRUE,
                              file = "rusus_check2025.html",
                              ## checks = setChecks(c("missing", "unique", "numRange", "valueRange")),
                              listChecks = TRUE,
                              maxProbVals = Inf,
                              codebook = TRUE,
-                             reportTitle = "Rusundersøkelse 2025")
+                             reportTitle = "Rusundersøkelse 2025",
+                             ## addSummaryTable = FALSE, #
+                             includeVariableList = TRUE #add variable labels
+                             )
 
-
+## Just those that might have prob
+makeDataReport(ssb, output = "html",
+               onlyProblematic = TRUE,
+               file = "ssb_report",
+               includeVariableList = TRUE)
 
 ## Bare illegale rusmidler variabler
 ilr <- ssbIrm[, -c("Can7sps", "Can8sps", "Ans2sps")]#Exclude free text coz create prob
