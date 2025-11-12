@@ -10,17 +10,21 @@ ssb[, .N, keyby = YrkStat2]
 ssb[, .N, keyby = .(Yrkesstatus, YrkStat2)]
 
 
-dkb <- ssb[, -c("Can7sps", "Can8sps", "Ans2sps")] #Exclude free text coz create prob
-meta <- extract_attr(dkb)
+## dkb <- ssb[, -c("Can7sps", "Can8sps", "Ans2sps")] #Exclude free text coz create prob
+meta <- extract_attr(ssb)
 
 ## Integer var
 intVars <- meta[value_labels == "", name]
 
 ## Categorical variable
-catVars <- setdiff(names(dkb), intVars)
-dkb[, (catVars) := lapply(.SD, as.factor), .SDcols = catVars]
+catVars <- setdiff(names(ssb), intVars)
+ssb[, (catVars) := lapply(.SD, as.factor), .SDcols = catVars]
 
-dataReporter::makeDataReport(data = dkb,
+## Labels names after defining var types and values
+## Else some var labels being excluded when defining factors var.
+source("define_labels.R")
+
+dataReporter::makeDataReport(data = ssb,
                              output = "html",
                              mode = c("summarize",  "visualize", "check"),
                              smartNum = FALSE, #Treat few numerical as category
