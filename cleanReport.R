@@ -4,12 +4,6 @@ source("fun-codebook.R")
 library(dataReporter)
 
 
-ssb[, .N, keyby = Yrkesstatus]
-ssb[, .N, keyby = YrkStat2]
-
-ssb[, .N, keyby = .(Yrkesstatus, YrkStat2)]
-
-
 meta <- extract_attr(ssb)
 
 ## Integer var
@@ -22,6 +16,8 @@ ssb[, (catVars) := lapply(.SD, as.factor), .SDcols = catVars]
 ## Labels names after defining var types and values
 ## Else some var labels being excluded when defining factors var.
 source("define_labels.R")
+
+## saveRDS(ssb, file = file.path(Rususdata, "Rusus_2025", "rusus2025_20251126.rds"))
 
 ## Exclude problem variables with lots of text
 dkb <- ssb[, -c("Can7sps", "Can8sps", "Ans2sps")] #Exclude free text coz create prob

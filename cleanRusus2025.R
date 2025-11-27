@@ -137,7 +137,7 @@ diffSSB <- SSBcol[!tolower(SSBcol) %chin% tolower(quesCol)]
 ## Define variables
 source("define_variables.R")
 
-## Illegale rusmidler variabler
+## Get only Illegale rusmidler variabler
 canInd <- which(quesCol == "Can1") #her fra er det TOIL vars
 canVars <- quesCol[canInd:length(quesCol)]
 ssbIrm <- ssb[, ..canVars]
