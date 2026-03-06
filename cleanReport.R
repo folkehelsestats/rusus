@@ -3,7 +3,6 @@ source("fun-codebook.R")
 
 library(dataReporter)
 
-
 meta <- extract_attr(ssb)
 
 ## Integer var
@@ -65,7 +64,7 @@ create_codebook(ssb, page = 50, save = TRUE)
 library(data.table)
 library(codebook)
 
-# Anta at dt er ditt data.table-objekt
+# Unngå omskriving av original filen just in-case
 dt <- copy(ssb)
 
 # Hent variabelbeskrivelser
