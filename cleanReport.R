@@ -3,7 +3,7 @@ source("fun-codebook.R")
 
 library(dataReporter)
 
-
+## Extract metadata with user defined function from fun-codebook.R
 meta <- extract_attr(ssb)
 
 ## Integer var
