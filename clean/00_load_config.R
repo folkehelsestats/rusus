@@ -15,15 +15,7 @@ load_config <- function(config_path = "config/variable_map.yaml") {
     setNames(rep(canonical, length(aliases)), aliases)
   })
   name_lookup <- unlist(name_lookup)
-
-  # --- Label lookup: canonical_name -> human-readable label -------------
-  # This is used for reporting and can be the same as canonical_name or more descriptive.
-  # e.g. "edu_attainment" -> "Education Attainment"
-  label_lookup <- lapply(names(var_map), function(canonical) {
-    label <- var_map[[canonical]]$label 
-  })
-  names(label_lookup) <- names(var_map)
-  
+ 
   # --- Keyword pattern lookup: canonical_name -> regex pattern ----------
   # Each variable's keywords are collapsed into a single regex that
   # matches if ANY keyword appears anywhere in the column name.
@@ -35,6 +27,32 @@ load_config <- function(config_path = "config/variable_map.yaml") {
   })
   names(keyword_patterns) <- names(var_map)
   keyword_patterns <- Filter(Negate(is.null), keyword_patterns)  # drop NULLs
+
+  # --- Type map: canonical_name -> R type -------------------------------
+  type_map <- sapply(names(var_map), function(canonical) {
+    var_map[[canonical]]$type %||% "character"
+  })
+ 
+  # --- Label lookup: canonical_name -> human-readable label -------------
+  # This is used for reporting and can be the same as canonical_name or more descriptive.
+  # e.g. "edu_attainment" -> "Education Attainment"
+  label_lookup <- lapply(names(var_map), function(canonical) {
+    label <- var_map[[canonical]]$label 
+  })
+  names(label_lookup) <- names(var_map)
+
+  # --- Value map: canonical_name -> data.table of raw->label values ------
+  # This is used to map raw values to human-readable labels for reporting.
+  # e.g. for "edu_attainment", raw value "1" -> label "Primary", "2" -> "Secondary", etc.
+  value_map <- lapply(names(var_map), function(canonical) {
+    value_list <- var_map[[canonical]]$value
+    if (is.null(value_list)) return(NULL)
+    data.table(
+      num_value = names(value_list),
+      chr_value = as.character(unlist(value_list))
+    )
+  })
+  names(value_map) <- names(var_map)
   
   # --- Recode map: canonical_name -> data.table of old->new values ------
   recode_map <- lapply(names(var_map), function(canonical) {
@@ -47,15 +65,12 @@ load_config <- function(config_path = "config/variable_map.yaml") {
   })
   names(recode_map) <- names(var_map)
   
-  # --- Type map: canonical_name -> R type -------------------------------
-  type_map <- sapply(names(var_map), function(canonical) {
-    var_map[[canonical]]$type %||% "character"
-  })
-  
   list(
     name_lookup      = name_lookup,
+    label_lookup     = label_lookup,
     keyword_patterns = keyword_patterns,
     recode_map       = recode_map,
+    value_map        = value_map,
     type_map         = type_map,
     var_map          = var_map
   )
