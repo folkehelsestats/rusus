@@ -1,0 +1,43 @@
+# Each variable has:
+#   colnames : exact matches (after clean_names normalization)
+#   keywords : partial word patterns used for intelligent prediction
+#   type     : target R type
+#   label    : variable description
+#   value    : optional value labels for categorical variable
+#   recode   : optional value remapping
+
+
+kjonn:
+  colnames: [Kjonn, ioblokk_Kjonn]
+  keywords: [Kjonn]
+  type: integer
+  label: Kjønn
+  value:
+    1: Mann
+    2: Kvinne
+  recode:
+    "0": 2
+    "1": 1
+    "2": 2
+
+alder:
+  colnames: [Alder]
+  keywords: [alder, age, ageyrs, yrs_old]
+  type: integer
+  label: Alder
+  value: ~
+  recode: ~
+
+yrkesstatus:
+  colnames: [Yrkesstatus, skjema_SpmBakgrunn_Yrkesstatus]
+  keywords:    [yrke]
+  type: numeric
+  label: "Er du yrkesaktiv?"
+  value:
+    1: Ja
+    2: Nei
+    8: "vet ikke"
+    9: "ikke svar"
+  recode:
+    "D": 8
+    "R": 9
