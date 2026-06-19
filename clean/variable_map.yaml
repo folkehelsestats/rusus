@@ -36,8 +36,54 @@ yrkesstatus:
   value:
     1: Ja
     2: Nei
-    8: "vet ikke"
-    9: "ikke svar"
+    8: "ikke svar"
+    9: "vet ikke"
   recode:
-    "D": 8
-    "R": 9
+    "R": 8
+    "D": 9
+
+yrkstat2:
+  colnames: [YrkStat2, skjema_SpmBakgrunn_YrkStat2]
+  keywords: [stat2]
+  type: numeric
+  label: "Betrakter du deg hovedsakelig som"
+  value:
+    1: "arbeidsledig"
+    2: "skoleelev eller student inkludert ubetalt arbeidserfaring"
+    3: "alders- eller førtidspensjonist"
+    4: "arbeidsufør"
+    5: "på arbeidsavklaringspenger"
+    6: "vernepliktig, sivilarbeider"
+    7: "hjemmearbeidende"
+    8: "annet"
+  recode: ~
+
+# skjema_SpmBakgrunn_Arbeid
+# skjema_SpmBakgrunn_Arbeid_Kod
+
+siv:
+  colnames: [Siv, skjema_SpmBakgrunn_Siv]
+  keywords: [siv]
+  type: integer
+  label: "Er du gift eller samboer?"
+  value:
+    1: "Ja, gift/registrert partner"
+    2: "Ja, samboer"
+    3: "Nei"
+  recode: ~
+
+sivstat:
+  colnames: [SivStat, skjema_SpmBakgrunn_SivStat]
+  keywords: [siv stat]
+  type: numeric
+  label: "Hva er din sivilstatus?"
+  value:
+    1: "Ugift"
+    2: "Enke/ enkemann/ gjenlevende partner"
+    3: "Separert/ separert partner"
+    4: "Skilt/ skilt partner"
+    8: "ikke svar"
+    9: "vet ikke"
+  recode:
+    "R": 8
+    "D": 9
