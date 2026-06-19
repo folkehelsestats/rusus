@@ -74,7 +74,7 @@ siv:
 
 sivstat:
   colnames: [SivStat, skjema_SpmBakgrunn_SivStat]
-  keywords: [siv stat]
+  keywords: [siv, stat]
   type: numeric
   label: "Hva er din sivilstatus?"
   value:
