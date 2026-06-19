@@ -45,7 +45,7 @@ render_audit_report <- function(log_dir      = "logs/matching",
   # ---- Locate the .qmd template -------------------------------------
   # By default, look for audit_report.qmd in the project root.
   # Adjust this path if you move the .qmd file elsewhere.
-  qmd_path <- "audit_report.qmd"
+  qmd_path <- "clean/audit_report.qmd"
   if (!file.exists(qmd_path)) {
     stop(sprintf(
       "Quarto template not found at '%s'. Check the file location.", qmd_path
@@ -55,7 +55,7 @@ render_audit_report <- function(log_dir      = "logs/matching",
   # ---- Build output filename with timestamp -------------------------
   timestamp   <- format(Sys.time(), "%Y%m%d_%H%M")
   output_file <- file.path(output_dir, sprintf("audit_report_%s.html", timestamp))
-  
+
   # ---- Render via quarto package ------------------------------------
   # quarto::quarto_render() calls the Quarto CLI under the hood.
   # execute_params passes R values into the params: block in the .qmd.
@@ -73,7 +73,6 @@ render_audit_report <- function(log_dir      = "logs/matching",
     execute_params = list(log_dir = log_dir),  # passed to params: in .qmd
     quiet          = FALSE
   )
-  
   # ---- Confirm success -----------------------------------------------
   if (file.exists(output_file)) {
     size_kb <- round(file.size(output_file) / 1024, 1)

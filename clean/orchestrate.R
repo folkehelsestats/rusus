@@ -8,12 +8,12 @@
 #   source("R/04_orchestrate.R")        # from RStudio / interactive R
 #   Rscript R/04_orchestrate.R          # from terminal
 
-source("R/00_load_config.R")
-source("R/01_match_columns.R")
-source("R/02_clean_dataset.R")
-source("R/03_validate.R")
-source("R/03_export_log.R")
-source("R/05_render_report.R")   # <- report renderer
+source("clean/00_load_config.R")
+source("clean/01_match_columns.R")
+source("clean/02_clean_dataset.R")
+source("clean/03_validate.R")
+source("clean/04_export_log.R")
+source("clean/05_render_report.R")   # <- report renderer
 
 library(data.table)
 library(readxl)
@@ -105,8 +105,8 @@ for (i in seq_len(nrow(file_manifest))) {
 # ------------------------------------------------------------------
 master_dt <- rbindlist(clean_list, fill = TRUE, use.names = TRUE)
 
-# Put year first, then all other columns alphabetically
-other_cols <- sort(setdiff(names(master_dt), "year"))
+# Put year first, then all other columns
+other_cols <- setdiff(names(master_dt), "year")
 setcolorder(master_dt, c("year", other_cols))
 
 # ------------------------------------------------------------------

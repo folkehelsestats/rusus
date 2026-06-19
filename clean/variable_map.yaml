@@ -30,7 +30,7 @@ alder:
 
 yrkesstatus:
   colnames: [Yrkesstatus, skjema_SpmBakgrunn_Yrkesstatus]
-  keywords:    [yrke]
+  keywords: [yrke]
   type: numeric
   label: "Er du yrkesaktiv?"
   value:
