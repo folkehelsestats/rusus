@@ -16,6 +16,7 @@ kjonn:
     1: "Mann"
     2: "Kvinne"
   recode:
+    "0": 2
     "1": 1
     "2": 2
   missing:
@@ -189,7 +190,7 @@ helse:
   colnames: [Helse]
   keywords: [helse]
   type: integer
-  label: "Egenopplevd helse."
+  label: "Egenopplevd helse"
   value:
     1: "Svært god"
     2: "God"
@@ -212,7 +213,7 @@ helsepsyk:
   colnames: [Helsepsyk]
   keywords: [helsepsyk]
   type: integer
-  label: "Egenopplevd psykisk helse."
+  label: "Egenopplevd psykisk helse"
   value:
     1: "Svært god"
     2: "God"
