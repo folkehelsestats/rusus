@@ -8,61 +8,68 @@
 
 
 kjonn:
-  colnames: [Kjonn, ioblokk_Kjonn]
-  keywords: [Kjonn]
+  colnames: [Kjonn]
+  keywords: [kjonn, sex, gender]
   type: integer
-  label: Kjønn
+  label: "IOs kjønn"
   value:
-    1: Mann
-    2: Kvinne
+    1: "Mann"
+    2: "Kvinne"
   recode:
-    "0": 2
     "1": 1
     "2": 2
+  missing:
+    - NA
 
 alder:
   colnames: [Alder]
-  keywords: [alder, age, ageyrs, yrs_old]
+  keywords: [alder, age, ageyrs]
   type: integer
-  label: Alder
+  label: "IOs alder"
   value: ~
   recode: ~
+  missing:
+    - NA
+
+sluttdato:
+  colnames: [sluttdato]
+  keywords: [sluttdato, date, dato]
+  type: date
+  label: "Dato for utfyllinga (parsed from numeric format)"
+  value: ~
+  recode: ~
+  missing:
+    - NA
 
 yrkesstatus:
-  colnames: [Yrkesstatus, skjema_SpmBakgrunn_Yrkesstatus]
-  keywords: [yrke]
-  type: numeric
-  label: "Er du yrkesaktiv?"
+  colnames: [Yrkesstatus]
+  keywords: [yrkesstatus]
+  type: integer
+  label: "Yrkesaktiv?"
   value:
-    1: Ja
-    2: Nei
-    8: "ikke svar"
-    9: "vet ikke"
+    1: "Ja"
+    2: "Nei"
   recode:
-    "R": 8
-    "D": 9
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
 
 yrkstat2:
-  colnames: [YrkStat2, skjema_SpmBakgrunn_YrkStat2]
-  keywords: [stat2]
-  type: numeric
-  label: "Betrakter du deg hovedsakelig som"
-  value:
-    1: "arbeidsledig"
-    2: "skoleelev eller student inkludert ubetalt arbeidserfaring"
-    3: "alders- eller førtidspensjonist"
-    4: "arbeidsufør"
-    5: "på arbeidsavklaringspenger"
-    6: "vernepliktig, sivilarbeider"
-    7: "hjemmearbeidende"
-    8: "annet"
+  colnames: [YrkStat2]
+  keywords: [yrkstat2]
+  type: integer
+  label: "Yrkesstatus?."
+  value: ~
   recode: ~
-
-# skjema_SpmBakgrunn_Arbeid
-# skjema_SpmBakgrunn_Arbeid_Kod
+  missing:
+    - NA
 
 siv:
-  colnames: [Siv, skjema_SpmBakgrunn_Siv]
+  colnames: [Siv]
   keywords: [siv]
   type: integer
   label: "Er du gift eller samboer?"
@@ -70,20 +77,4408 @@ siv:
     1: "Ja, gift/registrert partner"
     2: "Ja, samboer"
     3: "Nei"
-  recode: ~
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
 
 sivstat:
-  colnames: [SivStat, skjema_SpmBakgrunn_SivStat]
-  keywords: [siv, stat]
-  type: numeric
-  label: "Hva er din sivilstatus?"
+  colnames: [SivStat]
+  keywords: [sivstat]
+  type: integer
+  label: "IOs formelle sivilstatus"
   value:
     1: "Ugift"
-    2: "Enke/ enkemann/ gjenlevende partner"
-    3: "Separert/ separert partner"
-    4: "Skilt/ skilt partner"
-    8: "ikke svar"
-    9: "vet ikke"
+    2: "Gift/ registrert partner"
+    3: "Enke/ enkemann/ gjenlevende partner"
+    4: "Separert/ separert partner"
+    5: "Skilt/ skilt partner"
   recode:
-    "R": 8
-    "D": 9
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+antpers:
+  colnames: [Antpers]
+  keywords: [antpers]
+  type: integer
+  label: "Antall medlemmer i husholdningen?"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+antbarn1:
+  colnames: [AntBarn1]
+  keywords: [antbarn1]
+  type: integer
+  label: "Antall barn under 6 år."
+  value:
+    1: 1
+    0: 0
+    2: 2
+    98: 98
+    4: 4
+    3: 3
+  recode:
+    "1": 1
+    "0": 0
+    "2": 2
+    "98": 98
+    "4": 4
+    "3": 3
+    "99": NA
+  missing:
+    - NA
+    - 99
+
+antbarn2:
+  colnames: [AntBarn2]
+  keywords: [antbarn2]
+  type: integer
+  label: "Antall barn 6-18 år."
+  value:
+    1: 1
+    0: 0
+    5: 5
+    2: 2
+    4: 4
+    3: 3
+    98: 98
+    6: 6
+  recode:
+    "1": 1
+    "0": 0
+    "5": 5
+    "2": 2
+    "4": 4
+    "3": 3
+    "98": 98
+    "6": 6
+  missing:
+    - NA
+
+helse:
+  colnames: [Helse]
+  keywords: [helse]
+  type: integer
+  label: "Egenopplevd helse."
+  value:
+    1: "Svært god"
+    2: "God"
+    3: "Verken god eller dårlig"
+    4: "Dårlig"
+    5: "Svært dårlig"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+helsepsyk:
+  colnames: [Helsepsyk]
+  keywords: [helsepsyk]
+  type: integer
+  label: "Egenopplevd psykisk helse."
+  value:
+    1: "Svært god"
+    2: "God"
+    3: "Verken god eller dårlig"
+    4: "Dårlig"
+    5: "Svært dårlig"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+tob1:
+  colnames: [Tob1]
+  keywords: [tob1]
+  type: integer
+  label: "Hender at røyker"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+tob2:
+  colnames: [Tob2]
+  keywords: [tob2]
+  type: integer
+  label: "Røyker daglig/av og til?"
+  value:
+    1: "Daglig"
+    2: "Av og til"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+tob3:
+  colnames: [Tob3]
+  keywords: [tob3]
+  type: integer
+  label: "Røyker du sigaretter"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+tob4a:
+  colnames: [Tob4a]
+  keywords: [tob4a]
+  type: integer
+  label: "Hvor mange sigaretter per uke"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+tob5:
+  colnames: [Tob5]
+  keywords: [tob5]
+  type: integer
+  label: "Hvor ofte røyker du sigaretter"
+  value:
+    1: "Flere dager i uken"
+    2: "1 dag i uken"
+    3: "Sjeldnere"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+tob13:
+  colnames: [Tob13]
+  keywords: [tob13]
+  type: integer
+  label: "Har du noen gang røykt daglig?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+tob14:
+  colnames: [Tob14]
+  keywords: [tob14]
+  type: integer
+  label: "Har du noen gang røykt daglig eller av og til"
+  value:
+    1: "Ja, daglig"
+    2: "Ja, av og til"
+    3: "Nei, aldri"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+tob20:
+  colnames: [Tob20]
+  keywords: [tob20]
+  type: integer
+  label: "I hvilket år sluttet du å røyke daglig"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+tob21:
+  colnames: [Tob21]
+  keywords: [tob21]
+  type: integer
+  label: "Hvor mange ganger forsøkte du å slutte å røyke daglig før du lyktes"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+tob22a:
+  colnames: [Tob22a]
+  keywords: [tob22a]
+  type: integer
+  label: "Sluttet siste gang - brukte snus"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+  missing:
+    - NA
+
+tob22b:
+  colnames: [Tob22b]
+  keywords: [tob22b]
+  type: integer
+  label: "Sluttet siste gang - brukte nikotinlegemiddel"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+  missing:
+    - NA
+
+tob22d:
+  colnames: [Tob22d]
+  keywords: [tob22d]
+  type: integer
+  label: "Sluttet siste gang - brukte røykeavvenningsprodukt"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+  missing:
+    - NA
+
+tob22q:
+  colnames: [Tob22q]
+  keywords: [tob22q]
+  type: integer
+  label: "Sluttet siste gang - søkte helsetjenesten"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+  missing:
+    - NA
+
+tob22s:
+  colnames: [Tob22s]
+  keywords: [tob22s]
+  type: integer
+  label: "Sluttet siste gang - brukte e-sigaretter"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+  missing:
+    - NA
+
+tob22r:
+  colnames: [Tob22r]
+  keywords: [tob22r]
+  type: integer
+  label: "Sluttet siste gang - søkte nettsider eller mobiltjenester for røykeslutt"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+  missing:
+    - NA
+
+tob23:
+  colnames: [Tob23]
+  keywords: [tob23]
+  type: integer
+  label: "Hvor gammel var du da du begynte å røyke daglig"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+tob30:
+  colnames: [Tob30]
+  keywords: [tob30]
+  type: integer
+  label: "Røyker du sigaretter daglig"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+  missing:
+    - NA
+
+tob31a:
+  colnames: [Tob31a]
+  keywords: [tob31a]
+  type: integer
+  label: "Hvor mange sigaretter røyker du gjennomsnittlig pr. dag"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+tob31b:
+  colnames: [Tob31b]
+  keywords: [tob31b]
+  type: integer
+  label: "Hvor mange av disse sigarettene er fabrikklagde"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+    - 8
+
+tob31c:
+  colnames: [Tob31c]
+  keywords: [tob31c]
+  type: integer
+  label: "Hvor mange av disse sigarettene er hjemmerullede"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+    - 8
+    - 998
+
+tob33:
+  colnames: [Tob33]
+  keywords: [tob33]
+  type: integer
+  label: "Røyker du sigarer eller sigarillos daglig, av og til eller aldri"
+  value:
+    1: "Daglig"
+    2: "Av og til"
+    3: "Aldri"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+tob34:
+  colnames: [Tob34]
+  keywords: [tob34]
+  type: integer
+  label: "Røyker du pipe daglig, av og til eller aldri?"
+  value:
+    1: "Daglig"
+    2: "Av og til"
+    3: "Aldri"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+tob38:
+  colnames: [Tob38]
+  keywords: [tob38]
+  type: integer
+  label: "Har du noen gang prøvd å slutte å røyke daglig?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+tob39:
+  colnames: [Tob39]
+  keywords: [tob39]
+  type: integer
+  label: "Hvor mange ganger totalt har du prøvd å slutte å røyke daglig?"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+tob40:
+  colnames: [Tob40]
+  keywords: [tob40]
+  type: integer
+  label: "Har du prøvd å slutte å røyke daglig i løpet av de siste 12 månedene?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+  missing:
+    - NA
+
+tob42a:
+  colnames: [Tob42a]
+  keywords: [tob42a]
+  type: integer
+  label: "Forsøkte å slutte siste gang ... brukte snus"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+  missing:
+    - NA
+
+tob42b:
+  colnames: [Tob42b]
+  keywords: [tob42b]
+  type: integer
+  label: "Forsøkte å slutte siste gang ... brukte nikotinlegemiddel"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+  missing:
+    - NA
+
+tob42d:
+  colnames: [Tob42d]
+  keywords: [tob42d]
+  type: integer
+  label: "Forsøkte å slutte siste gang ... brukte reseptbelagt røykeavvenningsprodukt"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+  missing:
+    - NA
+    - 8
+
+tob42o:
+  colnames: [Tob42o]
+  keywords: [tob42o]
+  type: integer
+  label: "Forsøkte å slutte siste gang ... brukte elektroniske sigaretter"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+  missing:
+    - NA
+
+tob42m:
+  colnames: [Tob42m]
+  keywords: [tob42m]
+  type: integer
+  label: "Forsøkte å slutte siste gang ... søkte hjelp i helsetjenesten/kommunen"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+  missing:
+    - NA
+
+tob42n:
+  colnames: [Tob42n]
+  keywords: [tob42n]
+  type: integer
+  label: "Forsøkte å slutte siste gang ... søkte hjelp på nettsider eller mobiltjenester for røykeslutt"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+  missing:
+    - NA
+
+tob43:
+  colnames: [Tob43]
+  keywords: [tob43]
+  type: integer
+  label: "Vurderer du seriøst å slutte å røyke de neste 6 månedene?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+tob44:
+  colnames: [Tob44]
+  keywords: [tob44]
+  type: integer
+  label: "Planlegger du å slutte å røyke i løpet av de neste 30 dagene?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+tobvan1:
+  colnames: [Tobvan1]
+  keywords: [tobvan1]
+  type: integer
+  label: "Hvor lang tid etter at du våkner, tenner du din første sigarett"
+  value:
+    1: "Innen 5 min"
+    2: "Mellom 6 - 30 min"
+    3: "Mellom 31 - 60 min"
+    4: "Etter 60 min"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+tob61:
+  colnames: [Tob61]
+  keywords: [tob61]
+  type: integer
+  label: "Kan du prøve å forutsi dine røykevaner omkring 5 år fra nå?"
+  value:
+    1: "Kommer helt sikkert til å røyke daglig"
+    2: "Kommer antakelig til å røyke daglig"
+    3: "Kommer antakelig ikke til å røyke daglig"
+    4: "Kommer helt sikkert ikke til å røyke daglig"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+tob61b:
+  colnames: [Tob61b]
+  keywords: [tob61b]
+  type: integer
+  label: "Kan du prøve å forutsi dine snusvaner omkring 5 år fra nå?"
+  value:
+    1: "Kommer helt sikkert til å snuse daglig"
+    2: "Kommer antakelig til å snuse daglig"
+    3: "Kommer antakelig ikke til å snuse daglig"
+    4: "Kommer helt sikkert ikke til å snuse daglig"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+tob62a:
+  colnames: [Tob62a]
+  keywords: [tob62a]
+  type: integer
+  label: "Hvor skadelig tror du snus er på en skala fra 1 til 7"
+  value:
+    1: "1 Lite skadelig"
+    2: "2"
+    3: "3"
+    4: "4"
+    5: "5"
+    6: "6"
+    7: "7 Svært skadelig"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "6": 6
+    "7": 7
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+tob62e:
+  colnames: [Tob62e]
+  keywords: [tob62e]
+  type: integer
+  label: "Hvor skadelig tror du ferdigsigaretter med lavere nikotin- og tjæreinnhold er, på en skala fra 1 til 7?"
+  value:
+    1: "1 Lite skadelig"
+    2: "2"
+    3: "3"
+    4: "4"
+    5: "5"
+    6: "6"
+    7: "7 Svært skadelig"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "6": 6
+    "7": 7
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+tob62f:
+  colnames: [Tob62f]
+  keywords: [tob62f]
+  type: integer
+  label: "Hvor skadelig tror du vanlige ferdigsigaretter er, på en skala fra 1 til 7?"
+  value:
+    1: "1 Lite skadelig"
+    2: "2"
+    3: "3"
+    4: "4"
+    5: "5"
+    6: "6"
+    7: "7 Svært skadelig"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "6": 6
+    "7": 7
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+tob62g:
+  colnames: [Tob62g]
+  keywords: [tob62g]
+  type: integer
+  label: "Hvor skadelig tror du produkter som er laget for å erstatte tobakksprodukter med nikotin, som for eksempel nikotintyggegummi, nikotinplaster og nikotinposer er, på en skala fra 1 til 7?"
+  value:
+    1: "1 Lite skadelig"
+    2: "2"
+    3: "3"
+    4: "4"
+    5: "5"
+    6: "6"
+    7: "7 Svært skadelig"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "6": 6
+    "7": 7
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+tob62h:
+  colnames: [Tob62h]
+  keywords: [tob62h]
+  type: integer
+  label: "Hvor skadelig tror du e-sigaretter/fordampere (vape) er, på en skala fra 1 til 7?"
+  value:
+    1: "1 Lite skadelig"
+    2: "2"
+    3: "3"
+    4: "4"
+    5: "5"
+    6: "6"
+    7: "7 Svært skadelig"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "6": 6
+    "7": 7
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+tobe:
+  colnames: [TobE]
+  keywords: [tobe]
+  type: integer
+  label: "Bruker du e-sigaretter/fordampere daglig, av og til eller aldri?"
+  value:
+    1: "Daglig"
+    2: "Av og til"
+    3: "Aldri"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+tobe1:
+  colnames: [TobE1]
+  keywords: [tobe1]
+  type: integer
+  label: "Har du tidligere brukt e-sigaretter/fordampere?"
+  value:
+    1: "Ja, tidligere daglig"
+    2: "Ja, tidligere av og til"
+    3: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+tobald:
+  colnames: [tobald]
+  keywords: [tobald]
+  type: integer
+  label: "Hvor gammel var du da du begynte å bruke e-sigaretter regelmessig? Alder:"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+tobe3:
+  colnames: [TobE3]
+  keywords: [tobe3]
+  type: integer
+  label: "Hvilken type e-sigaretter/fordamper bruker du/brukte du i hovedsak?"
+  value:
+    1: "Engangs e-sigarett/fordamper som ikke er oppladbar («disposable», «puff bar» eller «elf bar»)"
+    2: "Oppladbar e-sigarett/fordamper med magasin/pod som du kan fylle på eller bytte ut selv"
+    3: "Oppladbar og modifiserbar e-sigarett/fordamper, hvor brukeren selv fyller på nikotinvæske/e-juice («mods» eller «tanks»)"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+tobe4:
+  colnames: [TobE4]
+  keywords: [tobe4]
+  type: integer
+  label: "Hva er/var nikotininnholdet i væsken i de e-sigarettene du vanligvis bruker/brukte?"
+  value:
+    1: "Nikotinfrie"
+    2: "6 mg eller mindre"
+    3: "7-11 mg"
+    4: "12-20 mg"
+    5: "21 mg eller mer"
+    6: "Med nikotin, men usikker på mengden"
+    7: "Vet ikke"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "6": 6
+    "7": 7
+  missing:
+    - NA
+
+tob60:
+  colnames: [Tob60]
+  keywords: [tob60]
+  type: integer
+  label: "Bruker du snus daglig, av og til eller aldri"
+  value:
+    1: "Daglig"
+    2: "Av og til"
+    3: "Aldri"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+tob64a:
+  colnames: [Tob64a]
+  keywords: [tob64a]
+  type: integer
+  label: "Har du brukt snus tidligere?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+tob64b:
+  colnames: [Tob64b]
+  keywords: [tob64b]
+  type: integer
+  label: "Brukte du snus daglig eller av og til?"
+  value:
+    1: "Daglig"
+    2: "Av og til"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+tob64c:
+  colnames: [Tob64c]
+  keywords: [tob64c]
+  type: integer
+  label: "Har du tidligere brukt snus daglig?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+  missing:
+    - NA
+
+tobprsn1:
+  colnames: [TobPrSn1]
+  keywords: [tobprsn1]
+  type: integer
+  label: "Hvor mange pris/porsjoner snus bruker du gjennomsnittlig pr. dag?"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+tobprsn2:
+  colnames: [TobPrSn2]
+  keywords: [tobprsn2]
+  type: integer
+  label: "Hvor mange pris/porsjoner snus bruker du gjennomsnittlig pr. uke?"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+tob66:
+  colnames: [Tob66]
+  keywords: [tob66]
+  type: integer
+  label: "Hva slags snus bruker du hovedsakelig, porsjonssnus eller løssnus?"
+  value:
+    1: "Løssnus"
+    2: "Porsjonssnus"
+    3: "Mini-porsjonssnus"
+    4: "Både løssnus og porsjonssnus"
+    5: "Nikotinposer eller hvit snus uten tobakk"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+tob68:
+  colnames: [Tob68]
+  keywords: [tob68]
+  type: integer
+  label: "Hvor gammel var du da du begynte å bruke snus regelmessig? Alder:"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+tob69:
+  colnames: [Tob69]
+  keywords: [tob69]
+  type: integer
+  label: "Hva begynte du med først, snus eller sigaretter"
+  value:
+    1: "Begynte med sigaretter først"
+    2: "Begynte med snus først"
+    3: "Omtrent samtidig (innenfor tre måneder)"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+tob69b:
+  colnames: [Tob69b]
+  keywords: [tob69b]
+  type: integer
+  label: "Bruker du noen former for nikotinerstatningsprodukter nå"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+tob71:
+  colnames: [Tob71]
+  keywords: [tob71]
+  type: integer
+  label: "Vurderer du seriøst å slutte å bruke snus de neste 6 månedene"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+tobsluttsn1:
+  colnames: [tobsluttsn1]
+  keywords: [tobsluttsn1]
+  type: integer
+  label: "Har du noen gang prøvd å slutte med snus?"
+  value:
+    1: "Ja, siste 12 måneder"
+    2: "Ja, for mer enn 12 måneder siden"
+    3: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+tobsluttsn2:
+  colnames: [tobsluttsn2]
+  keywords: [tobsluttsn2]
+  type: integer
+  label: "Hvilket år sluttet du med snus?"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+drukket1:
+  colnames: [Drukket1]
+  keywords: [drukket1]
+  type: integer
+  label: "Har drukket alkohol siste 12 mnd"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+  missing:
+    - 8
+
+drukk1b:
+  colnames: [Drukk1b]
+  keywords: [drukk1b]
+  type: integer
+  label: "Har du noen gang drukket alkohol"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+drukket2:
+  colnames: [Drukket2]
+  keywords: [drukket2]
+  type: integer
+  label: "Hvor ofte drukket alkohol siste 12 mnd"
+  value:
+    1: "Daglig"
+    2: "Ukentlig"
+    3: "Månedlig"
+    4: "Sjeldnere enn månedlig"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+drukk2a:
+  colnames: [Drukk2a]
+  keywords: [drukk2a]
+  type: integer
+  label: "Drukket alkohol ukentlig"
+  value:
+    1: "4-5 dager i uken"
+    2: "2-3 dager i uken"
+    3: "Omtrent 1 dag i uken"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+drukk2b:
+  colnames: [Drukk2b]
+  keywords: [drukk2b]
+  type: integer
+  label: "Antall dager drukket alkohol pr mnd siste 12 mnd"
+  value:
+    1: "Flere enn tre dager i måneden"
+    2: "2-3 dager i måneden"
+    3: "Omtrent 1 dag i måneden"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+drukk2c:
+  colnames: [Drukk2c]
+  keywords: [drukk2c]
+  type: integer
+  label: "Drukket alkohol få dager/en dag siste 12 mnd"
+  value:
+    1: "Flere enn tre dager"
+    2: "2-3 dager"
+    3: "Omtrent 1 dag"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+drukket3:
+  colnames: [Drukket3]
+  keywords: [drukket3]
+  type: integer
+  label: "Har drukket alkohol siste 4 uker"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+type1:
+  colnames: [Type1]
+  keywords: [type1]
+  type: integer
+  label: "Har drukket øl siste 4 uker"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+type2:
+  colnames: [Type2]
+  keywords: [type2]
+  type: integer
+  label: "Har drukket vin siste 4 uker"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+  missing:
+    - NA
+
+type3:
+  colnames: [Type3]
+  keywords: [type3]
+  type: integer
+  label: "Har drukket brennevin siste 4 uker"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+  missing:
+    - NA
+
+type4:
+  colnames: [Type4]
+  keywords: [type4]
+  type: integer
+  label: "Har drukket rusbrus/cider siste 4 uker"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+type1a:
+  colnames: [Type1a]
+  keywords: [type1a]
+  type: integer
+  label: "Hvor ofte drukket øl siste 4 uker?"
+  value:
+    1: "Daglig"
+    2: "Ukentlig"
+    3: "Sjeldnere enn ukentlig"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+typ1a_uk:
+  colnames: [Typ1a_uk]
+  keywords: [typ1a_uk, typ1a, uk]
+  type: integer
+  label: "Ukentlig: Ant dager i uken drukket øl siste 4 uker?"
+  value:
+    1: "4-5 dager i uken"
+    2: "2-3 dager i uken"
+    3: "Omtrent 1 dag i uken"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+typ1a_mn:
+  colnames: [Typ1a_mn]
+  keywords: [typ1a_mn, typ1a, mn]
+  type: integer
+  label: "Månedlig: Ant dager i uken drukket øl siste 4 uker?"
+  value:
+    1: "Flere enn 3 dager"
+    2: "2-3 dager"
+    3: "Omtrent 1 dag"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+type1b_a:
+  colnames: [Type1b_a]
+  keywords: [type1b_a, type1b, a]
+  type: integer
+  label: "Ukentlig: Drukket 0,33 liter øl siste 4 uker"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+type1b_b:
+  colnames: [Type1b_b]
+  keywords: [type1b_b, type1b, b]
+  type: integer
+  label: "Ukentlig: Drukket 0,5 liter øl siste 4 uker"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+type1b_1:
+  colnames: [Type1b_1]
+  keywords: [type1b_1, type1b, 1]
+  type: numeric
+  label: "Ukentlig: Gjennomsnitt ant 0,33 l øl drukket siste 4 uker?"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+type1b_2:
+  colnames: [Type1b_2]
+  keywords: [type1b_2, type1b, 2]
+  type: numeric
+  label: "Ukentlig: Gjennomsnitt ant 0,5 l øl drukket siste 4 uker?"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+type1c_a:
+  colnames: [Type1c_a]
+  keywords: [type1c_a, type1c, a]
+  type: integer
+  label: "Månedlig: Drukket 0,33 liter øl siste 4 uker"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+type1c_b:
+  colnames: [Type1c_b]
+  keywords: [type1c_b, type1c, b]
+  type: integer
+  label: "Månedlig: Drukket 0,5 liter øl siste 4 uker"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+type1c_1:
+  colnames: [Type1c_1]
+  keywords: [type1c_1, type1c, 1]
+  type: numeric
+  label: "Månedlig: Antall 0,33 l øl drukket siste 4 uker?"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+    - 9
+
+type1c_2:
+  colnames: [Type1c_2]
+  keywords: [type1c_2, type1c, 2]
+  type: numeric
+  label: "Månedlig: Antall 0,5 l øl drukket siste 4 uker?"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+type2a:
+  colnames: [Type2a]
+  keywords: [type2a]
+  type: integer
+  label: "Hvor ofte drukket vin siste 4 uker?"
+  value:
+    1: "Daglig"
+    2: "Ukentlig"
+    3: "Sjeldnere enn ukentlig"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+typ2a_uk:
+  colnames: [Typ2a_uk]
+  keywords: [typ2a_uk, typ2a, uk]
+  type: integer
+  label: "Ukentlig: Ant dager i uken drukket vin siste 4 uker?"
+  value:
+    1: "4-5 dager i uken"
+    2: "2-3 dager i uken"
+    3: "Omtrent 1 dag i uken"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+typ2a_mn:
+  colnames: [Typ2a_mn]
+  keywords: [typ2a_mn, typ2a, mn]
+  type: integer
+  label: "Månedlig: Ant dager i uken drukket vin siste 4 uker?"
+  value:
+    1: "Flere enn 3 dager"
+    2: "2-3 dager"
+    3: "Omtrent 1 dag"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+type2b_a:
+  colnames: [Type2b_a]
+  keywords: [type2b_a, type2b, a]
+  type: integer
+  label: "Ukentlig: Drukket glass vin siste 4 uker"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+type2b_b:
+  colnames: [Type2b_b]
+  keywords: [type2b_b, type2b, b]
+  type: integer
+  label: "Ukentlig: Drukket flasker vin siste 4 uker"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+type2b_1:
+  colnames: [Type2b_1]
+  keywords: [type2b_1, type2b, 1]
+  type: numeric
+  label: "Ukentlig: Gjennomsnitt antall glass vin drukket siste 4 uker?"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+type2b_2:
+  colnames: [Type2b_2]
+  keywords: [type2b_2, type2b, 2]
+  type: numeric
+  label: "Ukentlig: Gjennomsnitt antall flasker vin drukket siste 4 uker?"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+type2c_a:
+  colnames: [Type2c_a]
+  keywords: [type2c_a, type2c, a]
+  type: integer
+  label: "Månedlig: Drukket glass vin siste 4 uker"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+type2c_b:
+  colnames: [Type2c_b]
+  keywords: [type2c_b, type2c, b]
+  type: integer
+  label: "Månedlig: Drukket flasker vin siste 4 uker"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+type2c_1:
+  colnames: [Type2c_1]
+  keywords: [type2c_1, type2c, 1]
+  type: numeric
+  label: "Månedlig: Antall glass vin drukket siste 4 uker?"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+    - 8
+
+type2c_2:
+  colnames: [Type2c_2]
+  keywords: [type2c_2, type2c, 2]
+  type: numeric
+  label: "Månedlig: Antall flasker vin drukket siste 4 uker?"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+type3a:
+  colnames: [Type3a]
+  keywords: [type3a]
+  type: integer
+  label: "Hvor ofte drukket brennevin siste 4 uker?"
+  value:
+    1: "Daglig"
+    2: "Ukentlig"
+    3: "Sjeldnere enn ukentlig"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+typ3a_uk:
+  colnames: [Typ3a_uk]
+  keywords: [typ3a_uk, typ3a, uk]
+  type: integer
+  label: "Ukentlig: Ant dager i uken drukket brennevin siste 4 uker?"
+  value:
+    1: "4-5 dager i uken"
+    2: "2-3 dager i uken"
+    3: "Omtrent 1 dag i uken"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+  missing:
+    - NA
+
+typ3a_mn:
+  colnames: [Typ3a_mn]
+  keywords: [typ3a_mn, typ3a, mn]
+  type: integer
+  label: "Månedlig: Ant dager drukket brennevin siste 4 uker?"
+  value:
+    1: "Flere enn 3 dager"
+    2: "2-3 dager"
+    3: "Omtrent 1 dag"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+type3b_a:
+  colnames: [Type3b_a]
+  keywords: [type3b_a, type3b, a]
+  type: integer
+  label: "Ukentlig: Drukket drammer siste 4 uker"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+type3b_b:
+  colnames: [Type3b_b]
+  keywords: [type3b_b, type3b, b]
+  type: integer
+  label: "Ukentlig: Drukket flasker sprit siste 4 uker"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+type3b_1:
+  colnames: [Type3b_1]
+  keywords: [type3b_1, type3b, 1]
+  type: numeric
+  label: "Ukentlig: Gjennomsnitt antall glass drammer drukket siste 4 uker?"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+type3b_2:
+  colnames: [Type3b_2]
+  keywords: [type3b_2, type3b, 2]
+  type: numeric
+  label: "Ukentlig: Gjennomsnitt antall helflasker sprit drukket siste 4 uker?"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+type3c_a:
+  colnames: [Type3c_a]
+  keywords: [type3c_a, type3c, a]
+  type: integer
+  label: "Månedlig: Drukket drammer siste 4 uker"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+type3c_b:
+  colnames: [Type3c_b]
+  keywords: [type3c_b, type3c, b]
+  type: integer
+  label: "Månedlig: Drukket flasker sprit siste 4 uker"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+type3c_1:
+  colnames: [Type3c_1]
+  keywords: [type3c_1, type3c, 1]
+  type: numeric
+  label: "Månedlig: Antall drammer drukket siste 4 uker?"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+type3c_2:
+  colnames: [Type3c_2]
+  keywords: [type3c_2, type3c, 2]
+  type: numeric
+  label: "Månedlig: Antall flasker sprit drukket siste 4 uker?"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+type4a:
+  colnames: [Type4a]
+  keywords: [type4a]
+  type: integer
+  label: "Hvor ofte drukket rusbrus siste 4 uker?"
+  value:
+    1: "Daglig"
+    2: "Ukentlig"
+    3: "Sjeldnere enn ukentlig"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+typ4a_uk:
+  colnames: [Typ4a_uk]
+  keywords: [typ4a_uk, typ4a, uk]
+  type: integer
+  label: "Ukentlig: Ant dager i uken drukket rusbrus/alkoholholdig cider siste 4 uker?"
+  value:
+    1: "4-5 dager i uken"
+    2: "2-3 dager i uken"
+    3: "Omtrent 1 dag i uken"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+typ4a_mn:
+  colnames: [Typ4a_mn]
+  keywords: [typ4a_mn, typ4a, mn]
+  type: integer
+  label: "Månedlig: Ant dager i uken drukket rusbrus/alkoholholdig cider siste 4 uker?"
+  value:
+    1: "Flere enn 3 dager"
+    2: "2-3 dager"
+    3: "Omtrent 1 dag"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+type4b_a:
+  colnames: [Type4b_a]
+  keywords: [type4b_a, type4b, a]
+  type: integer
+  label: "Ukentlig: Drukket småflasker/småbokser siste 4 uker"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+type4b_b:
+  colnames: [Type4b_b]
+  keywords: [type4b_b, type4b, b]
+  type: integer
+  label: "Ukentlig: Drukket 0,5 liter siste 4 uker"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+type4b_1:
+  colnames: [Type4b_1]
+  keywords: [type4b_1, type4b, 1]
+  type: numeric
+  label: "Ukentlig: Gjennomsnitt antall småflasker rusbrus/cider drukket siste 4 uker?"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+type4b_2:
+  colnames: [Type4b_2]
+  keywords: [type4b_2, type4b, 2]
+  type: numeric
+  label: "Ukentlig: Gjennomsnitt antall halvliter rusbrus/cider drukket siste 4 uker?"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+type4c_a:
+  colnames: [Type4c_a]
+  keywords: [type4c_a, type4c, a]
+  type: integer
+  label: "Månedlig: Drukket småflasker/småbokser siste 4 uker"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+type4c_b:
+  colnames: [Type4c_b]
+  keywords: [type4c_b, type4c, b]
+  type: integer
+  label: "Månedlig: Drukket 0,5 liter siste 4 uker"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+type4c_1:
+  colnames: [Type4c_1]
+  keywords: [type4c_1, type4c, 1]
+  type: numeric
+  label: "Månedlig: Antall rusbrus/cider drukket siste 4 uker?"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+type4c_2:
+  colnames: [Type4c_2]
+  keywords: [type4c_2, type4c, 2]
+  type: numeric
+  label: "Månedlig: Antall halvlitere rusbrus/cider drukket siste 4 uker?"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+beruset4:
+  colnames: [Beruset4]
+  keywords: [beruset4]
+  type: integer
+  label: "Ant alkoholenheter for å føle seg tydelig beruset"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+    - 8
+    - 99
+
+al2:
+  colnames: [AL2]
+  keywords: [al2]
+  type: integer
+  label: "Ant ukedager drikker alkohol"
+  value:
+    1: "Alle 4 ukedagene"
+    2: "3 av 4 dager"
+    3: "2 av 4 dager"
+    4: "1 av 4 dager"
+    5: "Ingen av dagene"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+al3:
+  colnames: [AL3]
+  keywords: [al3]
+  type: integer
+  label: "Gjsn. ant alkoholenheter IO drikker på ukedagene"
+  value:
+    1: "16 eller flere enheter per dag"
+    2: "10-15 enheter per dag"
+    3: "6-9 enheter per dag"
+    4: "4-5 enheter per dag"
+    5: "3 enheter per dag"
+    6: "2 enheter per dag"
+    7: "1 enhet per dag"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "6": 6
+    "7": 7
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+al4:
+  colnames: [AL4]
+  keywords: [al4]
+  type: integer
+  label: "Ant helgedager drikker alkohol"
+  value:
+    1: "Alle 3 dagene"
+    2: "2 av 3 dager"
+    3: "1 av 3 dager"
+    4: "Ingen av dagene"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+al5:
+  colnames: [AL5]
+  keywords: [al5]
+  type: integer
+  label: "Gjsn. ant alkoholenheter IO drikker på helgedager"
+  value:
+    1: "16 eller flere enheter per dag"
+    2: "10-15 enheter per dag"
+    3: "6-9 enheter per dag"
+    4: "4-5 enheter per dag"
+    5: "3 enheter per dag"
+    6: "2 enheter per dag"
+    7: "1 enhet per dag"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "6": 6
+    "7": 7
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+audit2:
+  colnames: [Audit2]
+  keywords: [audit2]
+  type: integer
+  label: "Mengde alkohol drukket siste 12 mnd"
+  value:
+    1: "1-2"
+    2: "3-4"
+    3: "5-6"
+    4: "7-9"
+    5: "10 eller flere"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+audit3:
+  colnames: [Audit3]
+  keywords: [audit3]
+  type: integer
+  label: "Drukket seks alkoholenheter siste året?"
+  value:
+    1: "Daglig"
+    2: "Ukentlig"
+    3: "Månedlig"
+    4: "Sjeldnere enn månedlig"
+    5: "Aldri"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+audit3_1:
+  colnames: [Audit3_1]
+  keywords: [audit3_1, audit3, 1]
+  type: integer
+  label: "Hvor ofte drukket alkohol siste 12 mnd"
+  value:
+    1: "4-5 dager i uken"
+    2: "2-3 dager i uken"
+    3: "Omtrent 1 dag i uken"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+audit3_2:
+  colnames: [Audit3_2]
+  keywords: [audit3_2, audit3, 2]
+  type: integer
+  label: "Hvor ofte drukket alkohol siste 12 mnd"
+  value:
+    1: "Flere enn 3 dager i måneden"
+    2: "2-3 dager i måneden"
+    3: "Omtrent 1 dag i måneden"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+audit3_3:
+  colnames: [Audit3_3]
+  keywords: [audit3_3, audit3, 3]
+  type: integer
+  label: "Hvor ofte drukket alkohol siste 12 mnd"
+  value:
+    1: "Flere enn 3 dager"
+    2: "2-3 dager"
+    3: "Omtrent 1 dag"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+audit4:
+  colnames: [Audit4]
+  keywords: [audit4]
+  type: integer
+  label: "Ikke kunne stoppe drikke siste året?"
+  value:
+    1: "... aldri"
+    2: "... sjeldnere enn månedlig"
+    3: "... månedlig"
+    4: "... ukentlig"
+    5: "... daglig eller nesten daglig"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+audit5:
+  colnames: [Audit5]
+  keywords: [audit5]
+  type: integer
+  label: "Unnlatt å gjøre ting etter drukket alkohol siste året?"
+  value:
+    1: "... aldri"
+    2: "... sjeldnere enn månedlig"
+    3: "... månedlig"
+    4: "... ukentlig"
+    5: "... daglig eller nesten daglig"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+audit6:
+  colnames: [Audit6]
+  keywords: [audit6]
+  type: integer
+  label: "Startet dagen med alkohol siste året?"
+  value:
+    1: "... aldri"
+    2: "... sjeldnere enn månedlig"
+    3: "... månedlig"
+    4: "... ukentlig"
+    5: "... daglig eller nesten daglig"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+audit7:
+  colnames: [Audit7]
+  keywords: [audit7]
+  type: integer
+  label: "Følt skyldfølelse etter drikking siste året"
+  value:
+    1: "... aldri"
+    2: "... sjeldnere enn månedlig"
+    3: "... månedlig"
+    4: "... ukentlig"
+    5: "... daglig eller nesten daglig"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+audit8:
+  colnames: [Audit8]
+  keywords: [audit8]
+  type: integer
+  label: "Ikke husket hva som skjedd pga alkoholdrikking siste året"
+  value:
+    1: "... aldri"
+    2: "... sjeldnere enn månedlig"
+    3: "... månedlig"
+    4: "... ukentlig"
+    5: "... daglig eller nesten daglig"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+audit9_a:
+  colnames: [Audit9_a]
+  keywords: [audit9_a, audit9, a]
+  type: integer
+  label: "Skadet som følge av alkohol: Nei"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+audit9_b:
+  colnames: [Audit9_b]
+  keywords: [audit9_b, audit9, b]
+  type: integer
+  label: "Skadet som følge av alkohol: Ja, blitt skadet selv"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+audit9_c:
+  colnames: [Audit9_c]
+  keywords: [audit9_c, audit9, c]
+  type: integer
+  label: "Skadet som følge av alkohol: Ja, andre blitt skadet"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+audit9a:
+  colnames: [Audit9a]
+  keywords: [audit9a]
+  type: integer
+  label: "Har blitt skadet selv av egen alkoholdrikking siste året?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+audit9b:
+  colnames: [Audit9b]
+  keywords: [audit9b]
+  type: integer
+  label: "Andre blitt skadet av IOs alkoholdrikking siste året?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+audit10:
+  colnames: [Audit10]
+  keywords: [audit10]
+  type: integer
+  label: "Andre uttrykt bekymring for IOs alkobruk?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+audit10a:
+  colnames: [Audit10a]
+  keywords: [audit10a]
+  type: integer
+  label: "Andre uttrykt bekymring for IOs alkobruk siste året?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+  missing:
+    - NA
+
+arb_alk1:
+  colnames: [Arb_alk1]
+  keywords: [arb_alk1, arb, alk1]
+  type: integer
+  label: "Hatt sykefraværdager, med eller uten legeattest siste 12 mnd"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+arb_alk1b:
+  colnames: [Arb_alk1b]
+  keywords: [arb_alk1b, arb, alk1b]
+  type: integer
+  label: "Ant dager sykefravær siste 12 mnd?"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+arb_alk2:
+  colnames: [Arb_alk2]
+  keywords: [arb_alk2, arb, alk2]
+  type: integer
+  label: "Ant dager siste 12 mnd vært mindre effektiv på jobb pga alkoholdrikking dagen før?"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+    - 999
+
+arb_alk3:
+  colnames: [Arb_alk3]
+  keywords: [arb_alk3, arb, alk3]
+  type: integer
+  label: "Ant dager siste 12 mnd vært borte deler av dagen pga alkoholdrikking dagen før?"
+  value:
+    0: 0
+    1: 1
+    2: 2
+    3: 3
+    10: 10
+    15: 15
+  recode:
+    "0": 0
+    "1": 1
+    "2": 2
+    "3": 3
+    "10": 10
+    "15": 15
+    "8": NA
+    "999": NA
+    "998": NA
+  missing:
+    - NA
+    - 8
+    - 999
+    - 998
+
+arb_alk4:
+  colnames: [Arb_alk4]
+  keywords: [arb_alk4, arb, alk4]
+  type: integer
+  label: "Ant hele dager siste 12 mnd vært borte pga alkoholdrikking dagen før?"
+  value:
+    0: 0
+    1: 1
+    5: 5
+    2: 2
+    15: 15
+    12: 12
+  recode:
+    "0": 0
+    "1": 1
+    "5": 5
+    "2": 2
+    "15": 15
+    "12": 12
+    "999": NA
+    "998": NA
+  missing:
+    - NA
+    - 999
+    - 998
+
+arb_alk5:
+  colnames: [Arb_alk5]
+  keywords: [arb_alk5, arb, alk5]
+  type: integer
+  label: "Ant dager totalt siste 12 mnd vært borte pga alkoholdrikking?"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+    - 998
+
+leg1:
+  colnames: [Leg1]
+  keywords: [leg1]
+  type: integer
+  label: "Brukt reseptbelagte sovemidler siste 12 mnd?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+leg2:
+  colnames: [Leg2]
+  keywords: [leg2]
+  type: integer
+  label: "Brukt sovemidler daglig minst en uke?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+leg3:
+  colnames: [Leg3]
+  keywords: [leg3]
+  type: integer
+  label: "Varighet lengste periode med sovemiddelbruk"
+  value:
+    1: "1 til 2 uker"
+    2: "3 til 4 uker"
+    3: "1 til 3 måneder"
+    4: "Mer enn tre måneder"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+leg5:
+  colnames: [Leg5]
+  keywords: [leg5]
+  type: integer
+  label: "Brukt reseptbelagte beroligende midler siste 12 mnd"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+leg6:
+  colnames: [Leg6]
+  keywords: [leg6]
+  type: integer
+  label: "Brukt beroligende midler daglig minst en uke"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+  missing:
+    - NA
+    - 8
+
+leg7:
+  colnames: [Leg7]
+  keywords: [leg7]
+  type: integer
+  label: "Varighet av lengste periode med bruk av beroligende midler"
+  value:
+    1: "1 til 2 uker"
+    2: "3 til 4 uker"
+    3: "1 til 3 måneder"
+    4: "Mer enn tre måneder"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+leg9:
+  colnames: [Leg9]
+  keywords: [leg9]
+  type: integer
+  label: "Brukt reseptbelagte smertestillende midler siste 12 mnd?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+leg10:
+  colnames: [Leg10]
+  keywords: [leg10]
+  type: integer
+  label: "Brukt smertestillende daglig minst en uke?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+leg11:
+  colnames: [Leg11]
+  keywords: [leg11]
+  type: integer
+  label: "Varighet av lengste periode med bruk av smertestillende midler"
+  value:
+    1: "1 til 2 uker"
+    2: "3 til 4 uker"
+    3: "1 til 3 måneder"
+    4: "Mer enn tre måneder"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+leg12:
+  colnames: [Leg12]
+  keywords: [leg12]
+  type: integer
+  label: "I løpet av de siste 12 månedene, hvor ofte har du brukt reseptbelagte legemidler (sovemidler, smertestillende eller beroligende) samme dag som du drakk alkohol?"
+  value:
+    1: "Aldri"
+    2: "1 gang i mnd. eller sjeldnere"
+    3: "2-3 ganger i måneden"
+    4: "2-3 ganger i uken"
+    5: "4 ganger i uken eller mer"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+can1:
+  colnames: [Can1]
+  keywords: [can1]
+  type: integer
+  label: "Brukt cannabis noen gang"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+can2:
+  colnames: [Can2]
+  keywords: [can2]
+  type: integer
+  label: "Ant ganger brukt cannabis"
+  value:
+    1: "En gang"
+    2: "2-5 ganger"
+    3: "6-10 ganger"
+    4: "11-50 ganger"
+    5: "Mer enn 50 ganger"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+can3:
+  colnames: [Can3]
+  keywords: [can3]
+  type: integer
+  label: "Alder da IO prøvde cannabis første gang"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+can4:
+  colnames: [Can4]
+  keywords: [can4]
+  type: integer
+  label: "Drukket alkohol tidligere samme dag som første gang prøvd cannabis?"
+  value:
+    1: "Ja"
+    2: "Nei"
+    3: "Husker ikke/vet ikke"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+  missing:
+    - NA
+
+can5:
+  colnames: [Can5]
+  keywords: [can5]
+  type: integer
+  label: "Drukket alkohol tidligere samme dag som sist brukt cannabis?"
+  value:
+    1: "Ja"
+    2: "Nei"
+    3: "Vet ikke"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+can6:
+  colnames: [Can6]
+  keywords: [can6]
+  type: integer
+  label: "Brukt cannabis siste 12 mnd?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+  missing:
+    - NA
+    - 8
+
+can6b:
+  colnames: [Can6b]
+  keywords: [can6b]
+  type: integer
+  label: "muligheten til å prøve cannabis i løpet av de siste 12 måneder"
+  value:
+    1: "Nei"
+    2: "Ja, en gang"
+    3: "Ja, 2-5 ganger"
+    4: "Ja, 6-9 ganger"
+    5: "Ja, 10 ganger eller mer"
+    6: "Husker ikke/vet ikke"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "6": 6
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+can7_a:
+  colnames: [Can7_a]
+  keywords: [can7_a, can7, a]
+  type: integer
+  label: "Brukt Hasj siste 12 mnd?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+can7_b:
+  colnames: [Can7_b]
+  keywords: [can7_b, can7, b]
+  type: integer
+  label: "Brukt Marihuana siste 12 mnd?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+can7_c:
+  colnames: [Can7_c]
+  keywords: [can7_c, can7, c]
+  type: integer
+  label: "Brukt Cannabisolje siste 12 mnd?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+can7_d:
+  colnames: [Can7_d]
+  keywords: [can7_d, can7, d]
+  type: integer
+  label: "Brukt spiselige produkter (edibles) siste 12 mnd?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+can7_e:
+  colnames: [Can7_e]
+  keywords: [can7_e, can7, e]
+  type: integer
+  label: "Brukt annen type cannabis siste 12 mnd?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+can7sps:
+  colnames: [Can7sps]
+  keywords: [can7sps]
+  type: character
+  label: "Hvilke andre typer cannabis har du prøvd?"
+  value:
+    99999999999999999999999999999999999999999999999998: 99999999999999999999999999999999999999999999999998
+    99999999999999999999999999999999999999999999999999: 99999999999999999999999999999999999999999999999999
+  recode:
+    "99999999999999999999999999999999999999999999999998": 99999999999999999999999999999999999999999999999998
+    "99999999999999999999999999999999999999999999999999": 99999999999999999999999999999999999999999999999999
+  missing:
+    - NA
+
+can8:
+  colnames: [Can8]
+  keywords: [can8]
+  type: integer
+  label: "Hvilken måte fikk du cannabis på?"
+  value:
+    1: "Fikk av kjente"
+    2: "Kjøpte av kjente"
+    3: "Kjøpte via sosiale medier"
+    4: "Kjøpte via Internett"
+    5: "Kjøpte av ukjente på annen måte"
+    6: "Dyrket selv"
+    7: "Annet, spesifiser"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "6": 6
+    "7": 7
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+can8sps:
+  colnames: [Can8sps]
+  keywords: [can8sps]
+  type: character
+  label: "På hvilken annen måte fikk du cannabis?"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+can9:
+  colnames: [Can9]
+  keywords: [can9]
+  type: integer
+  label: "Ant ganger brukt cannabis siste 12 mnd"
+  value:
+    1: "1-5 ganger"
+    2: "6-10 ganger"
+    3: "11-50 ganger"
+    4: "Mer enn 50 ganger"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+can10:
+  colnames: [Can10]
+  keywords: [can10]
+  type: integer
+  label: "Brukt cannabis siste fire uker?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+  missing:
+    - NA
+    - 8
+
+can11:
+  colnames: [Can11]
+  keywords: [can11]
+  type: integer
+  label: "Ant ganger brukt cannabis siste fire uker"
+  value:
+    1: "20 dager eller mer"
+    2: "10-19 dager"
+    3: "4-9 dager"
+    4: "1-3 dager"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+  missing:
+    - NA
+
+can13:
+  colnames: [Can13]
+  keywords: [can13]
+  type: integer
+  label: "Hvor mange ganger ruset du deg på cannabis (uansett type) siste døgn?"
+  value:
+    1: 1
+    0: 0
+    2: 2
+    3: 3
+    5: 5
+    4: 4
+    10: 10
+  recode:
+    "1": 1
+    "0": 0
+    "2": 2
+    "3": 3
+    "5": 5
+    "4": 4
+    "10": 10
+    "99": NA
+  missing:
+    - NA
+    - 99
+
+can14:
+  colnames: [Can14]
+  keywords: [can14]
+  type: integer
+  label: "Brukt cannabis regelmessig?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+ans1:
+  colnames: [Ans1]
+  keywords: [ans1]
+  type: integer
+  label: "Brukt andre narkotiske stoffer noen gang"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+ans2sps:
+  colnames: [Ans2sps]
+  keywords: [ans2sps]
+  type: character
+  label: "Hvilke andre stoffer har du prøvd?"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+ans2_a:
+  colnames: [Ans2_a]
+  keywords: [ans2_a, ans2, a]
+  type: integer
+  label: "Brukt Kokain noen gang"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+ans2_b:
+  colnames: [Ans2_b]
+  keywords: [ans2_b, ans2, b]
+  type: integer
+  label: "Brukt Ecstasy noen gang"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+ans2_c:
+  colnames: [Ans2_c]
+  keywords: [ans2_c, ans2, c]
+  type: integer
+  label: "Brukt Amfetaminer noen gang"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+ans2_d:
+  colnames: [Ans2_d]
+  keywords: [ans2_d, ans2, d]
+  type: integer
+  label: "Brukt Relevin noen gang"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+ans2_e:
+  colnames: [Ans2_e]
+  keywords: [ans2_e, ans2, e]
+  type: integer
+  label: "Brukt Heroin noen gang"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+ans2_f:
+  colnames: [Ans2_f]
+  keywords: [ans2_f, ans2, f]
+  type: integer
+  label: "Brukt GHB/GBL noen gang"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+ans2_g:
+  colnames: [Ans2_g]
+  keywords: [ans2_g, ans2, g]
+  type: integer
+  label: "Brukt LSD noen gang"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+ans2_x:
+  colnames: [Ans2_x]
+  keywords: [ans2_x, ans2, x]
+  type: integer
+  label: "Brukt nye rusmidler noen gang"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+ans2_y:
+  colnames: [Ans2_y]
+  keywords: [ans2_y, ans2, y]
+  type: integer
+  label: "Brukt sopp/psilocybin noen gang"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+ans2_h:
+  colnames: [Ans2_h]
+  keywords: [ans2_h, ans2, h]
+  type: integer
+  label: "Brukt andre stoffer noen gang"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+ans3_1:
+  colnames: [Ans3_1]
+  keywords: [ans3_1, ans3, 1]
+  type: integer
+  label: "Brukt kokain siste 12 månedene?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+ans3_2:
+  colnames: [Ans3_2]
+  keywords: [ans3_2, ans3, 2]
+  type: integer
+  label: "Brukt ecstasy siste 12 månedene?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+  missing:
+    - NA
+
+ans3_3:
+  colnames: [Ans3_3]
+  keywords: [ans3_3, ans3, 3]
+  type: integer
+  label: "Brukt amfetaminer siste 12 månedene?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+  missing:
+    - NA
+
+ans3_4:
+  colnames: [Ans3_4]
+  keywords: [ans3_4, ans3, 4]
+  type: integer
+  label: "Brukt relevin siste 12 månedene?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+  missing:
+    - NA
+
+ans3_5:
+  colnames: [Ans3_5]
+  keywords: [ans3_5, ans3, 5]
+  type: integer
+  label: "Brukt heroin siste 12 månedene?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+  missing:
+    - NA
+
+ans3_6:
+  colnames: [Ans3_6]
+  keywords: [ans3_6, ans3, 6]
+  type: integer
+  label: "Brukt GHB/GBL siste 12 månedene?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+  missing:
+    - NA
+
+ans3_7:
+  colnames: [Ans3_7]
+  keywords: [ans3_7, ans3, 7]
+  type: integer
+  label: "Brukt LSD siste 12 månedene?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+  missing:
+    - NA
+
+ans3_x:
+  colnames: [Ans3_x]
+  keywords: [ans3_x, ans3, x]
+  type: integer
+  label: "Brukt nye rusmidler siste 12 månedene?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+  missing:
+    - NA
+
+ans3_y:
+  colnames: [Ans3_y]
+  keywords: [ans3_y, ans3, y]
+  type: integer
+  label: "Brukt sopp/psilocybin siste 12 månedene?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+  missing:
+    - NA
+
+ans3_8:
+  colnames: [Ans3_8]
+  keywords: [ans3_8, ans3, 8]
+  type: integer
+  label: "Brukt andre stoffer siste 12 månedene?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+  missing:
+    - NA
+
+ans_5:
+  colnames: [Ans_5]
+  keywords: [ans_5, ans, 5]
+  type: integer
+  label: "Antall dager brukt kokain siste 12 mnd"
+  value:
+    1: "1-5 dager"
+    2: "6-10 dager"
+    3: "11-50 dager"
+    4: "50 dager eller mer"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+ans9:
+  colnames: [Ans9]
+  keywords: [ans9]
+  type: integer
+  label: "Antall dager brukt amfetaminer siste 12 mnd"
+  value:
+    1: "1-5 dager"
+    2: "6-10 dager"
+    3: "11-50 dager"
+    4: "50 dager eller mer"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "9": NA
+  missing:
+    - NA
+    - 9
+
+dop1:
+  colnames: [Dop1]
+  keywords: [dop1]
+  type: integer
+  label: "Brukt prestasjonsfremmende midler"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+dop3_1:
+  colnames: [Dop3_1]
+  keywords: [dop3_1, dop3, 1]
+  type: integer
+  label: "Brukt anabole steroider siste 12 månedene?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+  missing:
+    - NA
+    - 8
+
+negkons1:
+  colnames: [NegKons1]
+  keywords: [negkons1]
+  type: integer
+  label: "I løpet av de siste 12 månedene, hvor mange ganger har du blitt skadet i en ulykke (f.eks. falt eller slått deg) mens du var påvirket av alkohol? Vi tenker her på skader slik at du fikk synlige merker eller måtte ha hjelp eller behandling."
+  value:
+    1: "Ingen"
+    2: "En gang"
+    3: "Mer enn en gang"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+negkons2:
+  colnames: [NegKons2]
+  keywords: [negkons2]
+  type: integer
+  label: "I løpet av de siste 12 månedene, hvor mange ganger har du blitt skadet i en voldshendelse (f.eks. at noen har slått eller sparket deg eller brukt kniv e.l.) mens du var påvirket av alkohol? Vi tenker her på skader slik at du fikk synlige merker eller måt"
+  value:
+    1: "Ingen"
+    2: "En gang"
+    3: "Mer enn en gang"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+negkons3:
+  colnames: [NegKons3]
+  keywords: [negkons3]
+  type: integer
+  label: "I løpet av de siste 12 månedene, hvor mange ganger har du blitt påført fysisk skade (f.eks. at noen har slått eller sparket deg eller brukt kniv e.l.) av noen som var alkoholpåvirket? Vi tenker her på skader slik at du fikk synlige merker eller måtte ha"
+  value:
+    1: "Ingen"
+    2: "En gang"
+    3: "Mer enn en gang"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+negkons4:
+  colnames: [NegKons4]
+  keywords: [negkons4]
+  type: integer
+  label: "I løpet av de siste 12 månedene, hvor mange ganger har du opplevd å få uønsket seksuell oppmerksomhet som du opplevde som krenkende eller trakasserende av noen som var alkoholpåvirket?"
+  value:
+    1: "Ingen"
+    2: "En gang"
+    3: "Mer enn en gang"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+negkons4_1:
+  colnames: [NegKons4_1]
+  keywords: [negkons4_1, negkons4, 1]
+  type: integer
+  label: "Hvor problematisk opplevde du at dette var?"
+  value:
+    1: "Helt uproblematisk"
+    2: "Nokså uproblematisk"
+    3: "Nokså problematisk"
+    4: "Svært problematisk"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "8": NA
+  missing:
+    - NA
+    - 8
+
+negkons5:
+  colnames: [NegKons5]
+  keywords: [negkons5]
+  type: integer
+  label: "I løpet av siste 12 månedene, hvor mange ganger har du blitt skadet i en ulykke (f.eks. falt eller slått deg) mens du var påvirket av ulovlige rusmidler? Vi tenker her på skader slik at du fikk synlige merker eller måtte ha hjelp eller behandling."
+  value:
+    1: "Ingen"
+    2: "En gang"
+    3: "Mer enn en gang"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+negkons6:
+  colnames: [NegKons6]
+  keywords: [negkons6]
+  type: integer
+  label: "I løpet av siste 12 månedene, hvor mange ganger har du blitt skadet i en voldshendelse (f.eks. at noen har slått eller sparket deg eller brukt kniv el.) mens du var påvirket av ulovlige rusmidler? Vi tenker her på skader slik at du fikk synlige merker el"
+  value:
+    1: "Ingen"
+    2: "En gang"
+    3: "Mer enn en gang"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+paaror1a:
+  colnames: [paaror1a]
+  keywords: [paaror1a]
+  type: integer
+  label: "Er du pårørende til en eller flere personer med alkohol- eller rusmiddelproblemer?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+paaror3:
+  colnames: [paaror3]
+  keywords: [paaror3]
+  type: integer
+  label: "Er dette noen du bor sammen med?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+  missing:
+    - NA
+    - 8
+
+paaror4:
+  colnames: [paaror4]
+  keywords: [paaror4]
+  type: integer
+  label: "Hvor ofte opplever du stor bekymring, engstelse, redsel eller lignende fordi du er pårørende til noen med rusmiddelproblemer?"
+  value:
+    1: "Daglig"
+    2: "Ukentlig"
+    3: "Månedlig"
+    4: "Sjeldnere enn månedlig"
+    5: "Aldri"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+paaror5:
+  colnames: [paaror5]
+  keywords: [paaror5]
+  type: integer
+  label: "Er du pårørende til noen med opplevd overdose av ulovlige rusmidler, alkohol eller reseptbelagte legemidler?"
+  value:
+    1: "Ja"
+    2: "Nei"
+    3: "Vet ikke"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "8": NA
+  missing:
+    - 8
+
+avslutt:
+  colnames: [Avslutt]
+  keywords: [avslutt]
+  type: integer
+  label: "Hvor interessante var spørsmålene i undersøkelsen for deg?"
+  value:
+    1: "Svært interessante"
+    2: "Ganske interessante"
+    3: "Ganske uinteressante"
+    4: "Svært uinteressante"
+    5: "Jeg har ingen mening om det"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "8": NA
+    "9": NA
+  missing:
+    - NA
+    - 8
+    - 9
+
+intslutt:
+  colnames: [intslutt]
+  keywords: [intslutt]
+  type: integer
+  label: "Tusen takk for at du svarte på undersøkelsen! Type kontakt"
+  value:
+    1: "Telefon"
+    2: "besok"
+    3: "www"
+    4: "Ingen"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+  missing:
+    - NA
+
+sluttintervjudato:
+  colnames: [sluttintervjudato]
+  keywords: [sluttintervjudato, date, dato]
+  type: date
+  label: "sluttintervjudato (parsed from numeric format)"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+yrke:
+  colnames: [yrke]
+  keywords: [yrke]
+  type: integer
+  label: "yrke"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+    - 8
+    - 9
+
+paaror1b_a:
+  colnames: [paaror1b_a]
+  keywords: [paaror1b_a, paaror1b, a]
+  type: integer
+  label: "Typer rusmidler: Alkohol"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+paaror1b_b:
+  colnames: [paaror1b_b]
+  keywords: [paaror1b_b, paaror1b, b]
+  type: integer
+  label: "Typer rusmidler: Reseptbelagte legemidler/piller"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+paaror1b_c:
+  colnames: [paaror1b_c]
+  keywords: [paaror1b_c, paaror1b, c]
+  type: integer
+  label: "Typer rusmidler: Cannabis eller andre ulovlige rusmidler"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+paaror2_a:
+  colnames: [paaror2_a]
+  keywords: [paaror2_a, paaror2, a]
+  type: integer
+  label: "Familierelasjon til pårørende: Ektefelle/partner/kjæreste"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+  missing:
+    - 8
+
+paaror2_b:
+  colnames: [paaror2_b]
+  keywords: [paaror2_b, paaror2, b]
+  type: integer
+  label: "Familierelasjon til pårørende: Mor eller far"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+  missing:
+    - 8
+
+paaror2_c:
+  colnames: [paaror2_c]
+  keywords: [paaror2_c, paaror2, c]
+  type: integer
+  label: "Familierelasjon til pårørende: Sønn eller datter"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+  missing:
+    - 8
+
+paaror2_d:
+  colnames: [paaror2_d]
+  keywords: [paaror2_d, paaror2, d]
+  type: integer
+  label: "Familierelasjon til pårørende: Søster eller bror"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+  missing:
+    - 8
+
+paaror2_e:
+  colnames: [paaror2_e]
+  keywords: [paaror2_e, paaror2, e]
+  type: integer
+  label: "Familierelasjon til pårørende: Annen relasjon"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+  missing:
+    - 8
+
+tobsit_a:
+  colnames: [tobsit_a]
+  keywords: [tobsit_a, tobsit, a]
+  type: integer
+  label: "Røyker vanligvis: I sosiale sammenkomster med andre"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+tobsit_b:
+  colnames: [tobsit_b]
+  keywords: [tobsit_b, tobsit, b]
+  type: integer
+  label: "Røyker vanligvis: I ferien"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+tobsit_c:
+  colnames: [tobsit_c]
+  keywords: [tobsit_c, tobsit, c]
+  type: integer
+  label: "Røyker vanligvis: Når jeg drikker alkohol"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+tobsit_d:
+  colnames: [tobsit_d]
+  keywords: [tobsit_d, tobsit, d]
+  type: integer
+  label: "Røyker vanligvis: Når jeg har lyst. Det er ingen spesiell foranledning"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+tobsit_e:
+  colnames: [tobsit_e]
+  keywords: [tobsit_e, tobsit, e]
+  type: integer
+  label: "Røyker vanligvis: Annet"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "8": NA
+    "9": NA
+  missing:
+    - 8
+    - 9
+
+alkansk_a:
+  colnames: [alkansk_a]
+  keywords: [alkansk_a, alkansk, a]
+  type: integer
+  label: "Anskaffer alkohol: Kjøper i butikk i Norge/vinmonopolet"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - 9
+
+alkansk_b:
+  colnames: [alkansk_b]
+  keywords: [alkansk_b, alkansk, b]
+  type: integer
+  label: "Anskaffer alkohol: Kjøper i utlandet,"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - 9
+
+alkansk_c:
+  colnames: [alkansk_c]
+  keywords: [alkansk_c, alkansk, c]
+  type: integer
+  label: "Anskaffer alkohol: Kjøper på tax-freebutikk,"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - 9
+
+alkansk_d:
+  colnames: [alkansk_d]
+  keywords: [alkansk_d, alkansk, d]
+  type: integer
+  label: "Anskaffer alkohol: Får av venner/slektninger"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - 9
+
+alkansk_e:
+  colnames: [alkansk_e]
+  keywords: [alkansk_e, alkansk, e]
+  type: integer
+  label: "Anskaffer alkohol: Kjøper av venner/slektninger"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - 9
+
+alkansk_f:
+  colnames: [alkansk_f]
+  keywords: [alkansk_f, alkansk, f]
+  type: integer
+  label: "Anskaffer alkohol: Kjøper via sosiale medier"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - 9
+
+alkansk_g:
+  colnames: [alkansk_g]
+  keywords: [alkansk_g, alkansk, g]
+  type: integer
+  label: "Anskaffer alkohol: Kjøper i nettbutikk"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - 9
+
+alkansk_h:
+  colnames: [alkansk_h]
+  keywords: [alkansk_h, alkansk, h]
+  type: integer
+  label: "Anskaffer alkohol: Kjøper av ukjente"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - 9
+
+alkansk_i:
+  colnames: [alkansk_i]
+  keywords: [alkansk_i, alkansk, i]
+  type: integer
+  label: "Anskaffer alkohol: Kjøper på utested/serveringssted"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - 9
+
+alkansk_j:
+  colnames: [alkansk_j]
+  keywords: [alkansk_j, alkansk, j]
+  type: integer
+  label: "Anskaffer alkohol: Annet"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - 9
+
+lopenr:
+  colnames: [lopenr]
+  keywords: [lopenr]
+  type: integer
+  label: "lopenr"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+sivilstand:
+  colnames: [SIVILSTAND]
+  keywords: [sivilstand]
+  type: integer
+  label: "SIVILSTAND"
+  value:
+    2: 2
+    1: 1
+    4: 4
+    3: 3
+    5: 5
+    0: 0
+  recode:
+    "2": 2
+    "1": 1
+    "4": 4
+    "3": 3
+    "5": 5
+    "0": 0
+    "8": NA
+  missing:
+    - 8
+
+fylke_2025:
+  colnames: [fylke_2025]
+  keywords: [fylke_2025, fylke, 2025]
+  type: integer
+  label: "fylke_2025"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+landsdel_2025:
+  colnames: [landsdel_2025]
+  keywords: [landsdel_2025, landsdel, 2025]
+  type: integer
+  label: "landsdel_2025"
+  value:
+    1: "Oslo og Viken"
+    2: "Innlandet"
+    3: "Agder og Sør-Østlandet"
+    4: "Vestlandet"
+    5: "Trøndelag"
+    6: "Nord-Norge"
+    9: "Uoppgitt"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "6": 6
+    "9": 9
+  missing:
+    - NA
+
+alder1:
+  colnames: [alder1]
+  keywords: [alder1, age, ageyrs]
+  type: integer
+  label: "Aldersgruppe 1"
+  value:
+    1: "16-24 år"
+    2: "25-44 år"
+    3: "45-66 år"
+    4: "67-79 år"
+    5: "80- år"
+    8: "Vil ikke svare"
+    9: "Vet ikke"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "8": 8
+    "9": 9
+  missing:
+    - NA
+
+alder2:
+  colnames: [alder2]
+  keywords: [alder2, age, ageyrs]
+  type: integer
+  label: "Aldersgruppe 2"
+  value:
+    1: "16-20 år"
+    2: "21-30 år"
+    3: "31-40 år"
+    4: "41-50 år"
+    5: "51-60 år"
+    6: "61-79 år"
+    7: "80- år"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "6": 6
+    "7": 7
+  missing:
+    - NA
+
+tett_spredt:
+  colnames: [Tett_spredt]
+  keywords: [tett_spredt, tett, spredt]
+  type: character
+  label: "Tett_spredt"
+  value:
+    s: "Spredtbygd"
+    t: "Tettbygd"
+  recode:
+    "s": s
+    "t": t
+  missing:
+    - NA
+
+fodeland_io:
+  colnames: [fodeland_IO]
+  keywords: [fodeland_io, fodeland, io]
+  type: integer
+  label: "fodeland_IO"
+  value:
+    1: "Norge"
+    2: "Europa"
+    3: "Asia"
+    4: "Afrika"
+    5: "Sør- og Mellom-Amerika"
+    6: "Nord-Amerika"
+    7: "Australia/New Zeland/Osceania"
+    9: "Uoppgitt/mangler"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "6": 6
+    "7": 7
+    "9": 9
+  missing:
+    - NA
+
+fodeland_far:
+  colnames: [fodeland_far]
+  keywords: [fodeland_far, fodeland, far]
+  type: integer
+  label: "fodeland_far"
+  value:
+    1: "Norge"
+    2: "Europa"
+    3: "Asia"
+    4: "Afrika"
+    5: "Sør- og Mellom-Amerika"
+    6: "Nord-Amerika"
+    7: "Australia/New Zeland/Osceania"
+    9: "Uoppgitt/mangler"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "6": 6
+    "7": 7
+    "9": 9
+  missing:
+    - NA
+
+fodeland_mor:
+  colnames: [fodeland_mor]
+  keywords: [fodeland_mor, fodeland, mor]
+  type: integer
+  label: "fodeland_mor"
+  value:
+    1: "Norge"
+    2: "Europa"
+    3: "Asia"
+    4: "Afrika"
+    5: "Sør- og Mellom-Amerika"
+    6: "Nord-Amerika"
+    7: "Australia/New Zeland/Osceania"
+    9: "Uoppgitt/mangler"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "6": 6
+    "7": 7
+    "9": 9
+  missing:
+    - NA
+
+innt_hush:
+  colnames: [innt_hush]
+  keywords: [innt_hush, innt, hush]
+  type: integer
+  label: "Husholdets bruttoinntekt,  Gruppert"
+  value: ~
+  recode: ~
+  missing:
+    - 9
+
+innt_person:
+  colnames: [innt_person]
+  keywords: [innt_person, innt, person]
+  type: integer
+  label: "IOs bruttoinntekt,   Gruppert"
+  value: ~
+  recode: ~
+  missing:
+    - 8
+
+utdann_4gr:
+  colnames: [Utdann_4gr]
+  keywords: [utdann_4gr, utdann, 4gr]
+  type: integer
+  label: "Utdann_4gr"
+  value:
+    1: "Grunnskole (inklusive uoppgitt og ingen utdanning)"
+    2: "Videregående skole"
+    3: "Universitet-og høyskole"
+    4: "Universitet-og høyskole, høyere nivå"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+  missing:
+    - NA
+
+vekt:
+  colnames: [vekt]
+  keywords: [vekt]
+  type: character
+  label: "vekt"
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+sentralitet:
+  colnames: [Sentralitet]
+  keywords: [sentralitet]
+  type: integer
+  label: "Sentralitet"
+  value:
+    1: "Sentralitet: 1 (925-1000) - høy"
+    2: "Sentralitet: 2 (870-924)"
+    3: "Sentralitet: 3 (775-869)"
+    4: "Sentralitet: 4 (670-774)"
+    5: "Sentralitet: 5 (565-669)"
+    6: "Sentralitet: 6 (0-564) - lav"
+  recode:
+    "1": 1
+    "2": 2
+    "3": 3
+    "4": 4
+    "5": 5
+    "6": 6
+  missing:
+    - NA
