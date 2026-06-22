@@ -144,3 +144,41 @@ ssbIrm <- ssb[, ..canVars]
 
 dt <- copy(ssb)
 setnames(dt, names(dt), tolower(names(dt)))
+
+
+## Describe the dataset
+## ----------------
+
+library(data.table)
+library(skimr)
+
+skimr::skim(ssb)
+
+skim(ssb) |>
+  as.data.table()
+
+describe_dt <- function(dt, n_max_unique = 10, n_show = 5) {
+  stopifnot(data.table::is.data.table(dt) || is.data.frame(dt))
+
+  data.table(
+    variable = names(dt),
+    class = vapply(dt, function(x) class(x)[1], character(1)),
+    n_unique = vapply(dt, function(x) length(unique(x)), integer(1)),
+    values = vapply(dt, function(x) {
+      
+      ux <- unique(x)
+      
+      if (is.factor(x)) {
+        paste(levels(x), collapse = ", ")
+      } else if (length(ux) <= n_max_unique) {
+        paste(ux, collapse = ", ")
+      } else {
+        paste(head(ux, n_show), collapse = ", ")
+      }
+      
+    }, character(1))
+  )
+}
+
+des <- describe_dt(ssb)
+fwrite(des, here("clean", "output", "ssb_variable_descriptions.csv"))
