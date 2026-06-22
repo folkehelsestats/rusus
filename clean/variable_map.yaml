@@ -45,7 +45,7 @@ yrkesstatus:
   colnames: [Yrkesstatus]
   keywords: [yrkesstatus]
   type: integer
-  label: "Yrkesaktiv?"
+  label: "Er du yrkesaktiv?"
   value:
     1: "Ja"
     2: "Nei"
@@ -62,11 +62,22 @@ yrkstat2:
   colnames: [YrkStat2]
   keywords: [yrkstat2]
   type: integer
-  label: "Yrkesstatus?."
-  value: ~
+  label: "Betrakter du deg hovedsakelig som"
+  value:
+    1: "arbeidsledig"
+    2: skoleelev eller student inkludert ubetalt arbeidserfaring
+    3: "alders- eller førtidspensjonist"
+    4: "arbeidsufør"
+    5: "på arbeidsavklaringspenger"
+    6: "vernepliktig, sivilarbeider"
+    7: "hjemmearbeidende"
+    8: "annet"
   recode: ~
   missing:
     - NA
+
+# skjema_SpmBakgrunn_Arbeid
+# skjema_SpmBakgrunn_Arbeid_Kod
 
 siv:
   colnames: [Siv]
@@ -87,6 +98,9 @@ siv:
     - 8
     - 9
 
+## Sjekk kategoriene siden de har vært forskjellige dvs.:
+## 2025 - 2: Gift/registrert partner (5 kategorier)
+## 2026 - testdata 2: Enke/enkemann/gjenlevende partner (4 kategorier)
 sivstat:
   colnames: [SivStat]
   keywords: [sivstat]
@@ -125,7 +139,7 @@ antbarn1:
   colnames: [AntBarn1]
   keywords: [antbarn1]
   type: integer
-  label: "Antall barn under 6 år."
+  label: "Antall barn under 6 år"
   value:
     1: 1
     0: 0
@@ -149,7 +163,7 @@ antbarn2:
   colnames: [AntBarn2]
   keywords: [antbarn2]
   type: integer
-  label: "Antall barn 6-18 år."
+  label: "Antall barn 6-18 år"
   value:
     1: 1
     0: 0
