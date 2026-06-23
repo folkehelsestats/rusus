@@ -1128,7 +1128,7 @@ type1a:
 
 typ1a_uk:
   colnames: [Typ1a_uk]
-  keywords: [typ1a_uk, typ1a, uk]
+  keywords: [typ1a_uk]
   type: integer
   label: "Ukentlig: Ant dager i uken drukket øl siste 4 uker?"
   value:
@@ -1142,7 +1142,7 @@ typ1a_uk:
 
 typ1a_mn:
   colnames: [Typ1a_mn]
-  keywords: [typ1a_mn, typ1a, mn]
+  keywords: [typ1a_mn]
   type: integer
   label: "Månedlig: Ant dager i uken drukket øl siste 4 uker?"
   value:
@@ -1157,7 +1157,7 @@ typ1a_mn:
 
 type1b_a:
   colnames: [Type1b_a]
-  keywords: [type1b_a, type1b, a]
+  keywords: [type1b_a]
   type: integer
   label: "Ukentlig: Drukket 0,33 liter øl siste 4 uker"
   value:
@@ -1170,7 +1170,7 @@ type1b_a:
 
 type1b_b:
   colnames: [Type1b_b]
-  keywords: [type1b_b, type1b, b]
+  keywords: [type1b_b]
   type: integer
   label: "Ukentlig: Drukket 0,5 liter øl siste 4 uker"
   value:
@@ -1183,7 +1183,7 @@ type1b_b:
 
 type1b_1:
   colnames: [Type1b_1]
-  keywords: [type1b_1, type1b, 1]
+  keywords: [type1b_1]
   type: numeric
   label: "Ukentlig: Gjennomsnitt ant 0,33 l øl drukket siste 4 uker?"
   value: ~
@@ -1193,7 +1193,7 @@ type1b_1:
 
 type1b_2:
   colnames: [Type1b_2]
-  keywords: [type1b_2, type1b, 2]
+  keywords: [type1b_2]
   type: numeric
   label: "Ukentlig: Gjennomsnitt ant 0,5 l øl drukket siste 4 uker?"
   value: ~
@@ -1203,7 +1203,7 @@ type1b_2:
 
 type1c_a:
   colnames: [Type1c_a]
-  keywords: [type1c_a, type1c, a]
+  keywords: [type1c_a]
   type: integer
   label: "Månedlig: Drukket 0,33 liter øl siste 4 uker"
   value:
@@ -1217,7 +1217,7 @@ type1c_a:
 
 type1c_b:
   colnames: [Type1c_b]
-  keywords: [type1c_b, type1c, b]
+  keywords: [type1c_b]
   type: integer
   label: "Månedlig: Drukket 0,5 liter øl siste 4 uker"
   value:
@@ -1231,7 +1231,7 @@ type1c_b:
 
 type1c_1:
   colnames: [Type1c_1]
-  keywords: [type1c_1, type1c, 1]
+  keywords: [type1c_1]
   type: numeric
   label: "Månedlig: Antall 0,33 l øl drukket siste 4 uker?"
   value: ~
@@ -1242,7 +1242,7 @@ type1c_1:
 
 type1c_2:
   colnames: [Type1c_2]
-  keywords: [type1c_2, type1c, 2]
+  keywords: [type1c_2]
   type: numeric
   label: "Månedlig: Antall 0,5 l øl drukket siste 4 uker?"
   value: ~
@@ -1267,7 +1267,7 @@ type2a:
 
 typ2a_uk:
   colnames: [Typ2a_uk]
-  keywords: [typ2a_uk, typ2a, uk]
+  keywords: [typ2a_uk]
   type: integer
   label: "Ukentlig: Ant dager i uken drukket vin siste 4 uker?"
   value:
@@ -1282,7 +1282,7 @@ typ2a_uk:
 
 typ2a_mn:
   colnames: [Typ2a_mn]
-  keywords: [typ2a_mn, typ2a, mn]
+  keywords: [typ2a_mn]
   type: integer
   label: "Månedlig: Ant dager i uken drukket vin siste 4 uker?"
   value:
@@ -1297,7 +1297,7 @@ typ2a_mn:
 
 type2b_a:
   colnames: [Type2b_a]
-  keywords: [type2b_a, type2b, a]
+  keywords: [type2b_a]
   type: integer
   label: "Ukentlig: Drukket glass vin siste 4 uker"
   value:
@@ -1311,7 +1311,7 @@ type2b_a:
 
 type2b_b:
   colnames: [Type2b_b]
-  keywords: [type2b_b, type2b, b]
+  keywords: [type2b_b]
   type: integer
   label: "Ukentlig: Drukket flasker vin siste 4 uker"
   value:
@@ -1325,7 +1325,7 @@ type2b_b:
 
 type2b_1:
   colnames: [Type2b_1]
-  keywords: [type2b_1, type2b, 1]
+  keywords: [type2b_1]
   type: numeric
   label: "Ukentlig: Gjennomsnitt antall glass vin drukket siste 4 uker?"
   value: ~
@@ -1335,7 +1335,7 @@ type2b_1:
 
 type2b_2:
   colnames: [Type2b_2]
-  keywords: [type2b_2, type2b, 2]
+  keywords: [type2b_2]
   type: numeric
   label: "Ukentlig: Gjennomsnitt antall flasker vin drukket siste 4 uker?"
   value: ~
@@ -1345,7 +1345,7 @@ type2b_2:
 
 type2c_a:
   colnames: [Type2c_a]
-  keywords: [type2c_a, type2c, a]
+  keywords: [type2c_a]
   type: integer
   label: "Månedlig: Drukket glass vin siste 4 uker"
   value:
@@ -1358,7 +1358,7 @@ type2c_a:
 
 type2c_b:
   colnames: [Type2c_b]
-  keywords: [type2c_b, type2c, b]
+  keywords: [type2c_b]
   type: integer
   label: "Månedlig: Drukket flasker vin siste 4 uker"
   value:
@@ -1371,7 +1371,7 @@ type2c_b:
 
 type2c_1:
   colnames: [Type2c_1]
-  keywords: [type2c_1, type2c, 1]
+  keywords: [type2c_1]
   type: numeric
   label: "Månedlig: Antall glass vin drukket siste 4 uker?"
   value: ~
@@ -1382,7 +1382,7 @@ type2c_1:
 
 type2c_2:
   colnames: [Type2c_2]
-  keywords: [type2c_2, type2c, 2]
+  keywords: [type2c_2]
   type: numeric
   label: "Månedlig: Antall flasker vin drukket siste 4 uker?"
   value: ~
@@ -1406,7 +1406,7 @@ type3a:
 
 typ3a_uk:
   colnames: [Typ3a_uk]
-  keywords: [typ3a_uk, typ3a, uk]
+  keywords: [typ3a_uk]
   type: integer
   label: "Ukentlig: Ant dager i uken drukket brennevin siste 4 uker?"
   value:
@@ -1419,7 +1419,7 @@ typ3a_uk:
 
 typ3a_mn:
   colnames: [Typ3a_mn]
-  keywords: [typ3a_mn, typ3a, mn]
+  keywords: [typ3a_mn]
   type: integer
   label: "Månedlig: Ant dager drukket brennevin siste 4 uker?"
   value:
@@ -1434,7 +1434,7 @@ typ3a_mn:
 
 type3b_a:
   colnames: [Type3b_a]
-  keywords: [type3b_a, type3b, a]
+  keywords: [type3b_a]
   type: integer
   label: "Ukentlig: Drukket drammer siste 4 uker"
   value:
@@ -1447,7 +1447,7 @@ type3b_a:
 
 type3b_b:
   colnames: [Type3b_b]
-  keywords: [type3b_b, type3b, b]
+  keywords: [type3b_b]
   type: integer
   label: "Ukentlig: Drukket flasker sprit siste 4 uker"
   value:
@@ -1460,7 +1460,7 @@ type3b_b:
 
 type3b_1:
   colnames: [Type3b_1]
-  keywords: [type3b_1, type3b, 1]
+  keywords: [type3b_1]
   type: numeric
   label: "Ukentlig: Gjennomsnitt antall glass drammer drukket siste 4 uker?"
   value: ~
@@ -1470,7 +1470,7 @@ type3b_1:
 
 type3b_2:
   colnames: [Type3b_2]
-  keywords: [type3b_2, type3b, 2]
+  keywords: [type3b_2]
   type: numeric
   label: "Ukentlig: Gjennomsnitt antall helflasker sprit drukket siste 4 uker?"
   value: ~
@@ -1480,7 +1480,7 @@ type3b_2:
 
 type3c_a:
   colnames: [Type3c_a]
-  keywords: [type3c_a, type3c, a]
+  keywords: [type3c_a]
   type: integer
   label: "Månedlig: Drukket drammer siste 4 uker"
   value:
@@ -1493,7 +1493,7 @@ type3c_a:
 
 type3c_b:
   colnames: [Type3c_b]
-  keywords: [type3c_b, type3c, b]
+  keywords: [type3c_b]
   type: integer
   label: "Månedlig: Drukket flasker sprit siste 4 uker"
   value:
@@ -1506,7 +1506,7 @@ type3c_b:
 
 type3c_1:
   colnames: [Type3c_1]
-  keywords: [type3c_1, type3c, 1]
+  keywords: [type3c_1]
   type: numeric
   label: "Månedlig: Antall drammer drukket siste 4 uker?"
   value: ~
@@ -1516,7 +1516,7 @@ type3c_1:
 
 type3c_2:
   colnames: [Type3c_2]
-  keywords: [type3c_2, type3c, 2]
+  keywords: [type3c_2]
   type: numeric
   label: "Månedlig: Antall flasker sprit drukket siste 4 uker?"
   value: ~
@@ -1540,7 +1540,7 @@ type4a:
 
 typ4a_uk:
   colnames: [Typ4a_uk]
-  keywords: [typ4a_uk, typ4a, uk]
+  keywords: [typ4a_uk]
   type: integer
   label: "Ukentlig: Ant dager i uken drukket rusbrus/alkoholholdig cider siste 4 uker?"
   value:
@@ -1554,7 +1554,7 @@ typ4a_uk:
 
 typ4a_mn:
   colnames: [Typ4a_mn]
-  keywords: [typ4a_mn, typ4a, mn]
+  keywords: [typ4a_mn]
   type: integer
   label: "Månedlig: Ant dager i uken drukket rusbrus/alkoholholdig cider siste 4 uker?"
   value:
@@ -1569,7 +1569,7 @@ typ4a_mn:
 
 type4b_a:
   colnames: [Type4b_a]
-  keywords: [type4b_a, type4b, a]
+  keywords: [type4b_a]
   type: integer
   label: "Ukentlig: Drukket småflasker/småbokser siste 4 uker"
   value:
@@ -1582,7 +1582,7 @@ type4b_a:
 
 type4b_b:
   colnames: [Type4b_b]
-  keywords: [type4b_b, type4b, b]
+  keywords: [type4b_b]
   type: integer
   label: "Ukentlig: Drukket 0,5 liter siste 4 uker"
   value:
@@ -1595,7 +1595,7 @@ type4b_b:
 
 type4b_1:
   colnames: [Type4b_1]
-  keywords: [type4b_1, type4b, 1]
+  keywords: [type4b_1]
   type: numeric
   label: "Ukentlig: Gjennomsnitt antall småflasker rusbrus/cider drukket siste 4 uker?"
   value: ~
@@ -1605,7 +1605,7 @@ type4b_1:
 
 type4b_2:
   colnames: [Type4b_2]
-  keywords: [type4b_2, type4b, 2]
+  keywords: [type4b_2]
   type: numeric
   label: "Ukentlig: Gjennomsnitt antall halvliter rusbrus/cider drukket siste 4 uker?"
   value: ~
@@ -1615,7 +1615,7 @@ type4b_2:
 
 type4c_a:
   colnames: [Type4c_a]
-  keywords: [type4c_a, type4c, a]
+  keywords: [type4c_a]
   type: integer
   label: "Månedlig: Drukket småflasker/småbokser siste 4 uker"
   value:
@@ -1629,7 +1629,7 @@ type4c_a:
 
 type4c_b:
   colnames: [Type4c_b]
-  keywords: [type4c_b, type4c, b]
+  keywords: [type4c_b]
   type: integer
   label: "Månedlig: Drukket 0,5 liter siste 4 uker"
   value:
@@ -1643,7 +1643,7 @@ type4c_b:
 
 type4c_1:
   colnames: [Type4c_1]
-  keywords: [type4c_1, type4c, 1]
+  keywords: [type4c_1]
   type: numeric
   label: "Månedlig: Antall rusbrus/cider drukket siste 4 uker?"
   value: ~
@@ -1653,7 +1653,7 @@ type4c_1:
 
 type4c_2:
   colnames: [Type4c_2]
-  keywords: [type4c_2, type4c, 2]
+  keywords: [type4c_2]
   type: numeric
   label: "Månedlig: Antall halvlitere rusbrus/cider drukket siste 4 uker?"
   value: ~
@@ -1780,7 +1780,7 @@ audit3:
 
 audit3_1:
   colnames: [Audit3_1]
-  keywords: [audit3_1, audit3, 1]
+  keywords: [audit3_1]
   type: integer
   label: "Hvor ofte drukket alkohol siste 12 mnd"
   value:
@@ -1794,7 +1794,7 @@ audit3_1:
 
 audit3_2:
   colnames: [Audit3_2]
-  keywords: [audit3_2, audit3, 2]
+  keywords: [audit3_2]
   type: integer
   label: "Hvor ofte drukket alkohol siste 12 mnd"
   value:
@@ -1809,7 +1809,7 @@ audit3_2:
 
 audit3_3:
   colnames: [Audit3_3]
-  keywords: [audit3_3, audit3, 3]
+  keywords: [audit3_3]
   type: integer
   label: "Hvor ofte drukket alkohol siste 12 mnd"
   value:
@@ -1909,7 +1909,7 @@ audit8:
 
 audit9_a:
   colnames: [Audit9_a]
-  keywords: [audit9_a, audit9, a]
+  keywords: [audit9_a]
   type: integer
   label: "Skadet som følge av alkohol: Nei"
   value:
@@ -1922,7 +1922,7 @@ audit9_a:
 
 audit9_b:
   colnames: [Audit9_b]
-  keywords: [audit9_b, audit9, b]
+  keywords: [audit9_b]
   type: integer
   label: "Skadet som følge av alkohol: Ja, blitt skadet selv"
   value:
@@ -1935,7 +1935,7 @@ audit9_b:
 
 audit9_c:
   colnames: [Audit9_c]
-  keywords: [audit9_c, audit9, c]
+  keywords: [audit9_c]
   type: integer
   label: "Skadet som følge av alkohol: Ja, andre blitt skadet"
   value:
@@ -2000,7 +2000,7 @@ audit10a:
 
 arb_alk1:
   colnames: [Arb_alk1]
-  keywords: [arb_alk1, arb, alk1]
+  keywords: [arb_alk1]
   type: integer
   label: "Hatt sykefraværdager, med eller uten legeattest siste 12 mnd"
   value:
@@ -2014,7 +2014,7 @@ arb_alk1:
 
 arb_alk1b:
   colnames: [Arb_alk1b]
-  keywords: [arb_alk1b, arb, alk1b]
+  keywords: [arb_alk1b, alk1b]
   type: integer
   label: "Ant dager sykefravær siste 12 mnd?"
   value: ~
@@ -2024,7 +2024,7 @@ arb_alk1b:
 
 arb_alk2:
   colnames: [Arb_alk2]
-  keywords: [arb_alk2, arb, alk2]
+  keywords: [arb_alk2, alk2]
   type: integer
   label: "Ant dager siste 12 mnd vært mindre effektiv på jobb pga alkoholdrikking dagen før?"
   value: ~
@@ -2035,7 +2035,7 @@ arb_alk2:
 
 arb_alk3:
   colnames: [Arb_alk3]
-  keywords: [arb_alk3, arb, alk3]
+  keywords: [arb_alk3, alk3]
   type: integer
   label: "Ant dager siste 12 mnd vært borte deler av dagen pga alkoholdrikking dagen før?"
   value:
@@ -2054,7 +2054,7 @@ arb_alk3:
 
 arb_alk4:
   colnames: [Arb_alk4]
-  keywords: [arb_alk4, arb, alk4]
+  keywords: [arb_alk4, alk4]
   type: integer
   label: "Ant hele dager siste 12 mnd vært borte pga alkoholdrikking dagen før?"
   value:
@@ -2072,7 +2072,7 @@ arb_alk4:
 
 arb_alk5:
   colnames: [Arb_alk5]
-  keywords: [arb_alk5, arb, alk5]
+  keywords: [arb_alk5, alk5]
   type: integer
   label: "Ant dager totalt siste 12 mnd vært borte pga alkoholdrikking?"
   value: ~
@@ -2320,7 +2320,7 @@ can6b:
 
 can7_a:
   colnames: [Can7_a]
-  keywords: [can7_a, can7, a]
+  keywords: [can7_a]
   type: integer
   label: "Brukt Hasj siste 12 mnd?"
   value:
@@ -2333,7 +2333,7 @@ can7_a:
 
 can7_b:
   colnames: [Can7_b]
-  keywords: [can7_b, can7, b]
+  keywords: [can7_b]
   type: integer
   label: "Brukt Marihuana siste 12 mnd?"
   value:
@@ -2346,7 +2346,7 @@ can7_b:
 
 can7_c:
   colnames: [Can7_c]
-  keywords: [can7_c, can7, c]
+  keywords: [can7_c]
   type: integer
   label: "Brukt Cannabisolje siste 12 mnd?"
   value:
@@ -2359,7 +2359,7 @@ can7_c:
 
 can7_d:
   colnames: [Can7_d]
-  keywords: [can7_d, can7, d]
+  keywords: [can7_d]
   type: integer
   label: "Brukt spiselige produkter (edibles) siste 12 mnd?"
   value:
@@ -2372,7 +2372,7 @@ can7_d:
 
 can7_e:
   colnames: [Can7_e]
-  keywords: [can7_e, can7, e]
+  keywords: [can7_e]
   type: integer
   label: "Brukt annen type cannabis siste 12 mnd?"
   value:
@@ -2515,7 +2515,7 @@ ans2sps:
 
 ans2_a:
   colnames: [Ans2_a]
-  keywords: [ans2_a, ans2, a]
+  keywords: [ans2_a]
   type: integer
   label: "Brukt Kokain noen gang"
   value:
@@ -2529,7 +2529,7 @@ ans2_a:
 
 ans2_b:
   colnames: [Ans2_b]
-  keywords: [ans2_b, ans2, b]
+  keywords: [ans2_b]
   type: integer
   label: "Brukt Ecstasy noen gang"
   value:
@@ -2543,7 +2543,7 @@ ans2_b:
 
 ans2_c:
   colnames: [Ans2_c]
-  keywords: [ans2_c, ans2, c]
+  keywords: [ans2_c]
   type: integer
   label: "Brukt Amfetaminer noen gang"
   value:
@@ -2557,7 +2557,7 @@ ans2_c:
 
 ans2_d:
   colnames: [Ans2_d]
-  keywords: [ans2_d, ans2, d]
+  keywords: [ans2_d]
   type: integer
   label: "Brukt Relevin noen gang"
   value:
@@ -2571,7 +2571,7 @@ ans2_d:
 
 ans2_e:
   colnames: [Ans2_e]
-  keywords: [ans2_e, ans2, e]
+  keywords: [ans2_e]
   type: integer
   label: "Brukt Heroin noen gang"
   value:
@@ -2585,7 +2585,7 @@ ans2_e:
 
 ans2_f:
   colnames: [Ans2_f]
-  keywords: [ans2_f, ans2, f]
+  keywords: [ans2_f]
   type: integer
   label: "Brukt GHB/GBL noen gang"
   value:
@@ -2599,7 +2599,7 @@ ans2_f:
 
 ans2_g:
   colnames: [Ans2_g]
-  keywords: [ans2_g, ans2, g]
+  keywords: [ans2_g]
   type: integer
   label: "Brukt LSD noen gang"
   value:
@@ -2613,7 +2613,7 @@ ans2_g:
 
 ans2_x:
   colnames: [Ans2_x]
-  keywords: [ans2_x, ans2, x]
+  keywords: [ans2_x]
   type: integer
   label: "Brukt nye rusmidler noen gang"
   value:
@@ -2627,7 +2627,7 @@ ans2_x:
 
 ans2_y:
   colnames: [Ans2_y]
-  keywords: [ans2_y, ans2, y]
+  keywords: [ans2_y]
   type: integer
   label: "Brukt sopp/psilocybin noen gang"
   value:
@@ -2641,7 +2641,7 @@ ans2_y:
 
 ans2_h:
   colnames: [Ans2_h]
-  keywords: [ans2_h, ans2, h]
+  keywords: [ans2_h]
   type: integer
   label: "Brukt andre stoffer noen gang"
   value:
@@ -2655,7 +2655,7 @@ ans2_h:
 
 ans3_1:
   colnames: [Ans3_1]
-  keywords: [ans3_1, ans3, 1]
+  keywords: [ans3_1]
   type: integer
   label: "Brukt kokain siste 12 månedene?"
   value:
@@ -2668,7 +2668,7 @@ ans3_1:
 
 ans3_2:
   colnames: [Ans3_2]
-  keywords: [ans3_2, ans3, 2]
+  keywords: [ans3_2]
   type: integer
   label: "Brukt ecstasy siste 12 månedene?"
   value:
@@ -2680,7 +2680,7 @@ ans3_2:
 
 ans3_3:
   colnames: [Ans3_3]
-  keywords: [ans3_3, ans3, 3]
+  keywords: [ans3_3]
   type: integer
   label: "Brukt amfetaminer siste 12 månedene?"
   value:
@@ -2692,7 +2692,7 @@ ans3_3:
 
 ans3_4:
   colnames: [Ans3_4]
-  keywords: [ans3_4, ans3, 4]
+  keywords: [ans3_4]
   type: integer
   label: "Brukt relevin siste 12 månedene?"
   value:
@@ -2704,7 +2704,7 @@ ans3_4:
 
 ans3_5:
   colnames: [Ans3_5]
-  keywords: [ans3_5, ans3, 5]
+  keywords: [ans3_5]
   type: integer
   label: "Brukt heroin siste 12 månedene?"
   value:
@@ -2716,7 +2716,7 @@ ans3_5:
 
 ans3_6:
   colnames: [Ans3_6]
-  keywords: [ans3_6, ans3, 6]
+  keywords: [ans3_6]
   type: integer
   label: "Brukt GHB/GBL siste 12 månedene?"
   value:
@@ -2728,7 +2728,7 @@ ans3_6:
 
 ans3_7:
   colnames: [Ans3_7]
-  keywords: [ans3_7, ans3, 7]
+  keywords: [ans3_7]
   type: integer
   label: "Brukt LSD siste 12 månedene?"
   value:
@@ -2740,7 +2740,7 @@ ans3_7:
 
 ans3_x:
   colnames: [Ans3_x]
-  keywords: [ans3_x, ans3, x]
+  keywords: [ans3_x]
   type: integer
   label: "Brukt nye rusmidler siste 12 månedene?"
   value:
@@ -2752,7 +2752,7 @@ ans3_x:
 
 ans3_y:
   colnames: [Ans3_y]
-  keywords: [ans3_y, ans3, y]
+  keywords: [ans3_y]
   type: integer
   label: "Brukt sopp/psilocybin siste 12 månedene?"
   value:
@@ -2764,7 +2764,7 @@ ans3_y:
 
 ans3_8:
   colnames: [Ans3_8]
-  keywords: [ans3_8, ans3, 8]
+  keywords: [ans3_8]
   type: integer
   label: "Brukt andre stoffer siste 12 månedene?"
   value:
@@ -2776,7 +2776,7 @@ ans3_8:
 
 ans_5:
   colnames: [Ans_5]
-  keywords: [ans_5, ans, 5]
+  keywords: [ans_5]
   type: integer
   label: "Antall dager brukt kokain siste 12 mnd"
   value:
@@ -2819,7 +2819,7 @@ dop1:
 
 dop3_1:
   colnames: [Dop3_1]
-  keywords: [dop3_1, dop3, 1]
+  keywords: [dop3_1]
   type: integer
   label: "Brukt anabole steroider siste 12 månedene?"
   value:
@@ -2890,7 +2890,7 @@ negkons4:
 
 negkons4_1:
   colnames: [NegKons4_1]
-  keywords: [negkons4_1, negkons4, 1]
+  keywords: [negkons4_1]
   type: integer
   label: "Hvor problematisk opplevde du at dette var?"
   value:
@@ -3022,7 +3022,7 @@ intslutt:
 
 sluttintervjudato:
   colnames: [sluttintervjudato]
-  keywords: [sluttintervjudato, date, dato]
+  keywords: [sluttintervjudato, slutt, intervju]
   type: date
   label: "sluttintervjudato (parsed from numeric format)"
   value: ~
@@ -3044,7 +3044,7 @@ yrke:
 
 paaror1b_a:
   colnames: [paaror1b_a]
-  keywords: [paaror1b_a, paaror1b, a]
+  keywords: [paaror1b_a]
   type: integer
   label: "Typer rusmidler: Alkohol"
   value:
@@ -3057,7 +3057,7 @@ paaror1b_a:
 
 paaror1b_b:
   colnames: [paaror1b_b]
-  keywords: [paaror1b_b, paaror1b, b]
+  keywords: [paaror1b_b]
   type: integer
   label: "Typer rusmidler: Reseptbelagte legemidler/piller"
   value:
@@ -3070,7 +3070,7 @@ paaror1b_b:
 
 paaror1b_c:
   colnames: [paaror1b_c]
-  keywords: [paaror1b_c, paaror1b, c]
+  keywords: [paaror1b_c]
   type: integer
   label: "Typer rusmidler: Cannabis eller andre ulovlige rusmidler"
   value:
@@ -3083,7 +3083,7 @@ paaror1b_c:
 
 paaror2_a:
   colnames: [paaror2_a]
-  keywords: [paaror2_a, paaror2, a]
+  keywords: [paaror2_a]
   type: integer
   label: "Familierelasjon til pårørende: Ektefelle/partner/kjæreste"
   value:
@@ -3095,7 +3095,7 @@ paaror2_a:
 
 paaror2_b:
   colnames: [paaror2_b]
-  keywords: [paaror2_b, paaror2, b]
+  keywords: [paaror2_b]
   type: integer
   label: "Familierelasjon til pårørende: Mor eller far"
   value:
@@ -3107,7 +3107,7 @@ paaror2_b:
 
 paaror2_c:
   colnames: [paaror2_c]
-  keywords: [paaror2_c, paaror2, c]
+  keywords: [paaror2_c]
   type: integer
   label: "Familierelasjon til pårørende: Sønn eller datter"
   value:
@@ -3119,7 +3119,7 @@ paaror2_c:
 
 paaror2_d:
   colnames: [paaror2_d]
-  keywords: [paaror2_d, paaror2, d]
+  keywords: [paaror2_d]
   type: integer
   label: "Familierelasjon til pårørende: Søster eller bror"
   value:
@@ -3131,7 +3131,7 @@ paaror2_d:
 
 paaror2_e:
   colnames: [paaror2_e]
-  keywords: [paaror2_e, paaror2, e]
+  keywords: [paaror2_e]
   type: integer
   label: "Familierelasjon til pårørende: Annen relasjon"
   value:
@@ -3143,7 +3143,7 @@ paaror2_e:
 
 tobsit_a:
   colnames: [tobsit_a]
-  keywords: [tobsit_a, tobsit, a]
+  keywords: [tobsit_a]
   type: integer
   label: "Røyker vanligvis: I sosiale sammenkomster med andre"
   value:
@@ -3156,7 +3156,7 @@ tobsit_a:
 
 tobsit_b:
   colnames: [tobsit_b]
-  keywords: [tobsit_b, tobsit, b]
+  keywords: [tobsit_b]
   type: integer
   label: "Røyker vanligvis: I ferien"
   value:
@@ -3169,7 +3169,7 @@ tobsit_b:
 
 tobsit_c:
   colnames: [tobsit_c]
-  keywords: [tobsit_c, tobsit, c]
+  keywords: [tobsit_c]
   type: integer
   label: "Røyker vanligvis: Når jeg drikker alkohol"
   value:
@@ -3182,7 +3182,7 @@ tobsit_c:
 
 tobsit_d:
   colnames: [tobsit_d]
-  keywords: [tobsit_d, tobsit, d]
+  keywords: [tobsit_d]
   type: integer
   label: "Røyker vanligvis: Når jeg har lyst. Det er ingen spesiell foranledning"
   value:
@@ -3195,7 +3195,7 @@ tobsit_d:
 
 tobsit_e:
   colnames: [tobsit_e]
-  keywords: [tobsit_e, tobsit, e]
+  keywords: [tobsit_e]
   type: integer
   label: "Røyker vanligvis: Annet"
   value:
@@ -3208,7 +3208,7 @@ tobsit_e:
 
 alkansk_a:
   colnames: [alkansk_a]
-  keywords: [alkansk_a, alkansk, a]
+  keywords: [alkansk_a]
   type: integer
   label: "Anskaffer alkohol: Kjøper i butikk i Norge/vinmonopolet"
   value:
@@ -3220,7 +3220,7 @@ alkansk_a:
 
 alkansk_b:
   colnames: [alkansk_b]
-  keywords: [alkansk_b, alkansk, b]
+  keywords: [alkansk_b]
   type: integer
   label: "Anskaffer alkohol: Kjøper i utlandet,"
   value:
@@ -3232,7 +3232,7 @@ alkansk_b:
 
 alkansk_c:
   colnames: [alkansk_c]
-  keywords: [alkansk_c, alkansk, c]
+  keywords: [alkansk_c]
   type: integer
   label: "Anskaffer alkohol: Kjøper på tax-freebutikk,"
   value:
@@ -3244,7 +3244,7 @@ alkansk_c:
 
 alkansk_d:
   colnames: [alkansk_d]
-  keywords: [alkansk_d, alkansk, d]
+  keywords: [alkansk_d]
   type: integer
   label: "Anskaffer alkohol: Får av venner/slektninger"
   value:
@@ -3256,7 +3256,7 @@ alkansk_d:
 
 alkansk_e:
   colnames: [alkansk_e]
-  keywords: [alkansk_e, alkansk, e]
+  keywords: [alkansk_e]
   type: integer
   label: "Anskaffer alkohol: Kjøper av venner/slektninger"
   value:
@@ -3268,7 +3268,7 @@ alkansk_e:
 
 alkansk_f:
   colnames: [alkansk_f]
-  keywords: [alkansk_f, alkansk, f]
+  keywords: [alkansk_f]
   type: integer
   label: "Anskaffer alkohol: Kjøper via sosiale medier"
   value:
@@ -3280,7 +3280,7 @@ alkansk_f:
 
 alkansk_g:
   colnames: [alkansk_g]
-  keywords: [alkansk_g, alkansk, g]
+  keywords: [alkansk_g]
   type: integer
   label: "Anskaffer alkohol: Kjøper i nettbutikk"
   value:
@@ -3292,7 +3292,7 @@ alkansk_g:
 
 alkansk_h:
   colnames: [alkansk_h]
-  keywords: [alkansk_h, alkansk, h]
+  keywords: [alkansk_h]
   type: integer
   label: "Anskaffer alkohol: Kjøper av ukjente"
   value:
@@ -3304,7 +3304,7 @@ alkansk_h:
 
 alkansk_i:
   colnames: [alkansk_i]
-  keywords: [alkansk_i, alkansk, i]
+  keywords: [alkansk_i]
   type: integer
   label: "Anskaffer alkohol: Kjøper på utested/serveringssted"
   value:
@@ -3316,7 +3316,7 @@ alkansk_i:
 
 alkansk_j:
   colnames: [alkansk_j]
-  keywords: [alkansk_j, alkansk, j]
+  keywords: [alkansk_j]
   type: integer
   label: "Anskaffer alkohol: Annet"
   value:
@@ -3348,9 +3348,9 @@ sivilstand:
 
 fylke_2025:
   colnames: [fylke_2025]
-  keywords: [fylke_2025, fylke, 2025]
+  keywords: [fylke_2025, fylke]
   type: integer
-  label: "fylke_2025"
+  label: "fylke"
   value: ~
   recode: ~
   missing:
@@ -3358,9 +3358,9 @@ fylke_2025:
 
 landsdel_2025:
   colnames: [landsdel_2025]
-  keywords: [landsdel_2025, landsdel, 2025]
+  keywords: [landsdel_2025, landsdel]
   type: integer
-  label: "landsdel_2025"
+  label: "landsdel"
   value:
     1: "Oslo og Viken"
     2: "Innlandet"
@@ -3416,14 +3416,12 @@ tett_spredt:
     s: "Spredtbygd"
     t: "Tettbygd"
   recode:
-    "s": s
-    "t": t
   missing:
     - NA
 
 fodeland_io:
   colnames: [fodeland_IO]
-  keywords: [fodeland_io, fodeland, io]
+  keywords: [fodeland_io, fodeland]
   type: integer
   label: "fodeland_IO"
   value:
@@ -3477,7 +3475,7 @@ fodeland_mor:
 
 innt_hush:
   colnames: [innt_hush]
-  keywords: [innt_hush, innt, hush]
+  keywords: [innt_hush]
   type: integer
   label: "Husholdets bruttoinntekt,  Gruppert"
   value: ~
@@ -3487,7 +3485,7 @@ innt_hush:
 
 innt_person:
   colnames: [innt_person]
-  keywords: [innt_person, innt, person]
+  keywords: [innt_person]
   type: integer
   label: "IOs bruttoinntekt,   Gruppert"
   value: ~
@@ -3497,7 +3495,7 @@ innt_person:
 
 utdann_4gr:
   colnames: [Utdann_4gr]
-  keywords: [utdann_4gr, utdann, 4gr]
+  keywords: [utdann_4gr, 4gr]
   type: integer
   label: "Utdann_4gr"
   value:
