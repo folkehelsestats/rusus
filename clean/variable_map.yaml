@@ -1,6 +1,6 @@
 # Each variable has:
 #   colnames : exact matches (after clean_names normalization)
-#   keywords : partial word patterns used for intelligent prediction
+#   keywords : partial word patterns used for intelligent prediction, at least 3 words
 #   type     : target R type
 #   label    : variable description
 #   value    : optional value labels for categorical variable
