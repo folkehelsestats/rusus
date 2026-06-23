@@ -5,6 +5,7 @@
 #   label    : variable description
 #   value    : optional value labels for categorical variable
 #   recode   : optional value remapping
+#   missing  : values for missing (not evaluated yet)
 
 
 kjonn:
@@ -50,11 +51,9 @@ yrkesstatus:
   value:
     1: "Ja"
     2: "Nei"
-  recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
+    8: "ikke svar"
+    9: "vet ikke"
+  recode: ~
   missing:
     - 8
     - 9
@@ -89,12 +88,7 @@ siv:
     1: "Ja, gift/registrert partner"
     2: "Ja, samboer"
     3: "Nei"
-  recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "8": NA
-    "9": NA
+  recode: ~
   missing:
     - 8
     - 9
@@ -113,14 +107,7 @@ sivstat:
     3: "Enke/ enkemann/ gjenlevende partner"
     4: "Separert/ separert partner"
     5: "Skilt/ skilt partner"
-  recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "8": NA
-    "9": NA
+  recode: ~
   missing:
     - NA
     - 8
@@ -141,23 +128,11 @@ antbarn1:
   keywords: [antbarn1]
   type: integer
   label: "Antall barn under 6 år"
-  value:
-    1: 1
-    0: 0
-    2: 2
-    98: 98
-    4: 4
-    3: 3
-  recode:
-    "1": 1
-    "0": 0
-    "2": 2
-    "98": 98
-    "4": 4
-    "3": 3
-    "99": NA
+  value: ~
+  recode: ~
   missing:
     - NA
+    - 98
     - 99
 
 antbarn2:
@@ -165,26 +140,12 @@ antbarn2:
   keywords: [antbarn2]
   type: integer
   label: "Antall barn 6-18 år"
-  value:
-    1: 1
-    0: 0
-    5: 5
-    2: 2
-    4: 4
-    3: 3
-    98: 98
-    6: 6
-  recode:
-    "1": 1
-    "0": 0
-    "5": 5
-    "2": 2
-    "4": 4
-    "3": 3
-    "98": 98
-    "6": 6
+  value: ~
+  recode: ~
   missing:
     - NA
+    - 98
+    - 99
 
 helse:
   colnames: [Helse]
@@ -197,14 +158,7 @@ helse:
     3: "Verken god eller dårlig"
     4: "Dårlig"
     5: "Svært dårlig"
-  recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "8": NA
-    "9": NA
+  recode: ~
   missing:
     - 8
     - 9
@@ -220,14 +174,7 @@ helsepsyk:
     3: "Verken god eller dårlig"
     4: "Dårlig"
     5: "Svært dårlig"
-  recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "8": NA
-    "9": NA
+  recode: ~
   missing:
     - 8
     - 9
@@ -240,11 +187,7 @@ tob1:
   value:
     1: "Ja"
     2: "Nei"
-  recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
+  recode: ~
   missing:
     - 8
     - 9
@@ -257,10 +200,7 @@ tob2:
   value:
     1: "Daglig"
     2: "Av og til"
-  recode:
-    "1": 1
-    "2": 2
-    "9": NA
+  recode: ~
   missing:
     - NA
     - 9
@@ -273,11 +213,7 @@ tob3:
   value:
     1: "Ja"
     2: "Nei"
-  recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
+  recode: ~
   missing:
     - NA
     - 8
@@ -302,11 +238,7 @@ tob5:
     1: "Flere dager i uken"
     2: "1 dag i uken"
     3: "Sjeldnere"
-  recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "9": NA
+  recode: ~
   missing:
     - NA
     - 9
@@ -319,11 +251,7 @@ tob13:
   value:
     1: "Ja"
     2: "Nei"
-  recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
+  recode: ~
   missing:
     - NA
     - 8
@@ -338,12 +266,7 @@ tob14:
     1: "Ja, daglig"
     2: "Ja, av og til"
     3: "Nei, aldri"
-  recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "8": NA
-    "9": NA
+  recode: ~
   missing:
     - NA
     - 8
@@ -377,9 +300,7 @@ tob22a:
   value:
     1: "Ja"
     2: "Nei"
-  recode:
-    "1": 1
-    "2": 2
+  recode: ~
   missing:
     - NA
 
@@ -391,9 +312,7 @@ tob22b:
   value:
     1: "Ja"
     2: "Nei"
-  recode:
-    "1": 1
-    "2": 2
+  recode: ~
   missing:
     - NA
 
@@ -405,9 +324,7 @@ tob22d:
   value:
     1: "Ja"
     2: "Nei"
-  recode:
-    "1": 1
-    "2": 2
+  recode: ~
   missing:
     - NA
 
@@ -419,9 +336,7 @@ tob22q:
   value:
     1: "Ja"
     2: "Nei"
-  recode:
-    "1": 1
-    "2": 2
+  recode: ~
   missing:
     - NA
 
@@ -433,9 +348,7 @@ tob22s:
   value:
     1: "Ja"
     2: "Nei"
-  recode:
-    "1": 1
-    "2": 2
+  recode: ~
   missing:
     - NA
 
@@ -447,9 +360,7 @@ tob22r:
   value:
     1: "Ja"
     2: "Nei"
-  recode:
-    "1": 1
-    "2": 2
+  recode: ~
   missing:
     - NA
 
@@ -471,9 +382,7 @@ tob30:
   value:
     1: "Ja"
     2: "Nei"
-  recode:
-    "1": 1
-    "2": 2
+  recode: ~
   missing:
     - NA
 
@@ -519,12 +428,7 @@ tob33:
     1: "Daglig"
     2: "Av og til"
     3: "Aldri"
-  recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "8": NA
-    "9": NA
+  recode: ~
   missing:
     - NA
     - 8
@@ -539,12 +443,7 @@ tob34:
     1: "Daglig"
     2: "Av og til"
     3: "Aldri"
-  recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "8": NA
-    "9": NA
+  recode: ~
   missing:
     - NA
     - 8
@@ -558,11 +457,7 @@ tob38:
   value:
     1: "Ja"
     2: "Nei"
-  recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
+  recode: ~
   missing:
     - NA
     - 8
@@ -586,9 +481,7 @@ tob40:
   value:
     1: "Ja"
     2: "Nei"
-  recode:
-    "1": 1
-    "2": 2
+  recode: ~
   missing:
     - NA
 
@@ -600,9 +493,7 @@ tob42a:
   value:
     1: "Ja"
     2: "Nei"
-  recode:
-    "1": 1
-    "2": 2
+  recode: ~
   missing:
     - NA
 
@@ -614,9 +505,7 @@ tob42b:
   value:
     1: "Ja"
     2: "Nei"
-  recode:
-    "1": 1
-    "2": 2
+  recode: ~
   missing:
     - NA
 
@@ -629,9 +518,6 @@ tob42d:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
   missing:
     - NA
     - 8
@@ -645,8 +531,6 @@ tob42o:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
   missing:
     - NA
 
@@ -659,8 +543,6 @@ tob42m:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
   missing:
     - NA
 
@@ -673,8 +555,6 @@ tob42n:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
   missing:
     - NA
 
@@ -687,10 +567,6 @@ tob43:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -705,9 +581,6 @@ tob44:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - NA
     - 9
@@ -723,12 +596,6 @@ tobvan1:
     3: "Mellom 31 - 60 min"
     4: "Etter 60 min"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -745,12 +612,6 @@ tob61:
     3: "Kommer antakelig ikke til å røyke daglig"
     4: "Kommer helt sikkert ikke til å røyke daglig"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "8": NA
-    "9": NA
   missing:
     - 8
     - 9
@@ -766,12 +627,6 @@ tob61b:
     3: "Kommer antakelig ikke til å snuse daglig"
     4: "Kommer helt sikkert ikke til å snuse daglig"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "8": NA
-    "9": NA
   missing:
     - 8
     - 9
@@ -790,15 +645,6 @@ tob62a:
     6: "6"
     7: "7 Svært skadelig"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "6": 6
-    "7": 7
-    "8": NA
-    "9": NA
   missing:
     - 8
     - 9
@@ -817,15 +663,6 @@ tob62e:
     6: "6"
     7: "7 Svært skadelig"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "6": 6
-    "7": 7
-    "8": NA
-    "9": NA
   missing:
     - 8
     - 9
@@ -844,15 +681,6 @@ tob62f:
     6: "6"
     7: "7 Svært skadelig"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "6": 6
-    "7": 7
-    "8": NA
-    "9": NA
   missing:
     - 8
     - 9
@@ -871,15 +699,6 @@ tob62g:
     6: "6"
     7: "7 Svært skadelig"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "6": 6
-    "7": 7
-    "8": NA
-    "9": NA
   missing:
     - 8
     - 9
@@ -898,15 +717,6 @@ tob62h:
     6: "6"
     7: "7 Svært skadelig"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "6": 6
-    "7": 7
-    "8": NA
-    "9": NA
   missing:
     - 8
     - 9
@@ -921,11 +731,6 @@ tobe:
     2: "Av og til"
     3: "Aldri"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "8": NA
-    "9": NA
   missing:
     - 8
     - 9
@@ -940,11 +745,6 @@ tobe1:
     2: "Ja, tidligere av og til"
     3: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -970,11 +770,6 @@ tobe3:
     2: "Oppladbar e-sigarett/fordamper med magasin/pod som du kan fylle på eller bytte ut selv"
     3: "Oppladbar og modifiserbar e-sigarett/fordamper, hvor brukeren selv fyller på nikotinvæske/e-juice («mods» eller «tanks»)"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -994,13 +789,6 @@ tobe4:
     6: "Med nikotin, men usikker på mengden"
     7: "Vet ikke"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "6": 6
-    "7": 7
   missing:
     - NA
 
@@ -1014,11 +802,6 @@ tob60:
     2: "Av og til"
     3: "Aldri"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "8": NA
-    "9": NA
   missing:
     - 8
     - 9
@@ -1032,10 +815,6 @@ tob64a:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -1050,10 +829,6 @@ tob64b:
     1: "Daglig"
     2: "Av og til"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -1068,8 +843,6 @@ tob64c:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
   missing:
     - NA
 
@@ -1105,13 +878,6 @@ tob66:
     4: "Både løssnus og porsjonssnus"
     5: "Nikotinposer eller hvit snus uten tobakk"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -1137,11 +903,6 @@ tob69:
     2: "Begynte med snus først"
     3: "Omtrent samtidig (innenfor tre måneder)"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -1156,10 +917,6 @@ tob69b:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -1174,10 +931,6 @@ tob71:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -1193,11 +946,6 @@ tobsluttsn1:
     2: "Ja, for mer enn 12 måneder siden"
     3: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -1222,9 +970,6 @@ drukket1:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
   missing:
     - 8
 
@@ -1237,10 +982,6 @@ drukk1b:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -1257,12 +998,6 @@ drukket2:
     3: "Månedlig"
     4: "Sjeldnere enn månedlig"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -1278,11 +1013,6 @@ drukk2a:
     2: "2-3 dager i uken"
     3: "Omtrent 1 dag i uken"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -1298,10 +1028,6 @@ drukk2b:
     2: "2-3 dager i måneden"
     3: "Omtrent 1 dag i måneden"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "9": NA
   missing:
     - NA
     - 9
@@ -1316,11 +1042,6 @@ drukk2c:
     2: "2-3 dager"
     3: "Omtrent 1 dag"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -1335,10 +1056,6 @@ drukket3:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -1353,9 +1070,6 @@ type1:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - NA
     - 9
@@ -1369,8 +1083,6 @@ type2:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
   missing:
     - NA
 
@@ -1383,8 +1095,6 @@ type3:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
   missing:
     - NA
 
@@ -1397,9 +1107,6 @@ type4:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - NA
     - 9
@@ -1414,11 +1121,6 @@ type1a:
     2: "Ukentlig"
     3: "Sjeldnere enn ukentlig"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -1434,10 +1136,6 @@ typ1a_uk:
     2: "2-3 dager i uken"
     3: "Omtrent 1 dag i uken"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "9": NA
   missing:
     - NA
     - 9
@@ -1452,11 +1150,6 @@ typ1a_mn:
     2: "2-3 dager"
     3: "Omtrent 1 dag"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -1471,9 +1164,6 @@ type1b_a:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - NA
     - 9
@@ -1487,9 +1177,6 @@ type1b_b:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - NA
     - 9
@@ -1523,10 +1210,6 @@ type1c_a:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -1541,10 +1224,6 @@ type1c_b:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -1581,11 +1260,6 @@ type2a:
     2: "Ukentlig"
     3: "Sjeldnere enn ukentlig"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -1601,11 +1275,6 @@ typ2a_uk:
     2: "2-3 dager i uken"
     3: "Omtrent 1 dag i uken"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -1621,11 +1290,6 @@ typ2a_mn:
     2: "2-3 dager"
     3: "Omtrent 1 dag"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -1640,10 +1304,6 @@ type2b_a:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -1658,10 +1318,6 @@ type2b_b:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -1696,9 +1352,6 @@ type2c_a:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - NA
     - 9
@@ -1712,9 +1365,6 @@ type2c_b:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - NA
     - 9
@@ -1750,10 +1400,6 @@ type3a:
     2: "Ukentlig"
     3: "Sjeldnere enn ukentlig"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "9": NA
   missing:
     - NA
     - 9
@@ -1768,9 +1414,6 @@ typ3a_uk:
     2: "2-3 dager i uken"
     3: "Omtrent 1 dag i uken"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
   missing:
     - NA
 
@@ -1784,11 +1427,6 @@ typ3a_mn:
     2: "2-3 dager"
     3: "Omtrent 1 dag"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -1803,9 +1441,6 @@ type3b_a:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - NA
     - 9
@@ -1819,9 +1454,6 @@ type3b_b:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - NA
     - 9
@@ -1855,9 +1487,6 @@ type3c_a:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - NA
     - 9
@@ -1871,9 +1500,6 @@ type3c_b:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - NA
     - 9
@@ -1908,10 +1534,6 @@ type4a:
     2: "Ukentlig"
     3: "Sjeldnere enn ukentlig"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "9": NA
   missing:
     - NA
     - 9
@@ -1926,10 +1548,6 @@ typ4a_uk:
     2: "2-3 dager i uken"
     3: "Omtrent 1 dag i uken"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "9": NA
   missing:
     - NA
     - 9
@@ -1944,11 +1562,6 @@ typ4a_mn:
     2: "2-3 dager"
     3: "Omtrent 1 dag"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -1963,9 +1576,6 @@ type4b_a:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - NA
     - 9
@@ -1979,9 +1589,6 @@ type4b_b:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - NA
     - 9
@@ -2015,10 +1622,6 @@ type4c_a:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -2033,10 +1636,6 @@ type4c_b:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -2086,13 +1685,6 @@ al2:
     4: "1 av 4 dager"
     5: "Ingen av dagene"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -2112,15 +1704,6 @@ al3:
     6: "2 enheter per dag"
     7: "1 enhet per dag"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "6": 6
-    "7": 7
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -2137,12 +1720,6 @@ al4:
     3: "1 av 3 dager"
     4: "Ingen av dagene"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -2162,15 +1739,6 @@ al5:
     6: "2 enheter per dag"
     7: "1 enhet per dag"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "6": 6
-    "7": 7
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -2188,13 +1756,6 @@ audit2:
     4: "7-9"
     5: "10 eller flere"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -2212,13 +1773,6 @@ audit3:
     4: "Sjeldnere enn månedlig"
     5: "Aldri"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -2234,10 +1788,6 @@ audit3_1:
     2: "2-3 dager i uken"
     3: "Omtrent 1 dag i uken"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "9": NA
   missing:
     - NA
     - 9
@@ -2252,11 +1802,6 @@ audit3_2:
     2: "2-3 dager i måneden"
     3: "Omtrent 1 dag i måneden"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -2272,11 +1817,6 @@ audit3_3:
     2: "2-3 dager"
     3: "Omtrent 1 dag"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -2294,13 +1834,6 @@ audit4:
     4: "... ukentlig"
     5: "... daglig eller nesten daglig"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -2318,13 +1851,6 @@ audit5:
     4: "... ukentlig"
     5: "... daglig eller nesten daglig"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -2342,13 +1868,6 @@ audit6:
     4: "... ukentlig"
     5: "... daglig eller nesten daglig"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -2366,13 +1885,6 @@ audit7:
     4: "... ukentlig"
     5: "... daglig eller nesten daglig"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -2390,13 +1902,6 @@ audit8:
     4: "... ukentlig"
     5: "... daglig eller nesten daglig"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -2411,10 +1916,6 @@ audit9_a:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - 8
     - 9
@@ -2428,10 +1929,6 @@ audit9_b:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - 8
     - 9
@@ -2445,10 +1942,6 @@ audit9_c:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - 8
     - 9
@@ -2462,9 +1955,6 @@ audit9a:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - NA
     - 9
@@ -2478,9 +1968,6 @@ audit9b:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - NA
     - 9
@@ -2494,10 +1981,6 @@ audit10:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -2512,8 +1995,6 @@ audit10a:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
   missing:
     - NA
 
@@ -2526,10 +2007,6 @@ arb_alk1:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -2569,15 +2046,6 @@ arb_alk3:
     10: 10
     15: 15
   recode:
-    "0": 0
-    "1": 1
-    "2": 2
-    "3": 3
-    "10": 10
-    "15": 15
-    "8": NA
-    "999": NA
-    "998": NA
   missing:
     - NA
     - 8
@@ -2597,14 +2065,6 @@ arb_alk4:
     15: 15
     12: 12
   recode:
-    "0": 0
-    "1": 1
-    "5": 5
-    "2": 2
-    "15": 15
-    "12": 12
-    "999": NA
-    "998": NA
   missing:
     - NA
     - 999
@@ -2630,10 +2090,6 @@ leg1:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - 8
     - 9
@@ -2647,9 +2103,6 @@ leg2:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - NA
     - 9
@@ -2665,11 +2118,6 @@ leg3:
     3: "1 til 3 måneder"
     4: "Mer enn tre måneder"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "9": NA
   missing:
     - NA
     - 9
@@ -2683,10 +2131,6 @@ leg5:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - 8
     - 9
@@ -2700,9 +2144,6 @@ leg6:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
   missing:
     - NA
     - 8
@@ -2718,11 +2159,6 @@ leg7:
     3: "1 til 3 måneder"
     4: "Mer enn tre måneder"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "9": NA
   missing:
     - NA
     - 9
@@ -2736,10 +2172,6 @@ leg9:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - 8
     - 9
@@ -2753,10 +2185,6 @@ leg10:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -2773,11 +2201,6 @@ leg11:
     3: "1 til 3 måneder"
     4: "Mer enn tre måneder"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "9": NA
   missing:
     - NA
     - 9
@@ -2794,13 +2217,6 @@ leg12:
     4: "2-3 ganger i uken"
     5: "4 ganger i uken eller mer"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -2815,10 +2231,6 @@ can1:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - 8
     - 9
@@ -2835,12 +2247,6 @@ can2:
     4: "11-50 ganger"
     5: "Mer enn 50 ganger"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "9": NA
   missing:
     - NA
     - 9
@@ -2865,9 +2271,6 @@ can4:
     2: "Nei"
     3: "Husker ikke/vet ikke"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
   missing:
     - NA
 
@@ -2881,10 +2284,6 @@ can5:
     2: "Nei"
     3: "Vet ikke"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "9": NA
   missing:
     - NA
     - 9
@@ -2898,9 +2297,6 @@ can6:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
   missing:
     - NA
     - 8
@@ -2918,14 +2314,6 @@ can6b:
     5: "Ja, 10 ganger eller mer"
     6: "Husker ikke/vet ikke"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "6": 6
-    "8": NA
-    "9": NA
   missing:
     - 8
     - 9
@@ -2939,9 +2327,6 @@ can7_a:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - NA
     - 9
@@ -2955,9 +2340,6 @@ can7_b:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - NA
     - 9
@@ -2971,9 +2353,6 @@ can7_c:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - NA
     - 9
@@ -2987,9 +2366,6 @@ can7_d:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - NA
     - 9
@@ -3003,9 +2379,6 @@ can7_e:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - NA
     - 9
@@ -3016,11 +2389,7 @@ can7sps:
   type: character
   label: "Hvilke andre typer cannabis har du prøvd?"
   value:
-    99999999999999999999999999999999999999999999999998: 99999999999999999999999999999999999999999999999998
-    99999999999999999999999999999999999999999999999999: 99999999999999999999999999999999999999999999999999
   recode:
-    "99999999999999999999999999999999999999999999999998": 99999999999999999999999999999999999999999999999998
-    "99999999999999999999999999999999999999999999999999": 99999999999999999999999999999999999999999999999999
   missing:
     - NA
 
@@ -3038,15 +2407,6 @@ can8:
     6: "Dyrket selv"
     7: "Annet, spesifiser"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "6": 6
-    "7": 7
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -3073,12 +2433,6 @@ can9:
     3: "11-50 ganger"
     4: "Mer enn 50 ganger"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -3093,9 +2447,6 @@ can10:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
   missing:
     - NA
     - 8
@@ -3111,10 +2462,6 @@ can11:
     3: "4-9 dager"
     4: "1-3 dager"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
   missing:
     - NA
 
@@ -3124,22 +2471,7 @@ can13:
   type: integer
   label: "Hvor mange ganger ruset du deg på cannabis (uansett type) siste døgn?"
   value:
-    1: 1
-    0: 0
-    2: 2
-    3: 3
-    5: 5
-    4: 4
-    10: 10
   recode:
-    "1": 1
-    "0": 0
-    "2": 2
-    "3": 3
-    "5": 5
-    "4": 4
-    "10": 10
-    "99": NA
   missing:
     - NA
     - 99
@@ -3153,10 +2485,6 @@ can14:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -3171,10 +2499,6 @@ ans1:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - 8
     - 9
@@ -3198,10 +2522,6 @@ ans2_a:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -3216,10 +2536,6 @@ ans2_b:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -3234,10 +2550,6 @@ ans2_c:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -3252,10 +2564,6 @@ ans2_d:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -3270,10 +2578,6 @@ ans2_e:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -3288,10 +2592,6 @@ ans2_f:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -3306,10 +2606,6 @@ ans2_g:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -3324,10 +2620,6 @@ ans2_x:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -3342,10 +2634,6 @@ ans2_y:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -3360,10 +2648,6 @@ ans2_h:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -3378,9 +2662,6 @@ ans3_1:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - NA
     - 9
@@ -3394,8 +2675,6 @@ ans3_2:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
   missing:
     - NA
 
@@ -3408,8 +2687,6 @@ ans3_3:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
   missing:
     - NA
 
@@ -3422,8 +2699,6 @@ ans3_4:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
   missing:
     - NA
 
@@ -3436,8 +2711,6 @@ ans3_5:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
   missing:
     - NA
 
@@ -3450,8 +2723,6 @@ ans3_6:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
   missing:
     - NA
 
@@ -3464,8 +2735,6 @@ ans3_7:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
   missing:
     - NA
 
@@ -3478,8 +2747,6 @@ ans3_x:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
   missing:
     - NA
 
@@ -3492,8 +2759,6 @@ ans3_y:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
   missing:
     - NA
 
@@ -3506,8 +2771,6 @@ ans3_8:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
   missing:
     - NA
 
@@ -3522,11 +2785,6 @@ ans_5:
     3: "11-50 dager"
     4: "50 dager eller mer"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "9": NA
   missing:
     - NA
     - 9
@@ -3542,11 +2800,6 @@ ans9:
     3: "11-50 dager"
     4: "50 dager eller mer"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "9": NA
   missing:
     - NA
     - 9
@@ -3560,10 +2813,6 @@ dop1:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - 8
     - 9
@@ -3577,9 +2826,6 @@ dop3_1:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
   missing:
     - NA
     - 8
@@ -3594,11 +2840,6 @@ negkons1:
     2: "En gang"
     3: "Mer enn en gang"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -3614,11 +2855,6 @@ negkons2:
     2: "En gang"
     3: "Mer enn en gang"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -3634,11 +2870,6 @@ negkons3:
     2: "En gang"
     3: "Mer enn en gang"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "8": NA
-    "9": NA
   missing:
     - 8
     - 9
@@ -3653,11 +2884,6 @@ negkons4:
     2: "En gang"
     3: "Mer enn en gang"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "8": NA
-    "9": NA
   missing:
     - 8
     - 9
@@ -3673,11 +2899,6 @@ negkons4_1:
     3: "Nokså problematisk"
     4: "Svært problematisk"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "8": NA
   missing:
     - NA
     - 8
@@ -3692,11 +2913,6 @@ negkons5:
     2: "En gang"
     3: "Mer enn en gang"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -3712,11 +2928,6 @@ negkons6:
     2: "En gang"
     3: "Mer enn en gang"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -3731,10 +2942,6 @@ paaror1a:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - 8
     - 9
@@ -3748,9 +2955,6 @@ paaror3:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
   missing:
     - NA
     - 8
@@ -3767,13 +2971,6 @@ paaror4:
     4: "Sjeldnere enn månedlig"
     5: "Aldri"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -3789,10 +2986,6 @@ paaror5:
     2: "Nei"
     3: "Vet ikke"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "8": NA
   missing:
     - 8
 
@@ -3808,13 +3001,6 @@ avslutt:
     4: "Svært uinteressante"
     5: "Jeg har ingen mening om det"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "8": NA
-    "9": NA
   missing:
     - NA
     - 8
@@ -3831,10 +3017,6 @@ intslutt:
     3: "www"
     4: "Ingen"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
   missing:
     - NA
 
@@ -3869,10 +3051,6 @@ paaror1b_a:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - 8
     - 9
@@ -3886,10 +3064,6 @@ paaror1b_b:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - 8
     - 9
@@ -3903,10 +3077,6 @@ paaror1b_c:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - 8
     - 9
@@ -3920,9 +3090,6 @@ paaror2_a:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
   missing:
     - 8
 
@@ -3935,9 +3102,6 @@ paaror2_b:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
   missing:
     - 8
 
@@ -3950,9 +3114,6 @@ paaror2_c:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
   missing:
     - 8
 
@@ -3965,9 +3126,6 @@ paaror2_d:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
   missing:
     - 8
 
@@ -3980,9 +3138,6 @@ paaror2_e:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
   missing:
     - 8
 
@@ -3995,10 +3150,6 @@ tobsit_a:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - 8
     - 9
@@ -4012,10 +3163,6 @@ tobsit_b:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - 8
     - 9
@@ -4029,10 +3176,6 @@ tobsit_c:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - 8
     - 9
@@ -4046,10 +3189,6 @@ tobsit_d:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - 8
     - 9
@@ -4063,10 +3202,6 @@ tobsit_e:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "8": NA
-    "9": NA
   missing:
     - 8
     - 9
@@ -4080,9 +3215,6 @@ alkansk_a:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - 9
 
@@ -4095,9 +3227,6 @@ alkansk_b:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - 9
 
@@ -4110,9 +3239,6 @@ alkansk_c:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - 9
 
@@ -4125,9 +3251,6 @@ alkansk_d:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - 9
 
@@ -4140,9 +3263,6 @@ alkansk_e:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - 9
 
@@ -4155,9 +3275,6 @@ alkansk_f:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - 9
 
@@ -4170,9 +3287,6 @@ alkansk_g:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - 9
 
@@ -4185,9 +3299,6 @@ alkansk_h:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - 9
 
@@ -4200,9 +3311,6 @@ alkansk_i:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - 9
 
@@ -4215,9 +3323,6 @@ alkansk_j:
     1: "Ja"
     2: "Nei"
   recode:
-    "1": 1
-    "2": 2
-    "9": NA
   missing:
     - 9
 
@@ -4237,20 +3342,7 @@ sivilstand:
   type: integer
   label: "SIVILSTAND"
   value:
-    2: 2
-    1: 1
-    4: 4
-    3: 3
-    5: 5
-    0: 0
   recode:
-    "2": 2
-    "1": 1
-    "4": 4
-    "3": 3
-    "5": 5
-    "0": 0
-    "8": NA
   missing:
     - 8
 
@@ -4278,13 +3370,6 @@ landsdel_2025:
     6: "Nord-Norge"
     9: "Uoppgitt"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "6": 6
-    "9": 9
   missing:
     - NA
 
@@ -4302,13 +3387,6 @@ alder1:
     8: "Vil ikke svare"
     9: "Vet ikke"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "8": 8
-    "9": 9
   missing:
     - NA
 
@@ -4326,13 +3404,6 @@ alder2:
     6: "61-79 år"
     7: "80- år"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "6": 6
-    "7": 7
   missing:
     - NA
 
@@ -4365,14 +3436,6 @@ fodeland_io:
     7: "Australia/New Zeland/Osceania"
     9: "Uoppgitt/mangler"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "6": 6
-    "7": 7
-    "9": 9
   missing:
     - NA
 
@@ -4391,14 +3454,6 @@ fodeland_far:
     7: "Australia/New Zeland/Osceania"
     9: "Uoppgitt/mangler"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "6": 6
-    "7": 7
-    "9": 9
   missing:
     - NA
 
@@ -4417,14 +3472,6 @@ fodeland_mor:
     7: "Australia/New Zeland/Osceania"
     9: "Uoppgitt/mangler"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "6": 6
-    "7": 7
-    "9": 9
   missing:
     - NA
 
@@ -4459,10 +3506,6 @@ utdann_4gr:
     3: "Universitet-og høyskole"
     4: "Universitet-og høyskole, høyere nivå"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
   missing:
     - NA
 
@@ -4489,11 +3532,5 @@ sentralitet:
     5: "Sentralitet: 5 (565-669)"
     6: "Sentralitet: 6 (0-564) - lav"
   recode:
-    "1": 1
-    "2": 2
-    "3": 3
-    "4": 4
-    "5": 5
-    "6": 6
   missing:
     - NA
