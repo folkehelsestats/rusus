@@ -262,7 +262,7 @@ print_match_report <- function(match_result, dataset_label = "") {
   # --- Keyword matches (low confidence, must review) -------------------
   keyword <- log[grepl("^keyword", method)]
   if (nrow(keyword) > 0) {
-    cat(sprintf("\n  ⚠⚠ KEYWORD/PREDICTED MATCHES — must verify (%d):\n", nrow(keyword)))
+    cat(sprintf("\n  🚫 KEYWORD/PREDICTED MATCHES — must verify (%d):\n", nrow(keyword)))
     keyword[, cat(sprintf("    %-25s -> %-15s  matched by %s\n",
                           raw_name, canonical, method)), by = seq_len(nrow(keyword))]
   }
