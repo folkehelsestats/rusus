@@ -19,6 +19,22 @@ match_columns <- function(raw_colnames, config, fuzzy_max_distance = 0.15) {
   # All canonical variable names we are trying to find
   canonical_vars <- names(config$var_map)
   
+  # ---- Sanity check: warn early if name_lookup is empty ---------------
+  # This almost always means load_config() is reading 'raw_aliases' from
+  # the YAML but the file uses 'colnames'. Fix: in load_config(), change
+  #   var_map[[canonical]]$raw_aliases
+  # to
+  #   var_map[[canonical]]$colnames
+  if (length(config$name_lookup) == 0) {
+    warning(
+      "config$name_lookup is empty — exact and fuzzy matching will be skipped.\n",
+      "  Check that load_config() reads the correct field from your YAML.\n",
+      "  Your YAML uses 'colnames:' but load_config() may be reading 'raw_aliases:'.\n",
+      "  Fix: replace '$raw_aliases' with '$colnames' in load_config().",
+      call. = FALSE
+    )
+  }
+  
   # Columns not yet assigned to a canonical variable (starts as all cols)
   unmatched <- raw_colnames
   
@@ -65,13 +81,20 @@ match_columns <- function(raw_colnames, config, fuzzy_max_distance = 0.15) {
   # e.g. "counrty" -> "country", "educaiton" -> "education"
   # max.distance controls tolerance: 0.15 = up to ~15% of chars wrong
   # ================================================================
+
+  # Consider to exclude the exactly matched aliases from the fuzzy search to reduce false positives??
+  # should use unmatched aliases only?? but that might miss some matches if the exact match was claimed by another column
+  #
+  # NOTE: name_lookup keys are the values from the YAML 'colnames' field.
+  # If name_lookup is empty here it means load_config() is reading 'raw_aliases'
+  # but your YAML uses 'colnames' — ensure load_config() reads var$colnames.
   all_aliases <- names(config$name_lookup)  # full pool of known aliases
   
   for (col in unmatched) {
     # Find aliases within edit-distance threshold of this raw column name
     fuzzy_hits <- agrep(
       pattern      = col,
-      x            = all_aliases,
+      x            = all_aliases, #should use unmatched aliases only??
       max.distance = fuzzy_max_distance,
       value        = TRUE,    # return matched strings, not indices
       ignore.case  = TRUE
@@ -119,15 +142,44 @@ match_columns <- function(raw_colnames, config, fuzzy_max_distance = 0.15) {
       if (canonical %in% claimed_canonical) next  # already claimed
       
       pattern <- config$keyword_patterns[[canonical]]
+
+      # Clean pattern
+      if (is.null(pattern) || pattern %in% c("NA", "", NA)) next
       
-      # grepl checks if any keyword appears anywhere in the column name
+      # grepl checks if the combined keyword pattern appears in the column name.
+      # 'pattern' here is already a single regex string built by build_keyword_patterns(),
+      # e.g. "\\b(kjonn|sex|gender)\\b" — safe to pass directly to grepl().
       if (grepl(pattern, col, ignore.case = TRUE, perl = TRUE)) {
         matched_canonical <- canonical
         
-        # Extract which specific keyword triggered the match (for reporting)
-        keywords  <- unlist(strsplit(pattern, "\\|"))
-        triggered <- keywords[grepl(keywords, col, ignore.case = TRUE)][1]
-        matched_keyword <- triggered
+        # --- Find which specific keyword triggered the match --------
+        # Split the combined pattern back into individual keyword tokens
+        # and test each one separately against the column name.
+        # This must use sapply/vapply (scalar per element), NOT grepl()
+        # on the whole vector — that would only test the first element
+        # and return NA for the rest, causing the "NA" display bug.
+        keywords <- unlist(strsplit(pattern, "\\|"))
+        
+        # Strip regex word-boundary wrappers added by build_keyword_patterns()
+        keywords <- gsub("^\\\\b\\(|\\)\\\\b$", "", keywords)
+        keywords <- trimws(keywords)
+        keywords <- keywords[nchar(keywords) >= 3]
+        
+        # Use vapply for element-wise grepl: one TRUE/FALSE per keyword
+        hit_flags <- vapply(
+          keywords,
+          function(kw) grepl(kw, col, ignore.case = TRUE),
+          logical(1)
+        )
+        
+        # Pick the longest matching keyword for the clearest report label
+        matching_kws <- keywords[hit_flags]
+        if (length(matching_kws) == 0) {
+          matched_keyword <- pattern   # fallback: show the raw pattern
+        } else {
+          matched_keyword <- matching_kws[which.max(nchar(matching_kws))]
+        }
+        
         break  # stop at first canonical variable that matches
       }
     }
@@ -210,7 +262,7 @@ print_match_report <- function(match_result, dataset_label = "") {
   # --- Keyword matches (low confidence, must review) -------------------
   keyword <- log[grepl("^keyword", method)]
   if (nrow(keyword) > 0) {
-    cat(sprintf("\n  ⚠⚠ KEYWORD/PREDICTED MATCHES — must verify (%d):\n", nrow(keyword)))
+    cat(sprintf("\n  🚫 KEYWORD/PREDICTED MATCHES — must verify (%d):\n", nrow(keyword)))
     keyword[, cat(sprintf("    %-25s -> %-15s  matched by %s\n",
                           raw_name, canonical, method)), by = seq_len(nrow(keyword))]
   }
@@ -225,4 +277,57 @@ print_match_report <- function(match_result, dataset_label = "") {
   
   cat("\n")
   invisible()
+}
+
+
+# ---------------------------------------------------------------
+# build_keyword_patterns()
+#
+# Cleans and constructs strict regex patterns from YAML keywords
+# ---------------------------------------------------------------
+build_keyword_patterns <- function(config, min_char = 3) {
+  
+  keyword_patterns <- lapply(config$var_map, function(var_def) {
+    
+    keywords <- var_def$keywords
+    
+    # ---- Step 1: Handle NULL / ~ / NA safely -------------------
+    if (is.null(keywords) || all(is.na(keywords))) {
+      return(NULL)
+    }
+    
+    # Convert to character
+    keywords <- as.character(keywords)
+    
+    # ---- Step 2: Clean keywords --------------------------------
+    keywords <- tolower(keywords)
+    keywords <- trimws(keywords)
+    
+    # Remove invalid values
+    keywords <- keywords[
+      !keywords %in% c("", "na", "null", "none") &
+      !is.na(keywords)
+    ]
+    
+    # Remove weak tokens (very important)
+    keywords <- keywords[nchar(keywords) >= min_char]
+    
+    # If nothing left → no pattern
+    if (length(keywords) == 0) {
+      return(NULL)
+    }
+    
+    # ---- Step 3: Escape regex special characters ----------------
+    keywords <- gsub("([\\.\\^\\$\\*\\+\\?\\(\\)\\[\\{\\\\\\|])", "\\\\\\1", keywords)
+    
+    # ---- Step 4: Build STRICT pattern with word boundaries ------
+    pattern <- paste0("\\b(", paste(unique(keywords), collapse = "|"), ")\\b")
+    
+    return(pattern)
+  })
+  
+  # Remove NULL entries (important!)
+  keyword_patterns <- keyword_patterns[!sapply(keyword_patterns, is.null)]
+  
+  return(keyword_patterns)
 }

@@ -5,9 +5,9 @@ library(readxl)
 
 `%||%` <- function(a, b) if (!is.null(a)) a else b
 
-load_config <- function(config_path = "config/variable_map.yaml") {
+load_config <- function(config_file = "config/variable_map.yaml") {
   
-  var_map <- yaml::read_yaml(config_path)
+  var_map <- yaml::read_yaml(config_file)
   
   # --- Exact name lookup: colnames -> canonical_name ------------------
   name_lookup <- lapply(names(var_map), function(canonical) {
