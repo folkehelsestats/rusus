@@ -17,9 +17,9 @@ kjonn:
     1: "Mann"
     2: "Kvinne"
   recode:
-    "0": 2
-    "1": 1
-    "2": 2
+    0: 2
+    1: 1
+    2: 2
   missing:
     - NA
 
