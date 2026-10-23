@@ -1,0 +1,272 @@
+#+title: Data cleaning
+
+* Process flow
+** Match column names
+- YAML file consist all standard column names for the output
+- =colnames:= consists of all possible column names in the raw dataset
+- =keywords:= consists of alternative names to be used for partial matching
+** Column data type
+- Specify the output data type for the column
+- This should warn when converting the specified type isn't possible to avoid
+  ~NAs introduced by coercion~ and possibility for debugging
+- List variables that aren't possible to convert
+** Value
+- List all the possible valid values that should contain in the variables when provided.
+- Warn when there are other values found other than those listed in =value=
+** Recode
+- Standardized the different values that can be found in some of the dataset
+** Missing
+- The values that can be recoded to missing, but this is optional.
+
+* Features
+
+Some new features and functions to be considered.
+** Matching keywords
+This should only be considered for the variables that aren't matched since some
+of the keywords are shared by more than one variables eg. siv and stat, can
+either be variable siv, sivstat or yrkstat2. Check [[file:01_match_columns.R::x = all_aliases, #should use unmatched aliases only?? but that might miss some matches if the exact match was claimed by another column][unmatch]]
+
+* Bugs
+Things to fix.
+
+* AI prompt
+
+## **Prompt: Generate YAML recoding specification with missing value detection and parsing rules**
+
+### **Goal**
+
+Generate a structured YAML configuration file for an R data-cleaning pipeline.
+The YAML must define variables, types, labels, value labels, recoding rules, and missing-value handling.
+
+***
+
+### **Context**
+
+I am working with survey data that needs to be standardized and cleaned in R.
+The YAML file will drive automated recoding, type conversion, and labeling.
+
+Each variable must follow this structure:
+
+* `colnames`: exact variable names
+* `keywords`: patterns for matching similar variables
+* `type`: target R type
+* `label`: variable description
+* `value`: value labels for categorical variables
+* `recode`: mapping from raw values to cleaned values
+* `missing`: rules for detecting and converting missing values
+
+***
+
+### **Source**
+
+You will use two inputs:
+
+#### 1. R variable labels
+
+```r
+var_label(ssb) <- list(
+  Kjonn = "IOs kjønn",
+  Alder = "IOs alder",
+  sluttdato = "Dato for utfyllinga",
+  Yrkesstatus = "Yrkesaktiv?"
+)
+```
+
+#### 2. CSV metadata
+
+```
+variable     class    n_unique    values
+Kjonn        integer  2           1, 2
+Alder        integer  64          33, 22, 45, 29
+sluttdato    integer  64          29052025, 16062025
+Yrkesstatus  integer  4           1, 2, 9, 8
+YrkStat2     integer  11          NA, 1, 5, 4
+```
+
+***
+
+### **Rules / Instructions**
+
+#### 1. Variable mapping
+
+* Match variables between R labels and CSV
+* Use lowercase variable name as YAML key
+* Populate:
+  * `colnames` from variable name
+  * `keywords` from variable name + common variants
+
+***
+
+#### 2. Type assignment (improved parsing)
+
+* Use CSV `class` as base type
+* Apply overrides:
+
+| Pattern                                   | Rule                 |
+| ----------------------------------------- | -------------------- |
+| Name contains `dato`, `date`              | type = `date`        |
+| Values look like `ddmmyyyy` or `yyyymmdd` | type = `date`        |
+| Numeric with many unique values           | type = `integer`     |
+| Few unique numeric values                 | treat as categorical |
+
+***
+
+#### 3. Value + recode logic
+
+* If `n_unique > 10`:
+  * `value: ~`
+  * `recode: ~`
+
+* If `n_unique ≤ 10`:
+  * Treat as categorical
+  * Define `value` using observed values (if labels not known, keep numeric)
+  * Define `recode` mapping raw → clean values (identity mapping if no better info)
+
+***
+
+#### 4. ✅ Automatic missing-value detection (NEW)
+
+Detect likely missing values using:
+
+##### Common missing codes:
+
+* `NA`, `"NA"`, `""`
+* `8`, `9`, `99`, `999`
+* negative values like `-1`
+
+##### Rules:
+
+* If variable is categorical (`n_unique ≤ 10`) and values include `8`, `9`, `99`:
+  * Treat these as missing unless clearly valid categories
+* If frequency suggests rare/high codes:
+  * Assume missing
+
+##### Output:
+
+Add a `missing` field:
+
+```yaml
+missing:
+  - NA
+  - 9
+  - 99
+```
+
+* Also ensure these are mapped to `NA` in `recode`:
+
+```yaml
+recode:
+  "1": 1
+  "2": 2
+  "9": NA
+```
+
+***
+
+#### 5. Date parsing rules (NEW)
+
+For date-like variables:
+
+* Detect formats like:
+  * `29052025` → assume `ddmmyyyy`
+  * `20250629` → assume `yyyymmdd`
+* Set:
+  * `type: date`
+* Add note in label if needed:
+  `"Dato for utfyllinga (parsed from numeric format)"`
+
+Optional recode example:
+
+```yaml
+recode:
+  "29052025": "2025-05-29"
+```
+
+***
+
+#### 6. Label assignment
+
+* Use R labels directly
+* If missing, fallback to variable name
+
+***
+
+#### 7. Output formatting
+
+* Valid YAML only
+* Use `~` for null values
+* Keep consistent indentation
+* Do not include explanations
+
+***
+
+### **Expected Output Example**
+
+```yaml
+kjonn:
+  colnames: [Kjonn]
+  keywords: [kjonn]
+  type: integer
+  label: IOs kjønn
+  value:
+    1: Mann
+    2: Kvinne
+  recode:
+    "1": 1
+    "2": 2
+    "9": NA
+  missing:
+    - 9
+
+alder:
+  colnames: [Alder]
+  keywords: [alder, age]
+  type: integer
+  label: IOs alder
+  value: ~
+  recode: ~
+  missing:
+    - NA
+
+sluttdato:
+  colnames: [sluttdato]
+  keywords: [sluttdato, date]
+  type: date
+  label: Dato for utfyllinga (parsed from numeric format)
+  value: ~
+  recode: ~
+  missing:
+    - NA
+```
+
+***
+
+# ✅ Why this improvement is important (coaching insight)
+
+You’ve now added **real intelligence** to the prompt:
+
+### ✅ Before
+
+* Static transformation rules
+
+### ✅ Now
+
+* **Heuristic detection** (missing codes)
+* **Pattern-based parsing** (dates)
+* **Safer automation** (reduces wrong recodes)
+
+This is exactly what makes prompts reliable in **production pipelines**, especially with survey data like yours (e.g., EUDA-style datasets).
+
+***
+
+## 👍 Optional next upgrade
+
+If you want, I can help you add:
+
+* Frequency-based detection (e.g., identify rare values as missing)
+* Norwegian/English label harmonization
+* Integration with `haven::labelled` or `sjlabelled`
+
+***
+
+👉 Do you want the prompt to also **automatically detect Likert scales (1–5, 1–7)** and label them (e.g., “Strongly agree → Strongly disagree”)?
