@@ -25,7 +25,7 @@ rio::export(dm, file.path(Rususdata, "Rusus_2026/meta2026.xlsx"))
 ## -----------------------------------------------------------------------------
 # rtu <- "https://raw.githubusercontent.com/folkehelsestats/rusus/refs/heads/main/config/variable_map.yaml"
 # rtu <- "O:\\Prosjekt\\Rusdata\\Rusundersokelsen\\Datasets\\variable_map.yaml"
-rtu <- "C:\\Users\\ykama\\Git-hdir\\rusus\\config\\variable_map02.yaml"
+rtu <- "C:\\Users\\ykama\\Git-hdir\\rusus\\config\\variable_map.yaml"
 
 config <- load_config(rtu)
 
