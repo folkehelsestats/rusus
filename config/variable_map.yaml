@@ -12,7 +12,7 @@ kjonn:
   colnames: [Kjonn]
   keywords: [kjonn, sex, gender]
   type: integer
-  label: "IOs kjÃ¸nn"
+  label: "IOs kjønn"
   value:
     1: "Mann"
     2: "Kvinne"
@@ -64,13 +64,13 @@ yrkstat2:
   value:
     1: "arbeidsledig"
     2: "skoleelev eller student inkludert ubetalt arbeidserfaring"   
-    3: "alders- eller fÃ¸rtidspensjonist"
-    4: "arbeidsufÃ¸r"
-    5: "pÃ¥ arbeidsavklaringspenger"
+    3: "alders- eller førtidspensjonist"
+    4: "arbeidsufør"
+    5: "på arbeidsavklaringspenger"
     6: "vernepliktig, sivilarbeider"
     7: "hjemmearbeidende"
     8: "annet"
-    98: "Ã˜nsker ikke Ã¥ svare"
+    98: "Ønsker ikke å svare"
     99: "Vet ikke"
   recode: ~
   missing:
@@ -94,10 +94,10 @@ siv:
     - 8
     - 9
 
-## Sjekk kategoriene siden de har vÃ¦rt forskjellige dvs.:
+## Sjekk kategoriene siden de har vært forskjellige dvs.:
 ## 2025 - 2: Gift/registrert partner (5 kategorier)
 ## 2026 - testdata 2: Enke/enkemann/gjenlevende partner (4 kategorier)
-## Endringen skyldes at dette spÃ¸rsmÃ¥let ikke stilles til de som svarer gift/registrert partner pÃ¥ forrige spÃ¸rsmÃ¥l, sÃ¥ i 2026 har dette alternativet blitt fjernet
+## Endringen skyldes at dette spørsmålet ikke stilles til de som svarer gift/registrert partner på forrige spørsmål, så i 2026 har dette alternativet blitt fjernet
 sivstat_gml:
   colnames: [SivStat]
   keywords: [sivstat]
@@ -131,7 +131,7 @@ sivstat_ny:
     - 8
     - 9
     
-## Deltakere som svarer 98 fÃ¥r ikke oppfÃ¸lgningsspÃ¸rsmÃ¥lene om antall barn, sÃ¥ antas Ã¥ vÃ¦re missing
+## Deltakere som svarer 98 får ikke oppfølgningsspørsmålene om antall barn, så antas å være missing
 antpers:
   colnames: [Antpers, skjema.SpmBakgrunn.Antpers]
   keywords: [antpers]
@@ -147,7 +147,7 @@ antbarn1:
   colnames: [AntBarn1, skjema.SpmBakgrunn.AntBarn1]
   keywords: [antbarn1]
   type: integer
-  label: "Antall barn under 6 Ã¥r"
+  label: "Antall barn under 6 år"
   value: ~
   recode: ~
   missing:
@@ -159,7 +159,7 @@ antbarn2:
   colnames: [AntBarn2, skjema.SpmBakgrunn.AntBarn2]
   keywords: [antbarn2]
   type: integer
-  label: "Antall barn 6-18 Ã¥r"
+  label: "Antall barn 6-18 år"
   value: ~
   recode: ~
   missing:
@@ -173,11 +173,11 @@ helse:
   type: integer
   label: "Egenopplevd helse"
   value:
-    1: "SvÃ¦rt god"
+    1: "Svært god"
     2: "God"
-    3: "Verken god eller dÃ¥rlig"
-    4: "DÃ¥rlig"
-    5: "SvÃ¦rt dÃ¥rlig"
+    3: "Verken god eller dårlig"
+    4: "Dårlig"
+    5: "Svært dårlig"
   recode: ~
   missing:
     - 8
@@ -190,11 +190,11 @@ helsepsyk:
   type: integer
   label: "Egenopplevd psykisk helse"
   value:
-    1: "SvÃ¦rt god"
+    1: "Svært god"
     2: "God"
-    3: "Verken god eller dÃ¥rlig"
-    4: "DÃ¥rlig"
-    5: "SvÃ¦rt dÃ¥rlig"
+    3: "Verken god eller dårlig"
+    4: "Dårlig"
+    5: "Svært dårlig"
   recode: ~
   missing:
     - 8
@@ -204,7 +204,7 @@ tob1:
   colnames: [Tob1, skjema.SpmTobakk.Tob1]
   keywords: [tob1]
   type: integer
-  label: "Hender at rÃ¸yker"
+  label: "Hender at røyker"
   value:
     1: "Ja"
     2: "Nei"
@@ -217,7 +217,7 @@ tob2:
   colnames: [Tob2, skjema.SpmTobakk.Tob2]
   keywords: [tob2]
   type: integer
-  label: "RÃ¸yker daglig/av og til?"
+  label: "Røyker daglig/av og til?"
   value:
     1: "Daglig"
     2: "Av og til"
@@ -230,7 +230,7 @@ tob3:
   colnames: [Tob3, skjema.SpmTobakk.Tob3]
   keywords: [tob3]
   type: integer
-  label: "RÃ¸yker du sigaretter"
+  label: "Røyker du sigaretter"
   value:
     1: "Ja"
     2: "Nei"
@@ -249,12 +249,14 @@ tob4a:
   recode: ~
   missing:
     - NA
+    - 998
+    - 999
 
 tob5:
   colnames: [Tob5, skjema.SpmTobakk.Tob5]
   keywords: [tob5]
   type: integer
-  label: "Hvor ofte rÃ¸yker du sigaretter"
+  label: "Hvor ofte røyker du sigaretter"
   value:
     1: "Flere dager i uken"
     2: "1 dag i uken"
@@ -268,7 +270,7 @@ tob13:
   colnames: [Tob13, skjema.SpmTobakk.Tob13]
   keywords: [tob13]
   type: integer
-  label: "Har du noen gang rÃ¸ykt daglig?"
+  label: "Har du noen gang røykt daglig?"
   value:
     1: "Ja"
     2: "Nei"
@@ -282,7 +284,7 @@ tob14:
   colnames: [Tob14, skjema.SpmTobakk.Tob14]
   keywords: [tob14]
   type: integer
-  label: "Har du noen gang rÃ¸ykt daglig eller av og til"
+  label: "Har du noen gang røykt daglig eller av og til"
   value:
     1: "Ja, daglig"
     2: "Ja, av og til"
@@ -297,21 +299,25 @@ tob20:
   colnames: [Tob20, skjema.SpmTobakk.Tob20]
   keywords: [tob20]
   type: integer
-  label: "I hvilket Ã¥r sluttet du Ã¥ rÃ¸yke daglig"
+  label: "I hvilket år sluttet du å røyke daglig"
   value: ~
   recode: ~
   missing:
     - NA
+    - 9998
+    - 9999
 
 tob21:
   colnames: [Tob21, skjema.SpmTobakk.Tob21]
   keywords: [tob21]
   type: integer
-  label: "Hvor mange ganger forsÃ¸kte du Ã¥ slutte Ã¥ rÃ¸yke daglig fÃ¸r du lyktes"
+  label: "Hvor mange ganger forsøkte du å slutte å røyke daglig før du lyktes"
   value: ~
   recode: ~
   missing:
     - NA
+    - 98
+    - 99
 
 tob22a:
   colnames: [Tob22a, skjema.SpmTobakk.Tob22a]
@@ -341,7 +347,7 @@ tob22d:
   colnames: [Tob22d, skjema.SpmTobakk.Tob22d]
   keywords: [tob22d]
   type: integer
-  label: "Sluttet siste gang - brukte rÃ¸ykeavvenningsprodukt"
+  label: "Sluttet siste gang - brukte røykeavvenningsprodukt"
   value:
     1: "Ja"
     2: "Nei"
@@ -353,7 +359,7 @@ tob22q:
   colnames: [Tob22q, skjema.SpmTobakk.Tob22q]
   keywords: [tob22q]
   type: integer
-  label: "Sluttet siste gang - sÃ¸kte helsetjenesten"
+  label: "Sluttet siste gang - søkte helsetjenesten"
   value:
     1: "Ja"
     2: "Nei"
@@ -377,7 +383,7 @@ tob22r:
   colnames: [Tob22r, skjema.SpmTobakk.Tob22r]
   keywords: [tob22r]
   type: integer
-  label: "Sluttet siste gang - sÃ¸kte nettsider eller mobiltjenester for rÃ¸ykeslutt"
+  label: "Sluttet siste gang - søkte nettsider eller mobiltjenester for røykeslutt"
   value:
     1: "Ja"
     2: "Nei"
@@ -389,17 +395,19 @@ tob23:
   colnames: [Tob23, skjema.SpmTobakk.Tob23]
   keywords: [tob23]
   type: integer
-  label: "Hvor gammel var du da du begynte Ã¥ rÃ¸yke daglig"
+  label: "Hvor gammel var du da du begynte å røyke daglig"
   value: ~
   recode: ~
   missing:
     - NA
+    - 98
+    - 99
 
 tob30:
   colnames: [Tob30, skjema.SpmTobakk.Tob30]
   keywords: [tob30]
   type: integer
-  label: "RÃ¸yker du sigaretter daglig"
+  label: "Røyker du sigaretter daglig"
   value:
     1: "Ja"
     2: "Nei"
@@ -411,11 +419,12 @@ tob31a:
   colnames: [Tob31a, skjema.SpmTobakk.Tob31a]
   keywords: [tob31a]
   type: integer
-  label: "Hvor mange sigaretter rÃ¸yker du gjennomsnittlig pr. dag"
+  label: "Hvor mange sigaretter røyker du gjennomsnittlig pr. dag"
   value: ~
   recode: ~
   missing:
     - NA
+    - 999
 
 tob31b:
   colnames: [Tob31b, skjema.SpmTobakk.Tob31b]
@@ -426,7 +435,8 @@ tob31b:
   recode: ~
   missing:
     - NA
-    - 8
+    - 998
+    - 999
 
 tob31c:
   colnames: [Tob31c, skjema.SpmTobakk.Tob31c]
@@ -437,14 +447,13 @@ tob31c:
   recode: ~
   missing:
     - NA
-    - 8
-    - 998
+    - 999
 
 tob33:
   colnames: [Tob33, skjema.SpmTobakk.Tob33]
   keywords: [tob33]
   type: integer
-  label: "RÃ¸yker du sigarer eller sigarillos daglig, av og til eller aldri"
+  label: "Røyker du sigarer eller sigarillos daglig, av og til eller aldri"
   value:
     1: "Daglig"
     2: "Av og til"
@@ -459,7 +468,7 @@ tob34:
   colnames: [Tob34, skjema.SpmTobakk.Tob34]
   keywords: [tob34]
   type: integer
-  label: "RÃ¸yker du pipe daglig, av og til eller aldri?"
+  label: "Røyker du pipe daglig, av og til eller aldri?"
   value:
     1: "Daglig"
     2: "Av og til"
@@ -474,7 +483,7 @@ tob38:
   colnames: [Tob38, skjema.SpmTobakk.Tob38]
   keywords: [tob38]
   type: integer
-  label: "Har du noen gang prÃ¸vd Ã¥ slutte Ã¥ rÃ¸yke daglig?"
+  label: "Har du noen gang prøvd å slutte å røyke daglig?"
   value:
     1: "Ja"
     2: "Nei"
@@ -488,17 +497,19 @@ tob39:
   colnames: [Tob39, skjema.SpmTobakk.Tob39]
   keywords: [tob39]
   type: integer
-  label: "Hvor mange ganger totalt har du prÃ¸vd Ã¥ slutte Ã¥ rÃ¸yke daglig?"
+  label: "Hvor mange ganger totalt har du prøvd å slutte å røyke daglig?"
   value: ~
   recode: ~
   missing:
     - NA
+    - 98
+    - 99
 
 tob40:
   colnames: [Tob40, skjema.SpmTobakk.Tob40]
   keywords: [tob40]
   type: integer
-  label: "Har du prÃ¸vd Ã¥ slutte Ã¥ rÃ¸yke daglig i lÃ¸pet av de siste 12 mÃ¥nedene?"
+  label: "Har du prøvd å slutte å røyke daglig i løpet av de siste 12 månedene?"
   value:
     1: "Ja"
     2: "Nei"
@@ -510,7 +521,7 @@ tob42a:
   colnames: [Tob42a, skjema.SpmTobakk.Tob42a]
   keywords: [tob42a]
   type: integer
-  label: "ForsÃ¸kte Ã¥ slutte siste gang ... brukte snus"
+  label: "Forsøkte å slutte siste gang ... brukte snus"
   value:
     1: "Ja"
     2: "Nei"
@@ -522,7 +533,7 @@ tob42b:
   colnames: [Tob42b, skjema.SpmTobakk.Tob42b]
   keywords: [tob42b]
   type: integer
-  label: "ForsÃ¸kte Ã¥ slutte siste gang ... brukte nikotinlegemiddel"
+  label: "Forsøkte å slutte siste gang ... brukte nikotinlegemiddel"
   value:
     1: "Ja"
     2: "Nei"
@@ -534,7 +545,7 @@ tob42d:
   colnames: [Tob42d, skjema.SpmTobakk.Tob42d]
   keywords: [tob42d]
   type: integer
-  label: "ForsÃ¸kte Ã¥ slutte siste gang ... brukte reseptbelagt rÃ¸ykeavvenningsprodukt"
+  label: "Forsøkte å slutte siste gang ... brukte reseptbelagt røykeavvenningsprodukt"
   value:
     1: "Ja"
     2: "Nei"
@@ -542,24 +553,26 @@ tob42d:
   missing:
     - NA
     - 8
+    - 9
 
 tob42o:
   colnames: [Tob42o, skjema.SpmTobakk.Tob42o]
   keywords: [tob42o]
   type: integer
-  label: "ForsÃ¸kte Ã¥ slutte siste gang ... brukte elektroniske sigaretter"
+  label: "Forsøkte å slutte siste gang ... brukte elektroniske sigaretter"
   value:
     1: "Ja"
     2: "Nei"
   recode:
   missing:
     - NA
+    - 9
 
 tob42m:
   colnames: [Tob42m, skjema.SpmTobakk.Tob42m]
   keywords: [tob42m]
   type: integer
-  label: "ForsÃ¸kte Ã¥ slutte siste gang ... sÃ¸kte hjelp i helsetjenesten/kommunen"
+  label: "Forsøkte å slutte siste gang ... søkte hjelp i helsetjenesten/kommunen"
   value:
     1: "Ja"
     2: "Nei"
@@ -571,7 +584,7 @@ tob42n:
   colnames: [Tob42n, skjema.SpmTobakk.Tob42n]
   keywords: [tob42n]
   type: integer
-  label: "ForsÃ¸kte Ã¥ slutte siste gang ... sÃ¸kte hjelp pÃ¥ nettsider eller mobiltjenester for rÃ¸ykeslutt"
+  label: "Forsøkte å slutte siste gang ... søkte hjelp på nettsider eller mobiltjenester for røykeslutt"
   value:
     1: "Ja"
     2: "Nei"
@@ -583,7 +596,7 @@ tob43:
   colnames: [Tob43, skjema.SpmTobakk.Tob43]
   keywords: [tob43]
   type: integer
-  label: "Vurderer du seriÃ¸st Ã¥ slutte Ã¥ rÃ¸yke de neste 6 mÃ¥nedene?"
+  label: "Vurderer du seriøst å slutte å røyke de neste 6 månedene?"
   value:
     1: "Ja"
     2: "Nei"
@@ -597,7 +610,7 @@ tob44:
   colnames: [Tob44, skjema.SpmTobakk.Tob44]
   keywords: [tob44]
   type: integer
-  label: "Planlegger du Ã¥ slutte Ã¥ rÃ¸yke i lÃ¸pet av de neste 30 dagene?"
+  label: "Planlegger du å slutte å røyke i løpet av de neste 30 dagene?"
   value:
     1: "Ja"
     2: "Nei"
@@ -610,7 +623,7 @@ tobvan1:
   colnames: [Tobvan1, skjema.SpmTobakk.Tobvan1]
   keywords: [tobvan1]
   type: integer
-  label: "Hvor lang tid etter at du vÃ¥kner, tenner du din fÃ¸rste sigarett"
+  label: "Hvor lang tid etter at du våkner, tenner du din første sigarett"
   value:
     1: "Innen 5 min"
     2: "Mellom 6 - 30 min"
@@ -626,12 +639,12 @@ tob61:
   colnames: [Tob61, skjema.SpmTobakk.Tob61]
   keywords: [tob61]
   type: integer
-  label: "Kan du prÃ¸ve Ã¥ forutsi dine rÃ¸ykevaner omkring 5 Ã¥r fra nÃ¥?"
+  label: "Kan du prøve å forutsi dine røykevaner omkring 5 år fra nå?"
   value:
-    1: "Kommer helt sikkert til Ã¥ rÃ¸yke daglig"
-    2: "Kommer antakelig til Ã¥ rÃ¸yke daglig"
-    3: "Kommer antakelig ikke til Ã¥ rÃ¸yke daglig"
-    4: "Kommer helt sikkert ikke til Ã¥ rÃ¸yke daglig"
+    1: "Kommer helt sikkert til å røyke daglig"
+    2: "Kommer antakelig til å røyke daglig"
+    3: "Kommer antakelig ikke til å røyke daglig"
+    4: "Kommer helt sikkert ikke til å røyke daglig"
   recode:
   missing:
     - 8
@@ -641,12 +654,12 @@ tob61b:
   colnames: [Tob61b, skjema.SpmTobakk.Tob61b]
   keywords: [tob61b]
   type: integer
-  label: "Kan du prÃ¸ve Ã¥ forutsi dine snusvaner omkring 5 Ã¥r fra nÃ¥?"
+  label: "Kan du prøve å forutsi dine snusvaner omkring 5 år fra nå?"
   value:
-    1: "Kommer helt sikkert til Ã¥ snuse daglig"
-    2: "Kommer antakelig til Ã¥ snuse daglig"
-    3: "Kommer antakelig ikke til Ã¥ snuse daglig"
-    4: "Kommer helt sikkert ikke til Ã¥ snuse daglig"
+    1: "Kommer helt sikkert til å snuse daglig"
+    2: "Kommer antakelig til å snuse daglig"
+    3: "Kommer antakelig ikke til å snuse daglig"
+    4: "Kommer helt sikkert ikke til å snuse daglig"
   recode:
   missing:
     - 8
@@ -656,7 +669,7 @@ tob62a:
   colnames: [Tob62a, skjema.SpmTobakk.Tob62a]
   keywords: [tob62a]
   type: integer
-  label: "Hvor skadelig tror du snus er pÃ¥ en skala fra 1 til 7"
+  label: "Hvor skadelig tror du snus er på en skala fra 1 til 7"
   value:
     1: "1 Lite skadelig"
     2: "2"
@@ -664,7 +677,7 @@ tob62a:
     4: "4"
     5: "5"
     6: "6"
-    7: "7 SvÃ¦rt skadelig"
+    7: "7 Svært skadelig"
   recode:
   missing:
     - 8
@@ -674,7 +687,7 @@ tob62e:
   colnames: [Tob62e, skjema.SpmTobakk.Tob62e]
   keywords: [tob62e]
   type: integer
-  label: "Hvor skadelig tror du ferdigsigaretter med lavere nikotin- og tjÃ¦reinnhold er, pÃ¥ en skala fra 1 til 7?"
+  label: "Hvor skadelig tror du ferdigsigaretter med lavere nikotin- og tjæreinnhold er, på en skala fra 1 til 7?"
   value:
     1: "1 Lite skadelig"
     2: "2"
@@ -682,7 +695,7 @@ tob62e:
     4: "4"
     5: "5"
     6: "6"
-    7: "7 SvÃ¦rt skadelig"
+    7: "7 Svært skadelig"
   recode:
   missing:
     - 8
@@ -692,7 +705,7 @@ tob62f:
   colnames: [Tob62f, skjema.SpmTobakk.Tob62f]
   keywords: [tob62f]
   type: integer
-  label: "Hvor skadelig tror du vanlige ferdigsigaretter er, pÃ¥ en skala fra 1 til 7?"
+  label: "Hvor skadelig tror du vanlige ferdigsigaretter er, på en skala fra 1 til 7?"
   value:
     1: "1 Lite skadelig"
     2: "2"
@@ -700,7 +713,7 @@ tob62f:
     4: "4"
     5: "5"
     6: "6"
-    7: "7 SvÃ¦rt skadelig"
+    7: "7 Svært skadelig"
   recode:
   missing:
     - 8
@@ -710,7 +723,7 @@ tob62g:
   colnames: [Tob62g, skjema.SpmTobakk.Tob62g]
   keywords: [tob62g]
   type: integer
-  label: "Hvor skadelig tror du produkter som er laget for Ã¥ erstatte tobakksprodukter med nikotin, som for eksempel nikotintyggegummi, nikotinplaster og nikotinposer er, pÃ¥ en skala fra 1 til 7?"
+  label: "Hvor skadelig tror du produkter som er laget for å erstatte tobakksprodukter med nikotin, som for eksempel nikotintyggegummi, nikotinplaster og nikotinposer er, på en skala fra 1 til 7?"
   value:
     1: "1 Lite skadelig"
     2: "2"
@@ -718,7 +731,7 @@ tob62g:
     4: "4"
     5: "5"
     6: "6"
-    7: "7 SvÃ¦rt skadelig"
+    7: "7 Svært skadelig"
   recode:
   missing:
     - 8
@@ -728,7 +741,7 @@ tob62h:
   colnames: [Tob62h, skjema.SpmTobakk.Tob62h]
   keywords: [tob62h]
   type: integer
-  label: "Hvor skadelig tror du e-sigaretter/fordampere (vape) er, pÃ¥ en skala fra 1 til 7?"
+  label: "Hvor skadelig tror du e-sigaretter/fordampere (vape) er, på en skala fra 1 til 7?"
   value:
     1: "1 Lite skadelig"
     2: "2"
@@ -736,7 +749,7 @@ tob62h:
     4: "4"
     5: "5"
     6: "6"
-    7: "7 SvÃ¦rt skadelig"
+    7: "7 Svært skadelig"
   recode:
   missing:
     - 8
@@ -775,11 +788,13 @@ tobald:
   colnames: [tobald, skjema.SpmTobakk.tobald]
   keywords: [tobald]
   type: integer
-  label: "Hvor gammel var du da du begynte Ã¥ bruke e-sigaretter regelmessig? Alder:"
+  label: "Hvor gammel var du da du begynte å bruke e-sigaretter regelmessig? Alder:"
   value: ~
   recode: ~
   missing:
     - NA
+    - 998
+    - 999
 
 tobe3:
   colnames: [TobE3, skjema.SpmTobakk.TobE3]
@@ -787,9 +802,9 @@ tobe3:
   type: integer
   label: "Hvilken type e-sigaretter/fordamper bruker du/brukte du i hovedsak?"
   value:
-    1: "Engangs e-sigarett/fordamper som ikke er oppladbar (Â«disposableÂ», Â«puff barÂ» eller Â«elf barÂ»)"
-    2: "Oppladbar e-sigarett/fordamper med magasin/pod som du kan fylle pÃ¥ eller bytte ut selv"
-    3: "Oppladbar og modifiserbar e-sigarett/fordamper, hvor brukeren selv fyller pÃ¥ nikotinvÃ¦ske/e-juice (Â«modsÂ» eller Â«tanksÂ»)"
+    1: "Engangs e-sigarett/fordamper som ikke er oppladbar (B+disposableB;, B+puff barB; eller B+elf barB;)"
+    2: "Oppladbar e-sigarett/fordamper med magasin/pod som du kan fylle på eller bytte ut selv"
+    3: "Oppladbar og modifiserbar e-sigarett/fordamper, hvor brukeren selv fyller på nikotinvæske/e-juice (B+modsB; eller B+tanksB;)"
   recode:
   missing:
     - NA
@@ -800,14 +815,14 @@ tobe4:
   colnames: [TobE4, skjema.SpmTobakk.TobE4]
   keywords: [tobe4]
   type: integer
-  label: "Hva er/var nikotininnholdet i vÃ¦sken i de e-sigarettene du vanligvis bruker/brukte?"
+  label: "Hva er/var nikotininnholdet i væsken i de e-sigarettene du vanligvis bruker/brukte?"
   value:
     1: "Nikotinfrie"
     2: "6 mg eller mindre"
     3: "7-11 mg"
     4: "12-20 mg"
     5: "21 mg eller mer"
-    6: "Med nikotin, men usikker pÃ¥ mengden"
+    6: "Med nikotin, men usikker på mengden"
     7: "Vet ikke"
   recode:
   missing:
@@ -876,6 +891,7 @@ tobprsn1:
   recode: ~
   missing:
     - NA
+    - 99
 
 tobprsn2:
   colnames: [TobPrSn2, skjema.SpmTobakk.TobPrSn2]
@@ -886,17 +902,19 @@ tobprsn2:
   recode: ~
   missing:
     - NA
+    - 98
+    - 99
 
 tob66:
   colnames: [Tob66, skjema.SpmTobakk.Tob66]
   keywords: [tob66]
   type: integer
-  label: "Hva slags snus bruker du hovedsakelig, porsjonssnus eller lÃ¸ssnus?"
+  label: "Hva slags snus bruker du hovedsakelig, porsjonssnus eller løssnus?"
   value:
-    1: "LÃ¸ssnus"
+    1: "Løssnus"
     2: "Porsjonssnus"
     3: "Mini-porsjonssnus"
-    4: "BÃ¥de lÃ¸ssnus og porsjonssnus"
+    4: "Både løssnus og porsjonssnus"
     5: "Nikotinposer eller hvit snus uten tobakk"
   recode:
   missing:
@@ -908,21 +926,23 @@ tob68:
   colnames: [Tob68, skjema.SpmTobakk.Tob68]
   keywords: [tob68]
   type: integer
-  label: "Hvor gammel var du da du begynte Ã¥ bruke snus regelmessig? Alder:"
+  label: "Hvor gammel var du da du begynte å bruke snus regelmessig? Alder:"
   value: ~
   recode: ~
   missing:
     - NA
+    - 98
+    - 99
 
 tob69:
   colnames: [Tob69, skjema.SpmTobakk.Tob69]
   keywords: [tob69]
   type: integer
-  label: "Hva begynte du med fÃ¸rst, snus eller sigaretter"
+  label: "Hva begynte du med først, snus eller sigaretter"
   value:
-    1: "Begynte med sigaretter fÃ¸rst"
-    2: "Begynte med snus fÃ¸rst"
-    3: "Omtrent samtidig (innenfor tre mÃ¥neder)"
+    1: "Begynte med sigaretter først"
+    2: "Begynte med snus først"
+    3: "Omtrent samtidig (innenfor tre måneder)"
   recode:
   missing:
     - NA
@@ -933,7 +953,7 @@ tob69b:
   colnames: [Tob69b, skjema.SpmTobakk.Tob69b]
   keywords: [tob69b]
   type: integer
-  label: "Bruker du noen former for nikotinerstatningsprodukter nÃ¥"
+  label: "Bruker du noen former for nikotinerstatningsprodukter nå"
   value:
     1: "Ja"
     2: "Nei"
@@ -947,7 +967,7 @@ tob71:
   colnames: [Tob71, skjema.SpmTobakk.Tob71]
   keywords: [tob71]
   type: integer
-  label: "Vurderer du seriÃ¸st Ã¥ slutte Ã¥ bruke snus de neste 6 mÃ¥nedene"
+  label: "Vurderer du seriøst å slutte å bruke snus de neste 6 månedene"
   value:
     1: "Ja"
     2: "Nei"
@@ -961,10 +981,10 @@ tobsluttsn1:
   colnames: [tobsluttsn1, skjema.SpmTobakk.tobsluttsn1]
   keywords: [tobsluttsn1]
   type: integer
-  label: "Har du noen gang prÃ¸vd Ã¥ slutte med snus?"
+  label: "Har du noen gang prøvd å slutte med snus?"
   value:
-    1: "Ja, siste 12 mÃ¥neder"
-    2: "Ja, for mer enn 12 mÃ¥neder siden"
+    1: "Ja, siste 12 måneder"
+    2: "Ja, for mer enn 12 måneder siden"
     3: "Nei"
   recode:
   missing:
@@ -976,11 +996,13 @@ tobsluttsn2:
   colnames: [tobsluttsn2, skjema.SpmTobakk.tobsluttsn2]
   keywords: [tobsluttsn2]
   type: integer
-  label: "Hvilket Ã¥r sluttet du med snus?"
+  label: "Hvilket år sluttet du med snus?"
   value: ~
   recode: ~
   missing:
     - NA
+    - 9998
+    - 9999
 
 drukket1:
   colnames: [Drukket1, skjema.SpmAlkohol.Drukket1]
@@ -993,6 +1015,7 @@ drukket1:
   recode:
   missing:
     - 8
+    - 9
 
 drukk1b:
   colnames: [Drukk1b, skjema.SpmAlkohol.Drukk1b]
@@ -1016,8 +1039,8 @@ drukket2:
   value:
     1: "Daglig"
     2: "Ukentlig"
-    3: "MÃ¥nedlig"
-    4: "Sjeldnere enn mÃ¥nedlig"
+    3: "Månedlig"
+    4: "Sjeldnere enn månedlig"
   recode:
   missing:
     - NA
@@ -1045,19 +1068,20 @@ drukk2b:
   type: integer
   label: "Antall dager drukket alkohol pr mnd siste 12 mnd"
   value:
-    1: "Flere enn tre dager i mÃ¥neden"
-    2: "2-3 dager i mÃ¥neden"
-    3: "Omtrent 1 dag i mÃ¥neden"
+    1: "Flere enn tre dager i måneden"
+    2: "2-3 dager i måneden"
+    3: "Omtrent 1 dag i måneden"
   recode:
   missing:
     - NA
+    - 8
     - 9
 
 drukk2c:
   colnames: [Drukk2c, skjema.SpmAlkohol.Drukk2c]
   keywords: [drukk2c]
   type: integer
-  label: "Drukket alkohol fÃ¥ dager/en dag siste 12 mnd"
+  label: "Drukket alkohol få dager/en dag siste 12 mnd"
   value:
     1: "Flere enn tre dager"
     2: "2-3 dager"
@@ -1086,7 +1110,7 @@ type1:
   colnames: [Type1, skjema.SpmAlkohol.Type1]
   keywords: [type1]
   type: integer
-  label: "Har drukket Ã¸l siste 4 uker"
+  label: "Har drukket øl siste 4 uker"
   value:
     1: "Ja"
     2: "Nei"
@@ -1106,6 +1130,7 @@ type2:
   recode:
   missing:
     - NA
+    - 9
 
 type3:
   colnames: [Type3, skjema.SpmAlkohol.Type3]
@@ -1118,6 +1143,7 @@ type3:
   recode:
   missing:
     - NA
+    - 9
 
 type4:
   colnames: [Type4, skjema.SpmAlkohol.Type4]
@@ -1136,7 +1162,7 @@ type1a:
   colnames: [Type1a, skjema.SpmAlkohol.Type1a]
   keywords: [type1a]
   type: integer
-  label: "Hvor ofte drukket Ã¸l siste 4 uker?"
+  label: "Hvor ofte drukket øl siste 4 uker?"
   value:
     1: "Daglig"
     2: "Ukentlig"
@@ -1151,7 +1177,7 @@ typ1a_uk:
   colnames: [Typ1a_uk, skjema.SpmAlkohol.Typ1a_uk]
   keywords: [typ1a_uk]
   type: integer
-  label: "Ukentlig: Ant dager i uken drukket Ã¸l siste 4 uker?"
+  label: "Ukentlig: Ant dager i uken drukket øl siste 4 uker?"
   value:
     1: "4-5 dager i uken"
     2: "2-3 dager i uken"
@@ -1159,13 +1185,14 @@ typ1a_uk:
   recode:
   missing:
     - NA
+    - 8
     - 9
 
 typ1a_mn:
   colnames: [Typ1a_mn, skjema.SpmAlkohol.Typ1a_mn]
   keywords: [typ1a_mn]
   type: integer
-  label: "MÃ¥nedlig: Ant dager i uken drukket Ã¸l siste 4 uker?"
+  label: "Månedlig: Ant dager i uken drukket øl siste 4 uker?"
   value:
     1: "Flere enn 3 dager"
     2: "2-3 dager"
@@ -1180,7 +1207,7 @@ type1b_a:
   colnames: [Type1b_a]
   keywords: [type1b_a]
   type: integer
-  label: "Ukentlig: Drukket 0,33 liter Ã¸l siste 4 uker"
+  label: "Ukentlig: Drukket 0,33 liter øl siste 4 uker"
   value:
     1: "Ja"
     2: "Nei"
@@ -1193,7 +1220,7 @@ type1b_b:
   colnames: [Type1b_b]
   keywords: [type1b_b]
   type: integer
-  label: "Ukentlig: Drukket 0,5 liter Ã¸l siste 4 uker"
+  label: "Ukentlig: Drukket 0,5 liter øl siste 4 uker"
   value:
     1: "Ja"
     2: "Nei"
@@ -1206,27 +1233,30 @@ type1b_1:
   colnames: [Type1b_1, "skjema.SpmAlkohol.Type1b[1]"]
   keywords: [type1b_1]
   type: numeric
-  label: "Ukentlig: Gjennomsnitt ant 0,33 l Ã¸l drukket siste 4 uker?"
+  label: "Ukentlig: Gjennomsnitt ant 0,33 l øl drukket siste 4 uker?"
   value: ~
   recode: ~
   missing:
     - NA
+    - 99999
 
 type1b_2:
   colnames: [Type1b_2, "skjema.SpmAlkohol.Type1b[2]"]
   keywords: [type1b_2]
   type: numeric
-  label: "Ukentlig: Gjennomsnitt ant 0,5 l Ã¸l drukket siste 4 uker?"
+  label: "Ukentlig: Gjennomsnitt ant 0,5 l øl drukket siste 4 uker?"
   value: ~
   recode: ~
   missing:
     - NA
-
+    - 99998
+    - 99999
+    
 type1c_a:
   colnames: [Type1c_a]
   keywords: [type1c_a]
   type: integer
-  label: "MÃ¥nedlig: Drukket 0,33 liter Ã¸l siste 4 uker"
+  label: "Månedlig: Drukket 0,33 liter øl siste 4 uker"
   value:
     1: "Ja"
     2: "Nei"
@@ -1240,7 +1270,7 @@ type1c_b:
   colnames: [Type1c_b]
   keywords: [type1c_b]
   type: integer
-  label: "MÃ¥nedlig: Drukket 0,5 liter Ã¸l siste 4 uker"
+  label: "Månedlig: Drukket 0,5 liter øl siste 4 uker"
   value:
     1: "Ja"
     2: "Nei"
@@ -1254,22 +1284,24 @@ type1c_1:
   colnames: [Type1c_1, "skjema.SpmAlkohol.Type1c[1]"]
   keywords: [type1c_1]
   type: numeric
-  label: "MÃ¥nedlig: Antall 0,33 l Ã¸l drukket siste 4 uker?"
+  label: "Månedlig: Antall 0,33 l øl drukket siste 4 uker?"
   value: ~
   recode: ~
   missing:
     - NA
-    - 9
+    - 99998
+    - 99999
 
 type1c_2:
   colnames: [Type1c_2, "skjema.SpmAlkohol.Type1c[2]"]
   keywords: [type1c_2]
   type: numeric
-  label: "MÃ¥nedlig: Antall 0,5 l Ã¸l drukket siste 4 uker?"
+  label: "Månedlig: Antall 0,5 l øl drukket siste 4 uker?"
   value: ~
   recode: ~
   missing:
     - NA
+    - 99999
 
 type2a:
   colnames: [Type2a, skjema.SpmAlkohol.Type2a]
@@ -1305,7 +1337,7 @@ typ2a_mn:
   colnames: [Typ2a_mn, skjema.SpmAlkohol.Typ2a_mn]
   keywords: [typ2a_mn]
   type: integer
-  label: "MÃ¥nedlig: Ant dager i uken drukket vin siste 4 uker?"
+  label: "Månedlig: Ant dager i uken drukket vin siste 4 uker?"
   value:
     1: "Flere enn 3 dager"
     2: "2-3 dager"
@@ -1353,6 +1385,8 @@ type2b_1:
   recode: ~
   missing:
     - NA
+    - 99998
+    - 99999
 
 type2b_2:
   colnames: [Type2b_2, "skjema.SpmAlkohol.Type2b[2]"]
@@ -1363,12 +1397,14 @@ type2b_2:
   recode: ~
   missing:
     - NA
+    - 99998
+    - 99999
 
 type2c_a:
   colnames: [Type2c_a]
   keywords: [type2c_a]
   type: integer
-  label: "MÃ¥nedlig: Drukket glass vin siste 4 uker"
+  label: "Månedlig: Drukket glass vin siste 4 uker"
   value:
     1: "Ja"
     2: "Nei"
@@ -1381,7 +1417,7 @@ type2c_b:
   colnames: [Type2c_b]
   keywords: [type2c_b]
   type: integer
-  label: "MÃ¥nedlig: Drukket flasker vin siste 4 uker"
+  label: "Månedlig: Drukket flasker vin siste 4 uker"
   value:
     1: "Ja"
     2: "Nei"
@@ -1394,18 +1430,19 @@ type2c_1:
   colnames: [Type2c_1, "skjema.SpmAlkohol.Type2c[1]"]
   keywords: [type2c_1]
   type: numeric
-  label: "MÃ¥nedlig: Antall glass vin drukket siste 4 uker?"
+  label: "Månedlig: Antall glass vin drukket siste 4 uker?"
   value: ~
   recode: ~
   missing:
     - NA
-    - 8
+    - 99998
+    - 99999
 
 type2c_2:
   colnames: [Type2c_2, "skjema.SpmAlkohol.Type2c[2]"]
   keywords: [type2c_2]
   type: numeric
-  label: "MÃ¥nedlig: Antall flasker vin drukket siste 4 uker?"
+  label: "Månedlig: Antall flasker vin drukket siste 4 uker?"
   value: ~
   recode: ~
   missing:
@@ -1437,12 +1474,13 @@ typ3a_uk:
   recode:
   missing:
     - NA
+    - 8
 
 typ3a_mn:
   colnames: [Typ3a_mn, skjema.SpmAlkohol.Typ3a_mn]
   keywords: [typ3a_mn]
   type: integer
-  label: "MÃ¥nedlig: Ant dager drukket brennevin siste 4 uker?"
+  label: "Månedlig: Ant dager drukket brennevin siste 4 uker?"
   value:
     1: "Flere enn 3 dager"
     2: "2-3 dager"
@@ -1488,6 +1526,8 @@ type3b_1:
   recode: ~
   missing:
     - NA
+    - 99998
+    - 99999
 
 type3b_2:
   colnames: [Type3b_2, "skjema.SpmAlkohol.Type3b[2]"]
@@ -1498,12 +1538,13 @@ type3b_2:
   recode: ~
   missing:
     - NA
+    - 99999
 
 type3c_a:
   colnames: [Type3c_a]
   keywords: [type3c_a]
   type: integer
-  label: "MÃ¥nedlig: Drukket drammer siste 4 uker"
+  label: "Månedlig: Drukket drammer siste 4 uker"
   value:
     1: "Ja"
     2: "Nei"
@@ -1516,7 +1557,7 @@ type3c_b:
   colnames: [Type3c_b]
   keywords: [type3c_b]
   type: integer
-  label: "MÃ¥nedlig: Drukket flasker sprit siste 4 uker"
+  label: "Månedlig: Drukket flasker sprit siste 4 uker"
   value:
     1: "Ja"
     2: "Nei"
@@ -1529,21 +1570,24 @@ type3c_1:
   colnames: [Type3c_1, "skjema.SpmAlkohol.Type3c[1]"]
   keywords: [type3c_1]
   type: numeric
-  label: "MÃ¥nedlig: Antall drammer drukket siste 4 uker?"
+  label: "Månedlig: Antall drammer drukket siste 4 uker?"
   value: ~
   recode: ~
   missing:
     - NA
+    - 99998
+    - 99999
 
 type3c_2:
   colnames: [Type3c_2, "skjema.SpmAlkohol.Type3c[2]"]
   keywords: [type3c_2]
   type: numeric
-  label: "MÃ¥nedlig: Antall flasker sprit drukket siste 4 uker?"
+  label: "Månedlig: Antall flasker sprit drukket siste 4 uker?"
   value: ~
   recode: ~
   missing:
     - NA
+    - 99999
 
 type4a:
   colnames: [Type4a, skjema.SpmAlkohol.Type4a]
@@ -1557,6 +1601,7 @@ type4a:
   recode:
   missing:
     - NA
+    - 8
     - 9
 
 typ4a_uk:
@@ -1577,7 +1622,7 @@ typ4a_mn:
   colnames: [Typ4a_mn, skjema.SpmAlkohol.Typ4a_mn]
   keywords: [typ4a_mn]
   type: integer
-  label: "MÃ¥nedlig: Ant dager i uken drukket rusbrus/alkoholholdig cider siste 4 uker?"
+  label: "Månedlig: Ant dager i uken drukket rusbrus/alkoholholdig cider siste 4 uker?"
   value:
     1: "Flere enn 3 dager"
     2: "2-3 dager"
@@ -1592,7 +1637,7 @@ type4b_a:
   colnames: [Type4b_a]
   keywords: [type4b_a]
   type: integer
-  label: "Ukentlig: Drukket smÃ¥flasker/smÃ¥bokser siste 4 uker"
+  label: "Ukentlig: Drukket småflasker/småbokser siste 4 uker"
   value:
     1: "Ja"
     2: "Nei"
@@ -1618,7 +1663,7 @@ type4b_1:
   colnames: [Type4b_1, "skjema.SpmAlkohol.Type4b[1]"]
   keywords: [type4b_1]
   type: numeric
-  label: "Ukentlig: Gjennomsnitt antall smÃ¥flasker rusbrus/cider drukket siste 4 uker?"
+  label: "Ukentlig: Gjennomsnitt antall småflasker rusbrus/cider drukket siste 4 uker?"
   value: ~
   recode: ~
   missing:
@@ -1633,12 +1678,13 @@ type4b_2:
   recode: ~
   missing:
     - NA
+    - 99999
 
 type4c_a:
   colnames: [Type4c_a]
   keywords: [type4c_a]
   type: integer
-  label: "MÃ¥nedlig: Drukket smÃ¥flasker/smÃ¥bokser siste 4 uker"
+  label: "Månedlig: Drukket småflasker/småbokser siste 4 uker"
   value:
     1: "Ja"
     2: "Nei"
@@ -1652,7 +1698,7 @@ type4c_b:
   colnames: [Type4c_b]
   keywords: [type4c_b]
   type: integer
-  label: "MÃ¥nedlig: Drukket 0,5 liter siste 4 uker"
+  label: "Månedlig: Drukket 0,5 liter siste 4 uker"
   value:
     1: "Ja"
     2: "Nei"
@@ -1666,27 +1712,31 @@ type4c_1:
   colnames: [Type4c_1, "skjema.SpmAlkohol.Type4c[1]"]
   keywords: [type4c_1]
   type: numeric
-  label: "MÃ¥nedlig: Antall rusbrus/cider drukket siste 4 uker?"
+  label: "Månedlig: Antall rusbrus/cider drukket siste 4 uker?"
   value: ~
   recode: ~
   missing:
     - NA
+    - 99998
+    - 99999
 
 type4c_2:
   colnames: [Type4c_2, "skjema.SpmAlkohol.Type4c[2]"]
   keywords: [type4c_2]
   type: numeric
-  label: "MÃ¥nedlig: Antall halvlitere rusbrus/cider drukket siste 4 uker?"
+  label: "Månedlig: Antall halvlitere rusbrus/cider drukket siste 4 uker?"
   value: ~
   recode: ~
   missing:
     - NA
+    - 99998
+    - 99999
 
 beruset4:
   colnames: [Beruset4, skjema.SpmAlkohol.Beruset4]
   keywords: [beruset4]
   type: integer
-  label: "Ant alkoholenheter for Ã¥ fÃ¸le seg tydelig beruset"
+  label: "Ant alkoholenheter for å føle seg tydelig beruset"
   value: ~
   recode: ~
   missing:
@@ -1715,7 +1765,7 @@ al3:
   colnames: [AL3, skjema.SpmAlkohol.AL3]
   keywords: [al3]
   type: integer
-  label: "Gjsn. ant alkoholenheter IO drikker pÃ¥ ukedagene"
+  label: "Gjsn. ant alkoholenheter IO drikker på ukedagene"
   value:
     1: "16 eller flere enheter per dag"
     2: "10-15 enheter per dag"
@@ -1750,7 +1800,7 @@ al5:
   colnames: [AL5, skjema.SpmAlkohol.AL5]
   keywords: [al5]
   type: integer
-  label: "Gjsn. ant alkoholenheter IO drikker pÃ¥ helgedager"
+  label: "Gjsn. ant alkoholenheter IO drikker på helgedager"
   value:
     1: "16 eller flere enheter per dag"
     2: "10-15 enheter per dag"
@@ -1786,12 +1836,12 @@ audit3:
   colnames: [Audit3, skjema.SpmAudit.Audit3]
   keywords: [audit3]
   type: integer
-  label: "Drukket seks alkoholenheter siste Ã¥ret?"
+  label: "Drukket seks alkoholenheter siste året?"
   value:
     1: "Daglig"
     2: "Ukentlig"
-    3: "MÃ¥nedlig"
-    4: "Sjeldnere enn mÃ¥nedlig"
+    3: "Månedlig"
+    4: "Sjeldnere enn månedlig"
     5: "Aldri"
   recode:
   missing:
@@ -1819,9 +1869,9 @@ audit3_2:
   type: integer
   label: "Hvor ofte drukket alkohol siste 12 mnd"
   value:
-    1: "Flere enn 3 dager i mÃ¥neden"
-    2: "2-3 dager i mÃ¥neden"
-    3: "Omtrent 1 dag i mÃ¥neden"
+    1: "Flere enn 3 dager i måneden"
+    2: "2-3 dager i måneden"
+    3: "Omtrent 1 dag i måneden"
   recode:
   missing:
     - NA
@@ -1847,11 +1897,11 @@ audit4:
   colnames: [Audit4, skjema.SpmAudit.Audit4]
   keywords: [audit4]
   type: integer
-  label: "Ikke kunne stoppe drikke siste Ã¥ret?"
+  label: "Ikke kunne stoppe drikke siste året?"
   value:
     1: "... aldri"
-    2: "... sjeldnere enn mÃ¥nedlig"
-    3: "... mÃ¥nedlig"
+    2: "... sjeldnere enn månedlig"
+    3: "... månedlig"
     4: "... ukentlig"
     5: "... daglig eller nesten daglig"
   recode:
@@ -1864,11 +1914,11 @@ audit5:
   colnames: [Audit5, skjema.SpmAudit.Audit5]
   keywords: [audit5]
   type: integer
-  label: "Unnlatt Ã¥ gjÃ¸re ting etter drukket alkohol siste Ã¥ret?"
+  label: "Unnlatt å gjøre ting etter drukket alkohol siste året?"
   value:
     1: "... aldri"
-    2: "... sjeldnere enn mÃ¥nedlig"
-    3: "... mÃ¥nedlig"
+    2: "... sjeldnere enn månedlig"
+    3: "... månedlig"
     4: "... ukentlig"
     5: "... daglig eller nesten daglig"
   recode:
@@ -1881,11 +1931,11 @@ audit6:
   colnames: [Audit6, skjema.SpmAudit.Audit6]
   keywords: [audit6]
   type: integer
-  label: "Startet dagen med alkohol siste Ã¥ret?"
+  label: "Startet dagen med alkohol siste året?"
   value:
     1: "... aldri"
-    2: "... sjeldnere enn mÃ¥nedlig"
-    3: "... mÃ¥nedlig"
+    2: "... sjeldnere enn månedlig"
+    3: "... månedlig"
     4: "... ukentlig"
     5: "... daglig eller nesten daglig"
   recode:
@@ -1898,11 +1948,11 @@ audit7:
   colnames: [Audit7, skjema.SpmAudit.Audit7]
   keywords: [audit7]
   type: integer
-  label: "FÃ¸lt skyldfÃ¸lelse etter drikking siste Ã¥ret"
+  label: "Følt skyldfølelse etter drikking siste året"
   value:
     1: "... aldri"
-    2: "... sjeldnere enn mÃ¥nedlig"
-    3: "... mÃ¥nedlig"
+    2: "... sjeldnere enn månedlig"
+    3: "... månedlig"
     4: "... ukentlig"
     5: "... daglig eller nesten daglig"
   recode:
@@ -1915,11 +1965,11 @@ audit8:
   colnames: [Audit8, skjema.SpmAudit.Audit8]
   keywords: [audit8]
   type: integer
-  label: "Ikke husket hva som skjedd pga alkoholdrikking siste Ã¥ret"
+  label: "Ikke husket hva som skjedd pga alkoholdrikking siste året"
   value:
     1: "... aldri"
-    2: "... sjeldnere enn mÃ¥nedlig"
-    3: "... mÃ¥nedlig"
+    2: "... sjeldnere enn månedlig"
+    3: "... månedlig"
     4: "... ukentlig"
     5: "... daglig eller nesten daglig"
   recode:
@@ -1932,7 +1982,7 @@ audit9_a:
   colnames: [Audit9_a]
   keywords: [audit9_a]
   type: integer
-  label: "Skadet som fÃ¸lge av alkohol: Nei"
+  label: "Skadet som følge av alkohol: Nei"
   value:
     1: "Ja"
     2: "Nei"
@@ -1945,7 +1995,7 @@ audit9_b:
   colnames: [Audit9_b]
   keywords: [audit9_b]
   type: integer
-  label: "Skadet som fÃ¸lge av alkohol: Ja, blitt skadet selv"
+  label: "Skadet som følge av alkohol: Ja, blitt skadet selv"
   value:
     1: "Ja"
     2: "Nei"
@@ -1958,7 +2008,7 @@ audit9_c:
   colnames: [Audit9_c]
   keywords: [audit9_c]
   type: integer
-  label: "Skadet som fÃ¸lge av alkohol: Ja, andre blitt skadet"
+  label: "Skadet som følge av alkohol: Ja, andre blitt skadet"
   value:
     1: "Ja"
     2: "Nei"
@@ -1971,7 +2021,7 @@ audit9a:
   colnames: [Audit9a, skjema.SpmAudit.Audit9a]
   keywords: [audit9a]
   type: integer
-  label: "Har blitt skadet selv av egen alkoholdrikking siste Ã¥ret?"
+  label: "Har blitt skadet selv av egen alkoholdrikking siste året?"
   value:
     1: "Ja"
     2: "Nei"
@@ -1984,7 +2034,7 @@ audit9b:
   colnames: [Audit9b, skjema.SpmAudit.Audit9b]
   keywords: [audit9b]
   type: integer
-  label: "Andre blitt skadet av IOs alkoholdrikking siste Ã¥ret?"
+  label: "Andre blitt skadet av IOs alkoholdrikking siste året?"
   value:
     1: "Ja"
     2: "Nei"
@@ -2011,7 +2061,7 @@ audit10a:
   colnames: [Audit10a, skjema.SpmAudit.Audit10a]
   keywords: [audit10a]
   type: integer
-  label: "Andre uttrykt bekymring for IOs alkobruk siste Ã¥ret?"
+  label: "Andre uttrykt bekymring for IOs alkobruk siste året?"
   value:
     1: "Ja"
     2: "Nei"
@@ -2023,7 +2073,7 @@ arb_alk1:
   colnames: [Arb_alk1]
   keywords: [arb_alk1]
   type: integer
-  label: "Hatt sykefravÃ¦rdager, med eller uten legeattest siste 12 mnd"
+  label: "Hatt sykefraværdager, med eller uten legeattest siste 12 mnd"
   value:
     1: "Ja"
     2: "Nei"
@@ -2037,7 +2087,7 @@ arb_alk1b:
   colnames: [Arb_alk1b]
   keywords: [arb_alk1b, alk1b]
   type: integer
-  label: "Ant dager sykefravÃ¦r siste 12 mnd?"
+  label: "Ant dager sykefravær siste 12 mnd?"
   value: ~
   recode: ~
   missing:
@@ -2047,7 +2097,7 @@ arb_alk2:
   colnames: [Arb_alk2, skjema.SpmArb_alko.Arb_alk2]
   keywords: [arb_alk2, alk2]
   type: integer
-  label: "Ant dager siste 12 mnd vÃ¦rt mindre effektiv pÃ¥ jobb pga alkoholdrikking dagen fÃ¸r?"
+  label: "Ant dager siste 12 mnd vært mindre effektiv på jobb pga alkoholdrikking dagen før?"
   value: ~
   recode: ~
   missing:
@@ -2058,7 +2108,7 @@ arb_alk3:
   colnames: [Arb_alk3, skjema.SpmArb_alko.Arb_alk3]
   keywords: [arb_alk3, alk3]
   type: integer
-  label: "Ant dager siste 12 mnd vÃ¦rt borte deler av dagen pga alkoholdrikking dagen fÃ¸r?"
+  label: "Ant dager siste 12 mnd vært borte deler av dagen pga alkoholdrikking dagen før?"
   value:
     0: 0
     1: 1
@@ -2077,7 +2127,7 @@ arb_alk4:
   colnames: [Arb_alk4]
   keywords: [arb_alk4, alk4]
   type: integer
-  label: "Ant hele dager siste 12 mnd vÃ¦rt borte pga alkoholdrikking dagen fÃ¸r?"
+  label: "Ant hele dager siste 12 mnd vært borte pga alkoholdrikking dagen før?"
   value:
     0: 0
     1: 1
@@ -2095,7 +2145,7 @@ arb_alk5:
   colnames: [Arb_alk5, skjema.SpmArb_alko.Arb_alk5]
   keywords: [arb_alk5, alk5]
   type: integer
-  label: "Ant dager totalt siste 12 mnd vÃ¦rt borte pga alkoholdrikking?"
+  label: "Ant dager totalt siste 12 mnd vært borte pga alkoholdrikking?"
   value: ~
   recode: ~
   missing:
@@ -2136,8 +2186,8 @@ leg3:
   value:
     1: "1 til 2 uker"
     2: "3 til 4 uker"
-    3: "1 til 3 mÃ¥neder"
-    4: "Mer enn tre mÃ¥neder"
+    3: "1 til 3 måneder"
+    4: "Mer enn tre måneder"
   recode:
   missing:
     - NA
@@ -2177,8 +2227,8 @@ leg7:
   value:
     1: "1 til 2 uker"
     2: "3 til 4 uker"
-    3: "1 til 3 mÃ¥neder"
-    4: "Mer enn tre mÃ¥neder"
+    3: "1 til 3 måneder"
+    4: "Mer enn tre måneder"
   recode:
   missing:
     - NA
@@ -2219,8 +2269,8 @@ leg11:
   value:
     1: "1 til 2 uker"
     2: "3 til 4 uker"
-    3: "1 til 3 mÃ¥neder"
-    4: "Mer enn tre mÃ¥neder"
+    3: "1 til 3 måneder"
+    4: "Mer enn tre måneder"
   recode:
   missing:
     - NA
@@ -2230,11 +2280,11 @@ leg12:
   colnames: [Leg12, skjema.SpmLegemidler.Leg12]
   keywords: [leg12]
   type: integer
-  label: "I lÃ¸pet av de siste 12 mÃ¥nedene, hvor ofte har du brukt reseptbelagte legemidler (sovemidler, smertestillende eller beroligende) samme dag som du drakk alkohol?"
+  label: "I løpet av de siste 12 månedene, hvor ofte har du brukt reseptbelagte legemidler (sovemidler, smertestillende eller beroligende) samme dag som du drakk alkohol?"
   value:
     1: "Aldri"
     2: "1 gang i mnd. eller sjeldnere"
-    3: "2-3 ganger i mÃ¥neden"
+    3: "2-3 ganger i måneden"
     4: "2-3 ganger i uken"
     5: "4 ganger i uken eller mer"
   recode:
@@ -2276,7 +2326,7 @@ can3:
   colnames: [Can3, skjema.SpmNarko_1.Can3]
   keywords: [can3]
   type: integer
-  label: "Alder da IO prÃ¸vde cannabis fÃ¸rste gang"
+  label: "Alder da IO prøvde cannabis første gang"
   value: ~
   recode: ~
   missing:
@@ -2286,7 +2336,7 @@ can4:
   colnames: [Can4, skjema.SpmNarko_1.Can4]
   keywords: [can4]
   type: integer
-  label: "Drukket alkohol tidligere samme dag som fÃ¸rste gang prÃ¸vd cannabis?"
+  label: "Drukket alkohol tidligere samme dag som første gang prøvd cannabis?"
   value:
     1: "Ja"
     2: "Nei"
@@ -2326,7 +2376,7 @@ can6b:
   colnames: [Can6b, skjema.SpmNarko_1.Can6b]
   keywords: [can6b]
   type: integer
-  label: "muligheten til Ã¥ prÃ¸ve cannabis i lÃ¸pet av de siste 12 mÃ¥neder"
+  label: "muligheten til å prøve cannabis i løpet av de siste 12 måneder"
   value:
     1: "Nei"
     2: "Ja, en gang"
@@ -2408,7 +2458,7 @@ can7sps:
   colnames: [Can7sps]
   keywords: [can7sps]
   type: character
-  label: "Hvilke andre typer cannabis har du prÃ¸vd?"
+  label: "Hvilke andre typer cannabis har du prøvd?"
   value:
   recode:
   missing:
@@ -2418,13 +2468,13 @@ can8:
   colnames: [Can8, skjema.SpmNarko_1.Can8]
   keywords: [can8]
   type: integer
-  label: "Hvilken mÃ¥te fikk du cannabis pÃ¥?"
+  label: "Hvilken måte fikk du cannabis på?"
   value:
     1: "Fikk av kjente"
-    2: "KjÃ¸pte av kjente"
-    3: "KjÃ¸pte via sosiale medier"
-    4: "KjÃ¸pte via Internett"
-    5: "KjÃ¸pte av ukjente pÃ¥ annen mÃ¥te"
+    2: "Kjøpte av kjente"
+    3: "Kjøpte via sosiale medier"
+    4: "Kjøpte via Internett"
+    5: "Kjøpte av ukjente på annen måte"
     6: "Dyrket selv"
     7: "Annet, spesifiser"
   recode:
@@ -2437,7 +2487,7 @@ can8sps:
   colnames: [Can8sps]
   keywords: [can8sps]
   type: character
-  label: "PÃ¥ hvilken annen mÃ¥te fikk du cannabis?"
+  label: "På hvilken annen måte fikk du cannabis?"
   value: ~
   recode: ~
   missing:
@@ -2490,7 +2540,7 @@ can13:
   colnames: [Can13]
   keywords: [can13]
   type: integer
-  label: "Hvor mange ganger ruset du deg pÃ¥ cannabis (uansett type) siste dÃ¸gn?"
+  label: "Hvor mange ganger ruset du deg på cannabis (uansett type) siste døgn?"
   value:
   recode:
   missing:
@@ -2528,7 +2578,7 @@ ans2sps:
   colnames: [Ans2sps]
   keywords: [ans2sps]
   type: character
-  label: "Hvilke andre stoffer har du prÃ¸vd?"
+  label: "Hvilke andre stoffer har du prøvd?"
   value: ~
   recode: ~
   missing:
@@ -2678,7 +2728,7 @@ ans3_1:
   colnames: [Ans3_1, skjema.SpmNarko_2.Ans3_1]
   keywords: [ans3_1]
   type: integer
-  label: "Brukt kokain siste 12 mÃ¥nedene?"
+  label: "Brukt kokain siste 12 månedene?"
   value:
     1: "Ja"
     2: "Nei"
@@ -2691,7 +2741,7 @@ ans3_2:
   colnames: [Ans3_2, skjema.SpmNarko_2.Ans3_2]
   keywords: [ans3_2]
   type: integer
-  label: "Brukt ecstasy siste 12 mÃ¥nedene?"
+  label: "Brukt ecstasy siste 12 månedene?"
   value:
     1: "Ja"
     2: "Nei"
@@ -2703,7 +2753,7 @@ ans3_3:
   colnames: [Ans3_3, skjema.SpmNarko_2.Ans3_3]
   keywords: [ans3_3]
   type: integer
-  label: "Brukt amfetaminer siste 12 mÃ¥nedene?"
+  label: "Brukt amfetaminer siste 12 månedene?"
   value:
     1: "Ja"
     2: "Nei"
@@ -2715,7 +2765,7 @@ ans3_4:
   colnames: [Ans3_4, skjema.SpmNarko_2.Ans3_4]
   keywords: [ans3_4]
   type: integer
-  label: "Brukt relevin siste 12 mÃ¥nedene?"
+  label: "Brukt relevin siste 12 månedene?"
   value:
     1: "Ja"
     2: "Nei"
@@ -2727,7 +2777,7 @@ ans3_5:
   colnames: [Ans3_5, skjema.SpmNarko_2.Ans3_5]
   keywords: [ans3_5]
   type: integer
-  label: "Brukt heroin siste 12 mÃ¥nedene?"
+  label: "Brukt heroin siste 12 månedene?"
   value:
     1: "Ja"
     2: "Nei"
@@ -2739,7 +2789,7 @@ ans3_6:
   colnames: [Ans3_6, skjema.SpmNarko_2.Ans3_6]
   keywords: [ans3_6]
   type: integer
-  label: "Brukt GHB/GBL siste 12 mÃ¥nedene?"
+  label: "Brukt GHB/GBL siste 12 månedene?"
   value:
     1: "Ja"
     2: "Nei"
@@ -2751,7 +2801,7 @@ ans3_7:
   colnames: [Ans3_7, skjema.SpmNarko_2.Ans3_7]
   keywords: [ans3_7]
   type: integer
-  label: "Brukt LSD siste 12 mÃ¥nedene?"
+  label: "Brukt LSD siste 12 månedene?"
   value:
     1: "Ja"
     2: "Nei"
@@ -2763,7 +2813,7 @@ ans3_x:
   colnames: [Ans3_x, skjema.SpmNarko_2.Ans3_x]
   keywords: [ans3_x]
   type: integer
-  label: "Brukt nye rusmidler siste 12 mÃ¥nedene?"
+  label: "Brukt nye rusmidler siste 12 månedene?"
   value:
     1: "Ja"
     2: "Nei"
@@ -2775,7 +2825,7 @@ ans3_y:
   colnames: [Ans3_y, skjema.SpmNarko_2.Ans3_y]
   keywords: [ans3_y]
   type: integer
-  label: "Brukt sopp/psilocybin siste 12 mÃ¥nedene?"
+  label: "Brukt sopp/psilocybin siste 12 månedene?"
   value:
     1: "Ja"
     2: "Nei"
@@ -2787,7 +2837,7 @@ ans3_8:
   colnames: [Ans3_8]
   keywords: [ans3_8]
   type: integer
-  label: "Brukt andre stoffer siste 12 mÃ¥nedene?"
+  label: "Brukt andre stoffer siste 12 månedene?"
   value:
     1: "Ja"
     2: "Nei"
@@ -2842,7 +2892,7 @@ dop3_1:
   colnames: [Dop3_1, skjema.SpmDoping.Dop3_1]
   keywords: [dop3_1]
   type: integer
-  label: "Brukt anabole steroider siste 12 mÃ¥nedene?"
+  label: "Brukt anabole steroider siste 12 månedene?"
   value:
     1: "Ja"
     2: "Nei"
@@ -2855,7 +2905,7 @@ negkons1:
   colnames: [NegKons1, skjema.SpmKonsekvenser.NegKons1]
   keywords: [negkons1]
   type: integer
-  label: "I lÃ¸pet av de siste 12 mÃ¥nedene, hvor mange ganger har du blitt skadet i en ulykke (f.eks. falt eller slÃ¥tt deg) mens du var pÃ¥virket av alkohol? Vi tenker her pÃ¥ skader slik at du fikk synlige merker eller mÃ¥tte ha hjelp eller behandling."
+  label: "I løpet av de siste 12 månedene, hvor mange ganger har du blitt skadet i en ulykke (f.eks. falt eller slått deg) mens du var påvirket av alkohol? Vi tenker her på skader slik at du fikk synlige merker eller måtte ha hjelp eller behandling."
   value:
     1: "Ingen"
     2: "En gang"
@@ -2870,7 +2920,7 @@ negkons2:
   colnames: [NegKons2, skjema.SpmKonsekvenser.NegKons2]
   keywords: [negkons2]
   type: integer
-  label: "I lÃ¸pet av de siste 12 mÃ¥nedene, hvor mange ganger har du blitt skadet i en voldshendelse (f.eks. at noen har slÃ¥tt eller sparket deg eller brukt kniv e.l.) mens du var pÃ¥virket av alkohol? Vi tenker her pÃ¥ skader slik at du fikk synlige merker eller mÃ¥t"
+  label: "I løpet av de siste 12 månedene, hvor mange ganger har du blitt skadet i en voldshendelse (f.eks. at noen har slått eller sparket deg eller brukt kniv e.l.) mens du var påvirket av alkohol? Vi tenker her på skader slik at du fikk synlige merker eller måt"
   value:
     1: "Ingen"
     2: "En gang"
@@ -2885,7 +2935,7 @@ negkons3:
   colnames: [NegKons3, skjema.SpmKonsekvenser.NegKons3]
   keywords: [negkons3]
   type: integer
-  label: "I lÃ¸pet av de siste 12 mÃ¥nedene, hvor mange ganger har du blitt pÃ¥fÃ¸rt fysisk skade (f.eks. at noen har slÃ¥tt eller sparket deg eller brukt kniv e.l.) av noen som var alkoholpÃ¥virket? Vi tenker her pÃ¥ skader slik at du fikk synlige merker eller mÃ¥tte ha"
+  label: "I løpet av de siste 12 månedene, hvor mange ganger har du blitt påført fysisk skade (f.eks. at noen har slått eller sparket deg eller brukt kniv e.l.) av noen som var alkoholpåvirket? Vi tenker her på skader slik at du fikk synlige merker eller måtte ha"
   value:
     1: "Ingen"
     2: "En gang"
@@ -2899,7 +2949,7 @@ negkons4:
   colnames: [NegKons4, skjema.SpmKonsekvenser.NegKons4]
   keywords: [negkons4]
   type: integer
-  label: "I lÃ¸pet av de siste 12 mÃ¥nedene, hvor mange ganger har du opplevd Ã¥ fÃ¥ uÃ¸nsket seksuell oppmerksomhet som du opplevde som krenkende eller trakasserende av noen som var alkoholpÃ¥virket?"
+  label: "I løpet av de siste 12 månedene, hvor mange ganger har du opplevd å få uønsket seksuell oppmerksomhet som du opplevde som krenkende eller trakasserende av noen som var alkoholpåvirket?"
   value:
     1: "Ingen"
     2: "En gang"
@@ -2916,9 +2966,9 @@ negkons4_1:
   label: "Hvor problematisk opplevde du at dette var?"
   value:
     1: "Helt uproblematisk"
-    2: "NoksÃ¥ uproblematisk"
-    3: "NoksÃ¥ problematisk"
-    4: "SvÃ¦rt problematisk"
+    2: "Nokså uproblematisk"
+    3: "Nokså problematisk"
+    4: "Svært problematisk"
   recode:
   missing:
     - NA
@@ -2928,7 +2978,7 @@ negkons5:
   colnames: [NegKons5]
   keywords: [negkons5]
   type: integer
-  label: "I lÃ¸pet av siste 12 mÃ¥nedene, hvor mange ganger har du blitt skadet i en ulykke (f.eks. falt eller slÃ¥tt deg) mens du var pÃ¥virket av ulovlige rusmidler? Vi tenker her pÃ¥ skader slik at du fikk synlige merker eller mÃ¥tte ha hjelp eller behandling."
+  label: "I løpet av siste 12 månedene, hvor mange ganger har du blitt skadet i en ulykke (f.eks. falt eller slått deg) mens du var påvirket av ulovlige rusmidler? Vi tenker her på skader slik at du fikk synlige merker eller måtte ha hjelp eller behandling."
   value:
     1: "Ingen"
     2: "En gang"
@@ -2943,7 +2993,7 @@ negkons6:
   colnames: [NegKons6]
   keywords: [negkons6]
   type: integer
-  label: "I lÃ¸pet av siste 12 mÃ¥nedene, hvor mange ganger har du blitt skadet i en voldshendelse (f.eks. at noen har slÃ¥tt eller sparket deg eller brukt kniv el.) mens du var pÃ¥virket av ulovlige rusmidler? Vi tenker her pÃ¥ skader slik at du fikk synlige merker el"
+  label: "I løpet av siste 12 månedene, hvor mange ganger har du blitt skadet i en voldshendelse (f.eks. at noen har slått eller sparket deg eller brukt kniv el.) mens du var påvirket av ulovlige rusmidler? Vi tenker her på skader slik at du fikk synlige merker el"
   value:
     1: "Ingen"
     2: "En gang"
@@ -2958,7 +3008,7 @@ paaror1a:
   colnames: [paaror1a, skjema.SpmKonsekvenser.paaror1a]
   keywords: [paaror1a]
   type: integer
-  label: "Er du pÃ¥rÃ¸rende til en eller flere personer med alkohol- eller rusmiddelproblemer?"
+  label: "Er du pårørende til en eller flere personer med alkohol- eller rusmiddelproblemer?"
   value:
     1: "Ja"
     2: "Nei"
@@ -2984,12 +3034,12 @@ paaror4:
   colnames: [paaror4, skjema.SpmKonsekvenser.paaror4]
   keywords: [paaror4]
   type: integer
-  label: "Hvor ofte opplever du stor bekymring, engstelse, redsel eller lignende fordi du er pÃ¥rÃ¸rende til noen med rusmiddelproblemer?"
+  label: "Hvor ofte opplever du stor bekymring, engstelse, redsel eller lignende fordi du er pårørende til noen med rusmiddelproblemer?"
   value:
     1: "Daglig"
     2: "Ukentlig"
-    3: "MÃ¥nedlig"
-    4: "Sjeldnere enn mÃ¥nedlig"
+    3: "Månedlig"
+    4: "Sjeldnere enn månedlig"
     5: "Aldri"
   recode:
   missing:
@@ -3001,7 +3051,7 @@ paaror5:
   colnames: [paaror5, skjema.SpmKonsekvenser.paaror5]
   keywords: [paaror5]
   type: integer
-  label: "Er du pÃ¥rÃ¸rende til noen med opplevd overdose av ulovlige rusmidler, alkohol eller reseptbelagte legemidler?"
+  label: "Er du pårørende til noen med opplevd overdose av ulovlige rusmidler, alkohol eller reseptbelagte legemidler?"
   value:
     1: "Ja"
     2: "Nei"
@@ -3014,12 +3064,12 @@ avslutt:
   colnames: [Avslutt]
   keywords: [avslutt]
   type: integer
-  label: "Hvor interessante var spÃ¸rsmÃ¥lene i undersÃ¸kelsen for deg?"
+  label: "Hvor interessante var spørsmålene i undersøkelsen for deg?"
   value:
-    1: "SvÃ¦rt interessante"
+    1: "Svært interessante"
     2: "Ganske interessante"
     3: "Ganske uinteressante"
-    4: "SvÃ¦rt uinteressante"
+    4: "Svært uinteressante"
     5: "Jeg har ingen mening om det"
   recode:
   missing:
@@ -3031,7 +3081,7 @@ intslutt:
   colnames: [intslutt]
   keywords: [intslutt]
   type: integer
-  label: "Tusen takk for at du svarte pÃ¥ undersÃ¸kelsen! Type kontakt"
+  label: "Tusen takk for at du svarte på undersøkelsen! Type kontakt"
   value:
     1: "Telefon"
     2: "besok"
@@ -3106,7 +3156,7 @@ paaror2_a:
   colnames: [paaror2_a]
   keywords: [paaror2_a]
   type: integer
-  label: "Familierelasjon til pÃ¥rÃ¸rende: Ektefelle/partner/kjÃ¦reste"
+  label: "Familierelasjon til pårørende: Ektefelle/partner/kjæreste"
   value:
     1: "Ja"
     2: "Nei"
@@ -3118,7 +3168,7 @@ paaror2_b:
   colnames: [paaror2_b]
   keywords: [paaror2_b]
   type: integer
-  label: "Familierelasjon til pÃ¥rÃ¸rende: Mor eller far"
+  label: "Familierelasjon til pårørende: Mor eller far"
   value:
     1: "Ja"
     2: "Nei"
@@ -3130,7 +3180,7 @@ paaror2_c:
   colnames: [paaror2_c]
   keywords: [paaror2_c]
   type: integer
-  label: "Familierelasjon til pÃ¥rÃ¸rende: SÃ¸nn eller datter"
+  label: "Familierelasjon til pårørende: Sønn eller datter"
   value:
     1: "Ja"
     2: "Nei"
@@ -3142,7 +3192,7 @@ paaror2_d:
   colnames: [paaror2_d]
   keywords: [paaror2_d]
   type: integer
-  label: "Familierelasjon til pÃ¥rÃ¸rende: SÃ¸ster eller bror"
+  label: "Familierelasjon til pårørende: Søster eller bror"
   value:
     1: "Ja"
     2: "Nei"
@@ -3154,7 +3204,7 @@ paaror2_e:
   colnames: [paaror2_e]
   keywords: [paaror2_e]
   type: integer
-  label: "Familierelasjon til pÃ¥rÃ¸rende: Annen relasjon"
+  label: "Familierelasjon til pårørende: Annen relasjon"
   value:
     1: "Ja"
     2: "Nei"
@@ -3166,7 +3216,7 @@ tobsit_a:
   colnames: [tobsit_a]
   keywords: [tobsit_a]
   type: integer
-  label: "RÃ¸yker vanligvis: I sosiale sammenkomster med andre"
+  label: "Røyker vanligvis: I sosiale sammenkomster med andre"
   value:
     1: "Ja"
     2: "Nei"
@@ -3179,7 +3229,7 @@ tobsit_b:
   colnames: [tobsit_b]
   keywords: [tobsit_b]
   type: integer
-  label: "RÃ¸yker vanligvis: I ferien"
+  label: "Røyker vanligvis: I ferien"
   value:
     1: "Ja"
     2: "Nei"
@@ -3192,7 +3242,7 @@ tobsit_c:
   colnames: [tobsit_c]
   keywords: [tobsit_c]
   type: integer
-  label: "RÃ¸yker vanligvis: NÃ¥r jeg drikker alkohol"
+  label: "Røyker vanligvis: Når jeg drikker alkohol"
   value:
     1: "Ja"
     2: "Nei"
@@ -3205,7 +3255,7 @@ tobsit_d:
   colnames: [tobsit_d]
   keywords: [tobsit_d]
   type: integer
-  label: "RÃ¸yker vanligvis: NÃ¥r jeg har lyst. Det er ingen spesiell foranledning"
+  label: "Røyker vanligvis: Når jeg har lyst. Det er ingen spesiell foranledning"
   value:
     1: "Ja"
     2: "Nei"
@@ -3218,7 +3268,7 @@ tobsit_e:
   colnames: [tobsit_e]
   keywords: [tobsit_e]
   type: integer
-  label: "RÃ¸yker vanligvis: Annet"
+  label: "Røyker vanligvis: Annet"
   value:
     1: "Ja"
     2: "Nei"
@@ -3231,7 +3281,7 @@ alkansk_a:
   colnames: [alkansk_a]
   keywords: [alkansk_a]
   type: integer
-  label: "Anskaffer alkohol: KjÃ¸per i butikk i Norge/vinmonopolet"
+  label: "Anskaffer alkohol: Kjøper i butikk i Norge/vinmonopolet"
   value:
     1: "Ja"
     2: "Nei"
@@ -3243,7 +3293,7 @@ alkansk_b:
   colnames: [alkansk_b]
   keywords: [alkansk_b]
   type: integer
-  label: "Anskaffer alkohol: KjÃ¸per i utlandet,"
+  label: "Anskaffer alkohol: Kjøper i utlandet,"
   value:
     1: "Ja"
     2: "Nei"
@@ -3255,7 +3305,7 @@ alkansk_c:
   colnames: [alkansk_c]
   keywords: [alkansk_c]
   type: integer
-  label: "Anskaffer alkohol: KjÃ¸per pÃ¥ tax-freebutikk,"
+  label: "Anskaffer alkohol: Kjøper på tax-freebutikk,"
   value:
     1: "Ja"
     2: "Nei"
@@ -3267,7 +3317,7 @@ alkansk_d:
   colnames: [alkansk_d]
   keywords: [alkansk_d]
   type: integer
-  label: "Anskaffer alkohol: FÃ¥r av venner/slektninger"
+  label: "Anskaffer alkohol: Får av venner/slektninger"
   value:
     1: "Ja"
     2: "Nei"
@@ -3279,7 +3329,7 @@ alkansk_e:
   colnames: [alkansk_e]
   keywords: [alkansk_e]
   type: integer
-  label: "Anskaffer alkohol: KjÃ¸per av venner/slektninger"
+  label: "Anskaffer alkohol: Kjøper av venner/slektninger"
   value:
     1: "Ja"
     2: "Nei"
@@ -3291,7 +3341,7 @@ alkansk_f:
   colnames: [alkansk_f]
   keywords: [alkansk_f]
   type: integer
-  label: "Anskaffer alkohol: KjÃ¸per via sosiale medier"
+  label: "Anskaffer alkohol: Kjøper via sosiale medier"
   value:
     1: "Ja"
     2: "Nei"
@@ -3303,7 +3353,7 @@ alkansk_g:
   colnames: [alkansk_g]
   keywords: [alkansk_g]
   type: integer
-  label: "Anskaffer alkohol: KjÃ¸per i nettbutikk"
+  label: "Anskaffer alkohol: Kjøper i nettbutikk"
   value:
     1: "Ja"
     2: "Nei"
@@ -3315,7 +3365,7 @@ alkansk_h:
   colnames: [alkansk_h]
   keywords: [alkansk_h]
   type: integer
-  label: "Anskaffer alkohol: KjÃ¸per av ukjente"
+  label: "Anskaffer alkohol: Kjøper av ukjente"
   value:
     1: "Ja"
     2: "Nei"
@@ -3327,7 +3377,7 @@ alkansk_i:
   colnames: [alkansk_i]
   keywords: [alkansk_i]
   type: integer
-  label: "Anskaffer alkohol: KjÃ¸per pÃ¥ utested/serveringssted"
+  label: "Anskaffer alkohol: Kjøper på utested/serveringssted"
   value:
     1: "Ja"
     2: "Nei"
@@ -3385,9 +3435,9 @@ landsdel_2025:
   value:
     1: "Oslo og Viken"
     2: "Innlandet"
-    3: "Agder og SÃ¸r-Ã˜stlandet"
+    3: "Agder og Sør-Østlandet"
     4: "Vestlandet"
-    5: "TrÃ¸ndelag"
+    5: "Trøndelag"
     6: "Nord-Norge"
     9: "Uoppgitt"
   recode:
@@ -3400,11 +3450,11 @@ alder1:
   type: integer
   label: "Aldersgruppe 1"
   value:
-    1: "16-24 Ã¥r"
-    2: "25-44 Ã¥r"
-    3: "45-66 Ã¥r"
-    4: "67-79 Ã¥r"
-    5: "80- Ã¥r"
+    1: "16-24 år"
+    2: "25-44 år"
+    3: "45-66 år"
+    4: "67-79 år"
+    5: "80- år"
     8: "Vil ikke svare"
     9: "Vet ikke"
   recode:
@@ -3417,13 +3467,13 @@ alder2:
   type: integer
   label: "Aldersgruppe 2"
   value:
-    1: "16-20 Ã¥r"
-    2: "21-30 Ã¥r"
-    3: "31-40 Ã¥r"
-    4: "41-50 Ã¥r"
-    5: "51-60 Ã¥r"
-    6: "61-79 Ã¥r"
-    7: "80- Ã¥r"
+    1: "16-20 år"
+    2: "21-30 år"
+    3: "31-40 år"
+    4: "41-50 år"
+    5: "51-60 år"
+    6: "61-79 år"
+    7: "80- år"
   recode:
   missing:
     - NA
@@ -3448,7 +3498,7 @@ fodeland_io:
     2: "Europa"
     3: "Asia"
     4: "Afrika"
-    5: "SÃ¸r- og Mellom-Amerika"
+    5: "Sør- og Mellom-Amerika"
     6: "Nord-Amerika"
     7: "Australia/New Zeland/Osceania"
     9: "Uoppgitt/mangler"
@@ -3466,7 +3516,7 @@ fodeland_far:
     2: "Europa"
     3: "Asia"
     4: "Afrika"
-    5: "SÃ¸r- og Mellom-Amerika"
+    5: "Sør- og Mellom-Amerika"
     6: "Nord-Amerika"
     7: "Australia/New Zeland/Osceania"
     9: "Uoppgitt/mangler"
@@ -3484,7 +3534,7 @@ fodeland_mor:
     2: "Europa"
     3: "Asia"
     4: "Afrika"
-    5: "SÃ¸r- og Mellom-Amerika"
+    5: "Sør- og Mellom-Amerika"
     6: "Nord-Amerika"
     7: "Australia/New Zeland/Osceania"
     9: "Uoppgitt/mangler"
@@ -3519,9 +3569,9 @@ utdann_4gr:
   label: "Utdann_4gr"
   value:
     1: "Grunnskole (inklusive uoppgitt og ingen utdanning)"
-    2: "VideregÃ¥ende skole"
-    3: "Universitet-og hÃ¸yskole"
-    4: "Universitet-og hÃ¸yskole, hÃ¸yere nivÃ¥"
+    2: "Videregående skole"
+    3: "Universitet-og høyskole"
+    4: "Universitet-og høyskole, høyere nivå"
   recode:
   missing:
     - NA
@@ -3530,16 +3580,16 @@ utdanning:
   colnames: [utdanning]
   keywords: [utdanning]
   type: integer
-  label: "UtdanningsnivÃ¥"
+  label: "Utdanningsnivå"
   value:
-    0: "Ingen utdanning og fÃ¸rskoleutdanning"
+    0: "Ingen utdanning og førskoleutdanning"
     1: "Barneskoleutdanning"
     2: "Ungdomsskoleutdanning"
-    3: "VideregÃ¥ende, grunnutdanning"
-    4: "VideregÃ¥ende, avsluttende utdanning"
-    5: "PÃ¥bygging til videregÃ¥ende utdanning"
-    6: "Universitets- og hÃ¸gskoleutdanning, lavere nivÃ¥"
-    7: "Universitets- og hÃ¸gskoleutdanning, hÃ¸yere nivÃ¥"
+    3: "Videregående, grunnutdanning"
+    4: "Videregående, avsluttende utdanning"
+    5: "Påbygging til videregående utdanning"
+    6: "Universitets- og høgskoleutdanning, lavere nivå"
+    7: "Universitets- og høgskoleutdanning, høyere nivå"
     8: "Forskerutdanning"
     9: "Uoppgitt fra register"
   recode:
@@ -3562,7 +3612,7 @@ sentralitet:
   type: integer
   label: "Sentralitet"
   value:
-    1: "Sentralitet: 1 (925-1000) - hÃ¸y"
+    1: "Sentralitet: 1 (925-1000) - høy"
     2: "Sentralitet: 2 (870-924)"
     3: "Sentralitet: 3 (775-869)"
     4: "Sentralitet: 4 (670-774)"
@@ -3580,9 +3630,9 @@ what:
   type: integer
   label: ""
   value:
-    1: "BokmÃ¥l"
+    1: "Bokmål"
     2: "Nynorsk"
-    8: "Ã˜nsker ikke Ã¥ svare"
+    8: "Ønsker ikke å svare"
     9: "Vet ikke"
   recode: ~
   missing:
@@ -3609,7 +3659,7 @@ tob64any:
     1: "Ja, daglig"
     2: "Ja, av og til"
     3: "Nei"
-    8: "Ã˜nsker ikke Ã¥ svare"
+    8: "Ønsker ikke å svare"
     9: "Vet ikke"
   recode: ~
   missing:
@@ -3621,14 +3671,14 @@ tobsit_1:
   colnames: ["skjema.SpmTobakk.tobsit[1]"]
   keywords: [tobsit_1]
   type: integer
-  label: "I hvilke situasjoner rÃ¸yker du vanligvis"
+  label: "I hvilke situasjoner røyker du vanligvis"
   value:
     1: "I sosiale sammenkomster med andre"
     2: "I ferien"
-    3: "NÃ¥r jeg drikker alkohol"
-    4: "NÃ¥r jeg har lyst. Det er ingen spesiell foranledning"
+    3: "Når jeg drikker alkohol"
+    4: "Når jeg har lyst. Det er ingen spesiell foranledning"
     5: "Annet"
-    8: "Ã˜nsker ikke Ã¥ svare"
+    8: "Ønsker ikke å svare"
     9: "Vet ikke"
   recode: ~
   missing:
@@ -3640,14 +3690,14 @@ tobsit_2:
   colnames: ["skjema.SpmTobakk.tobsit[2]"]
   keywords: [tobsit_2]
   type: integer
-  label: "I hvilke situasjoner rÃ¸yker du vanligvis"
+  label: "I hvilke situasjoner røyker du vanligvis"
   value:
     1: "I sosiale sammenkomster med andre"
     2: "I ferien"
-    3: "NÃ¥r jeg drikker alkohol"
-    4: "NÃ¥r jeg har lyst. Det er ingen spesiell foranledning"
+    3: "Når jeg drikker alkohol"
+    4: "Når jeg har lyst. Det er ingen spesiell foranledning"
     5: "Annet"
-    8: "Ã˜nsker ikke Ã¥ svare"
+    8: "Ønsker ikke å svare"
     9: "Vet ikke"
   recode: ~
   missing:
@@ -3659,14 +3709,14 @@ tobsit_3:
   colnames: ["skjema.SpmTobakk.tobsit[3]"]
   keywords: [tobsit_3]
   type: integer
-  label: "I hvilke situasjoner rÃ¸yker du vanligvis"
+  label: "I hvilke situasjoner røyker du vanligvis"
   value:
     1: "I sosiale sammenkomster med andre"
     2: "I ferien"
-    3: "NÃ¥r jeg drikker alkohol"
-    4: "NÃ¥r jeg har lyst. Det er ingen spesiell foranledning"
+    3: "Når jeg drikker alkohol"
+    4: "Når jeg har lyst. Det er ingen spesiell foranledning"
     5: "Annet"
-    8: "Ã˜nsker ikke Ã¥ svare"
+    8: "Ønsker ikke å svare"
     9: "Vet ikke"
   recode: ~
   missing:
@@ -3678,14 +3728,14 @@ tobsit_4:
   colnames: ["skjema.SpmTobakk.tobsit[4]"]
   keywords: [tobsit_4]
   type: integer
-  label: "I hvilke situasjoner rÃ¸yker du vanligvis"
+  label: "I hvilke situasjoner røyker du vanligvis"
   value:
     1: "I sosiale sammenkomster med andre"
     2: "I ferien"
-    3: "NÃ¥r jeg drikker alkohol"
-    4: "NÃ¥r jeg har lyst. Det er ingen spesiell foranledning"
+    3: "Når jeg drikker alkohol"
+    4: "Når jeg har lyst. Det er ingen spesiell foranledning"
     5: "Annet"
-    8: "Ã˜nsker ikke Ã¥ svare"
+    8: "Ønsker ikke å svare"
     9: "Vet ikke"
   recode: ~
   missing:
@@ -3697,14 +3747,14 @@ tobsit_5:
   colnames: ["skjema.SpmTobakk.tobsit[5]"]
   keywords: [tobsit_5]
   type: integer
-  label: "I hvilke situasjoner rÃ¸yker du vanligvis"
+  label: "I hvilke situasjoner røyker du vanligvis"
   value:
     1: "I sosiale sammenkomster med andre"
     2: "I ferien"
-    3: "NÃ¥r jeg drikker alkohol"
-    4: "NÃ¥r jeg har lyst. Det er ingen spesiell foranledning"
+    3: "Når jeg drikker alkohol"
+    4: "Når jeg har lyst. Det er ingen spesiell foranledning"
     5: "Annet"
-    8: "Ã˜nsker ikke Ã¥ svare"
+    8: "Ønsker ikke å svare"
     9: "Vet ikke"
   recode: ~
   missing:
@@ -3721,6 +3771,7 @@ tobsit_elm_1:
   recode: ~
   missing:
     - NA
+    - 8
 
 tobsit_elm_2:
   colnames: ["skjema.SpmTobakk.tobsit_ELM_2"]
@@ -3731,26 +3782,29 @@ tobsit_elm_2:
   recode: ~
   missing:
     - NA
+    - 8
 
 tobsit_elm_3:
   colnames: ["skjema.SpmTobakk.tobsit_ELM_3"]
   keywords: [tobsit_elm_3]
   type: integer
-  label: "NÃ¥r jeg drikker alkohol (Code 3)"
+  label: "Når jeg drikker alkohol (Code 3)"
   value: ~
   recode: ~
   missing:
     - NA
+    - 8
 
 tobsit_elm_4:
   colnames: ["skjema.SpmTobakk.tobsit_ELM_4"]
   keywords: [tobsit_elm_4]
   type: integer
-  label: "NÃ¥r jeg har lyst. Det er ingen spesiell foranledning (Code 4)"
+  label: "Når jeg har lyst. Det er ingen spesiell foranledning (Code 4)"
   value: ~
   recode: ~
   missing:
     - NA
+    - 8
 
 tobsit_elm_5:
   colnames: ["skjema.SpmTobakk.tobsit_ELM_5"]
@@ -3761,6 +3815,7 @@ tobsit_elm_5:
   recode: ~
   missing:
     - NA
+    - 8
 
 type1b_elm_1:
   colnames: ["skjema.SpmAlkohol.Type1b_ELM_1"]
@@ -3786,7 +3841,7 @@ type1b_12:
   colnames: ["skjema.SpmAlkohol.Type1b_1"]
   keywords: [type1b_12]
   type: integer
-  label: "Ukentlig: Gjennomsnitt ant 0,33 l Ã¸l drukket siste 4 uker?"
+  label: "Ukentlig: Gjennomsnitt ant 0,33 l øl drukket siste 4 uker?"
   value: ~
   recode: ~
   missing:
@@ -3796,7 +3851,7 @@ type1b_22:
   colnames: ["skjema.SpmAlkohol.Type1b_2"]
   keywords: [type1b_22]
   type: integer
-  label: "Ukentlig: Gjennomsnitt ant 0,5 l Ã¸l drukket siste 4 uker?"
+  label: "Ukentlig: Gjennomsnitt ant 0,5 l øl drukket siste 4 uker?"
   value: ~
   recode: ~
   missing:
@@ -3826,7 +3881,7 @@ type1c_12:
   colnames: ["skjema.SpmAlkohol.Type1c_1"]
   keywords: [type1c_12]
   type: integer
-  label: "MÃ¥nedlig: Antall 0,33 l Ã¸l drukket siste 4 uker?"
+  label: "Månedlig: Antall 0,33 l øl drukket siste 4 uker?"
   value: ~
   recode: ~
   missing:
@@ -3836,7 +3891,7 @@ type1c_22:
   colnames: ["skjema.SpmAlkohol.Type1c_2"]
   keywords: [type1c_22]
   type: integer
-  label: "MÃ¥nedlig: Antall 0,5 l Ã¸l drukket siste 4 uker?"
+  label: "Månedlig: Antall 0,5 l øl drukket siste 4 uker?"
   value: ~
   recode: ~
   missing:
@@ -3906,7 +3961,7 @@ type2c_12:
   colnames: ["skjema.SpmAlkohol.Type2c_1"]
   keywords: [type2c_12]
   type: integer
-  label: "MÃ¥nedlig: Antall glass vin drukket siste 4 uker?"
+  label: "Månedlig: Antall glass vin drukket siste 4 uker?"
   value: ~
   recode: ~
   missing:
@@ -3916,7 +3971,7 @@ type2c_22:
   colnames: ["skjema.SpmAlkohol.Type2c_2"]
   keywords: [type2c_22]
   type: integer
-  label: "MÃ¥nedlig: Antall flasker vin drukket siste 4 uker?"
+  label: "Månedlig: Antall flasker vin drukket siste 4 uker?"
   value: ~
   recode: ~
   missing:
@@ -3986,7 +4041,7 @@ type3c_12:
   colnames: ["skjema.SpmAlkohol.Type3c_1"]
   keywords: [type3c_12]
   type: integer
-  label: "MÃ¥nedlig: Antall drammer drukket siste 4 uker?"
+  label: "Månedlig: Antall drammer drukket siste 4 uker?"
   value: ~
   recode: ~
   missing:
@@ -3996,7 +4051,7 @@ type3c_22:
   colnames: ["skjema.SpmAlkohol.Type3c_2"]
   keywords: [type3c_22]
   type: integer
-  label: "MÃ¥nedlig: Antall flasker sprit drukket siste 4 uker?"
+  label: "Månedlig: Antall flasker sprit drukket siste 4 uker?"
   value: ~
   recode: ~
   missing:
@@ -4006,7 +4061,7 @@ type4b_elm_1:
   colnames: ["skjema.SpmAlkohol.Type4b_ELM_1"]
   keywords: [type4b_elm_1]
   type: integer
-  label: "SmÃ¥flasker/smÃ¥bokser (0,33 liter) (Code 1)"
+  label: "Småflasker/småbokser (0,33 liter) (Code 1)"
   value: ~
   recode: ~
   missing:
@@ -4026,7 +4081,7 @@ type4b_12:
   colnames: ["skjema.SpmAlkohol.Type4b_1"]
   keywords: [type4b_12]
   type: integer
-  label: "Ukentlig: Gjennomsnitt antall smÃ¥flasker rusbrus/cider drukket siste 4 uker?"
+  label: "Ukentlig: Gjennomsnitt antall småflasker rusbrus/cider drukket siste 4 uker?"
   value: ~
   recode: ~
   missing:
@@ -4046,7 +4101,7 @@ type4c_elm_1:
   colnames: ["skjema.SpmAlkohol.Type4c_ELM_1"]
   keywords: [type4c_elm_1]
   type: integer
-  label: "SmÃ¥flasker/smÃ¥bokser (0,33 liter) (Code 1)"
+  label: "Småflasker/småbokser (0,33 liter) (Code 1)"
   value: ~
   recode: ~
   missing:
@@ -4066,7 +4121,7 @@ type4c_12:
   colnames: ["skjema.SpmAlkohol.Type4c_1"]
   keywords: [type4c_12]
   type: integer
-  label: "MÃ¥nedlig: Antall rusbrus/cider drukket siste 4 uker?"
+  label: "Månedlig: Antall rusbrus/cider drukket siste 4 uker?"
   value: ~
   recode: ~
   missing:
@@ -4076,7 +4131,7 @@ type4c_22:
   colnames: ["skjema.SpmAlkohol.Type4c_2"]
   keywords: [type4c_22]
   type: integer
-  label: "MÃ¥nedlig: Antall halvlitere rusbrus/cider drukket siste 4 uker?"
+  label: "Månedlig: Antall halvlitere rusbrus/cider drukket siste 4 uker?"
   value: ~
   recode: ~
   missing:
@@ -4091,7 +4146,7 @@ audit9_1:
     1: "Nei"
     2: "Ja, blitt skadet selv"
     3: "Ja, andre blitt skadet"
-    8: "Ã˜nsker ikke Ã¥ svare"
+    8: "Ønsker ikke å svare"
     9: "Vet ikke"
   recode: ~
   missing:
@@ -4108,7 +4163,7 @@ audit9_2:
     1: "Nei"
     2: "Ja, blitt skadet selv"
     3: "Ja, andre blitt skadet"
-    8: "Ã˜nsker ikke Ã¥ svare"
+    8: "Ønsker ikke å svare"
     9: "Vet ikke"
   recode: ~
   missing:
@@ -4125,7 +4180,7 @@ audit9_3:
     1: "Nei"
     2: "Ja, blitt skadet selv"
     3: "Ja, andre blitt skadet"
-    8: "Ã˜nsker ikke Ã¥ svare"
+    8: "Ønsker ikke å svare"
     9: "Vet ikke"
   recode: ~
   missing:
@@ -4167,7 +4222,7 @@ arb_alk1_ny:
   colnames: ["skjema.SpmArbliv.Arb_alk1_ny"]
   keywords: [arb_alk1_ny]
   type: integer
-  label: "Hvor mange sykefravÃ¦rsdager har du hatt de siste 12 mÃ¥nedene"
+  label: "Hvor mange sykefraværsdager har du hatt de siste 12 månedene"
   value: ~
   recode: ~
   missing:
@@ -4182,1420 +4237,11 @@ can7_1:
     1: "Hasj"
     2: "Marihuana"
     3: "Cannabisolje/ekstrakt"
-    4: "Spiselige produkter (â€˜ediblesâ€™)"
+    4: "Spiselige produkter"
     5: "I vape/e-sigaretter"
     6: "Andre typer cannabis"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
   recode: ~
   missing:
     - NA
     - 8
     - 9
-
-can7_2:
-  colnames: ["skjema.SpmNarko_1.Can7[2]"]
-  keywords: [can7_2]
-  type: integer
-  label: "Hvilke typer brukt siste 12 mnd"
-  value:
-    1: "Hasj"
-    2: "Marihuana"
-    3: "Cannabisolje/ekstrakt"
-    4: "Spiselige produkter (â€˜ediblesâ€™)"
-    5: "I vape/e-sigaretter"
-    6: "Andre typer cannabis"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
-
-can7_3:
-  colnames: ["skjema.SpmNarko_1.Can7[3]"]
-  keywords: [can7_3]
-  type: integer
-  label: "Hvilke typer brukt siste 12 mnd"
-  value:
-    1: "Hasj"
-    2: "Marihuana"
-    3: "Cannabisolje/ekstrakt"
-    4: "Spiselige produkter (â€˜ediblesâ€™)"
-    5: "I vape/e-sigaretter"
-    6: "Andre typer cannabis"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
-
-can7_4:
-  colnames: ["skjema.SpmNarko_1.Can7[4]"]
-  keywords: [can7_4]
-  type: integer
-  label: "Hvilke typer brukt siste 12 mnd"
-  value:
-    1: "Hasj"
-    2: "Marihuana"
-    3: "Cannabisolje/ekstrakt"
-    4: "Spiselige produkter (â€˜ediblesâ€™)"
-    5: "I vape/e-sigaretter"
-    6: "Andre typer cannabis"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
-
-can7_5:
-  colnames: ["skjema.SpmNarko_1.Can7[5]"]
-  keywords: [can7_5]
-  type: integer
-  label: "Hvilke typer brukt siste 12 mnd"
-  value:
-    1: "Hasj"
-    2: "Marihuana"
-    3: "Cannabisolje/ekstrakt"
-    4: "Spiselige produkter (â€˜ediblesâ€™)"
-    5: "I vape/e-sigaretter"
-    6: "Andre typer cannabis"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
-
-can7_6:
-  colnames: ["skjema.SpmNarko_1.Can7[6]"]
-  keywords: [can7_6]
-  type: integer
-  label: "Hvilke typer brukt siste 12 mnd"
-  value:
-    1: "Hasj"
-    2: "Marihuana"
-    3: "Cannabisolje/ekstrakt"
-    4: "Spiselige produkter (â€˜ediblesâ€™)"
-    5: "I vape/e-sigaretter"
-    6: "Andre typer cannabis"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
-
-can7_elm_1:
-  colnames: ["skjema.SpmNarko_1.Can7_ELM_1"]
-  keywords: [can7_elm_1]
-  type: integer
-  label: "Hasj (Code 1)"
-  value: ~
-  recode: ~
-  missing:
-    - NA
-
-can7_elm_2:
-  colnames: ["skjema.SpmNarko_1.Can7_ELM_2"]
-  keywords: [can7_elm_2]
-  type: integer
-  label: "Marihuana (Code 2)"
-  value: ~
-  recode: ~
-  missing:
-    - NA
-
-can7_elm_3:
-  colnames: ["skjema.SpmNarko_1.Can7_ELM_3"]
-  keywords: [can7_elm_3]
-  type: integer
-  label: "Cannabisolje/ekstrakt (Code 3)"
-  value: ~
-  recode: ~
-  missing:
-    - NA
-
-can7_elm_4:
-  colnames: ["skjema.SpmNarko_1.Can7_ELM_4"]
-  keywords: [can7_elm_4]
-  type: integer
-  label: "Spiselige produkter (â€˜ediblesâ€™) (Code 4)"
-  value: ~
-  recode: ~
-  missing:
-    - NA
-
-can7_elm_5:
-  colnames: ["skjema.SpmNarko_1.Can7_ELM_5"]
-  keywords: [can7_elm_5]
-  type: integer
-  label: "I vape/e-sigaretter (Code 5)"
-  value: ~
-  recode: ~
-  missing:
-    - NA
-
-can7_elm_6:
-  colnames: ["skjema.SpmNarko_1.Can7_ELM_6"]
-  keywords: [can7_elm_6]
-  type: integer
-  label: "Andre typer cannabis (Code 6)"
-  value: ~
-  recode: ~
-  missing:
-    - NA
-
-holdn1:
-  colnames: ["skjema.SpmNarko_1.holdn1"]
-  keywords: [holdn1]
-  type: integer
-  label: "BÃ¸r bruk av cannabis generelt bli straffefritt i Norge"
-  value:
-    1: "Ja"
-    2: "Nei"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
-
-holdn2:
-  colnames: ["skjema.SpmNarko_1.holdn2"]
-  keywords: [holdn2]
-  type: integer
-  label: "BÃ¸r salg av cannabis generelt bli tillatt i Norge"
-  value:
-    1: "Ja"
-    2: "Nei"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
-
-cast1:
-  colnames: ["skjema.SpmNarko_1.cast1"]
-  keywords: [cast1]
-  type: integer
-  label: "Har du rÃ¸ykt cannabis pÃ¥ formiddagen, fÃ¸r klokken 12"
-  value:
-    1: "Aldri"
-    2: "Sjelden"
-    3: "Av og til"
-    4: "Ganske ofte"
-    5: "Ofte"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
-
-cast2:
-  colnames: ["skjema.SpmNarko_1.cast2"]
-  keywords: [cast2]
-  type: integer
-  label: "Har du rÃ¸ykt cannabis nÃ¥r du har vÃ¦rt alene"
-  value:
-    1: "Aldri"
-    2: "Sjelden"
-    3: "Av og til"
-    4: "Ganske ofte"
-    5: "Ofte"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
-
-cast3:
-  colnames: ["skjema.SpmNarko_1.cast3"]
-  keywords: [cast3]
-  type: integer
-  label: "Har du hatt problemer med hukommelsen nÃ¥r du har rÃ¸ykt cannabis"
-  value:
-    1: "Aldri"
-    2: "Sjelden"
-    3: "Av og til"
-    4: "Ganske ofte"
-    5: "Ofte"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
-
-cast4:
-  colnames: ["skjema.SpmNarko_1.cast4"]
-  keywords: [cast4]
-  type: integer
-  label: "Har venner eller familie sagt til deg at du bÃ¸r redusere eller slutte Ã¥ bruke cannabis"
-  value:
-    1: "Aldri"
-    2: "Sjelden"
-    3: "Av og til"
-    4: "Ganske ofte"
-    5: "Ofte"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
-
-cast5:
-  colnames: ["skjema.SpmNarko_1.cast5"]
-  keywords: [cast5]
-  type: integer
-  label: "Har du forsÃ¸kt Ã¥ redusere eller slutte Ã¥ bruke cannabis uten Ã¥ lykkes"
-  value:
-    1: "Aldri"
-    2: "Sjelden"
-    3: "Av og til"
-    4: "Ganske ofte"
-    5: "Ofte"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
-
-cast6:
-  colnames: ["skjema.SpmNarko_1.cast6"]
-  keywords: [cast6]
-  type: integer
-  label: "Har du hatt problemer pÃ¥ grunn av din cannabisbruk"
-  value:
-    1: "Aldri"
-    2: "Sjelden"
-    3: "Av og til"
-    4: "Ganske ofte"
-    5: "Ofte"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
-
-ans2_1:
-  colnames: ["skjema.SpmNarko_2.Ans2[1]"]
-  keywords: [ans2_1]
-  type: integer
-  label: "Hvilke stoffer har du prÃ¸vd?"
-  value:
-    1: "Kokain"
-    2: "Ecstacy/MDMA"
-    3: "Amfetaminer/speed"
-    4: "Relevin"
-    5: "Heroin"
-    6: "GHB/GBL"
-    7: "LSD"
-    8: "Nye rusmidler, ofte kalt â€˜legal highsâ€™ eller â€˜research chemicalsâ€™ (for eksempel syntetiske cannabinoider eller katinoner)"
-    9: "Sopp/psilocybin"
-    10: "Ketamin"
-    11: "Andre"
-    98: "Ã˜nsker ikke Ã¥ svare"
-    99: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 98
-    - 99
-
-ans2_2:
-  colnames: ["skjema.SpmNarko_2.Ans2[2]"]
-  keywords: [ans2_2]
-  type: integer
-  label: "Hvilke stoffer har du prÃ¸vd?"
-  value:
-    1: "Kokain"
-    2: "Ecstacy/MDMA"
-    3: "Amfetaminer/speed"
-    4: "Relevin"
-    5: "Heroin"
-    6: "GHB/GBL"
-    7: "LSD"
-    8: "Nye rusmidler, ofte kalt â€˜legal highsâ€™ eller â€˜research chemicalsâ€™ (for eksempel syntetiske cannabinoider eller katinoner)"
-    9: "Sopp/psilocybin"
-    10: "Ketamin"
-    11: "Andre"
-    98: "Ã˜nsker ikke Ã¥ svare"
-    99: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 98
-    - 99
-
-ans2_3:
-  colnames: ["skjema.SpmNarko_2.Ans2[3]"]
-  keywords: [ans2_3]
-  type: integer
-  label: "Hvilke stoffer har du prÃ¸vd?"
-  value:
-    1: "Kokain"
-    2: "Ecstacy/MDMA"
-    3: "Amfetaminer/speed"
-    4: "Relevin"
-    5: "Heroin"
-    6: "GHB/GBL"
-    7: "LSD"
-    8: "Nye rusmidler, ofte kalt â€˜legal highsâ€™ eller â€˜research chemicalsâ€™ (for eksempel syntetiske cannabinoider eller katinoner)"
-    9: "Sopp/psilocybin"
-    10: "Ketamin"
-    11: "Andre"
-    98: "Ã˜nsker ikke Ã¥ svare"
-    99: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 98
-    - 99
-
-ans2_4:
-  colnames: ["skjema.SpmNarko_2.Ans2[4]"]
-  keywords: [ans2_4]
-  type: integer
-  label: "Hvilke stoffer har du prÃ¸vd?"
-  value:
-    1: "Kokain"
-    2: "Ecstacy/MDMA"
-    3: "Amfetaminer/speed"
-    4: "Relevin"
-    5: "Heroin"
-    6: "GHB/GBL"
-    7: "LSD"
-    8: "Nye rusmidler, ofte kalt â€˜legal highsâ€™ eller â€˜research chemicalsâ€™ (for eksempel syntetiske cannabinoider eller katinoner)"
-    9: "Sopp/psilocybin"
-    10: "Ketamin"
-    11: "Andre"
-    98: "Ã˜nsker ikke Ã¥ svare"
-    99: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 98
-    - 99
-
-ans2_5:
-  colnames: ["skjema.SpmNarko_2.Ans2[5]"]
-  keywords: [ans2_5]
-  type: integer
-  label: "Hvilke stoffer har du prÃ¸vd?"
-  value:
-    1: "Kokain"
-    2: "Ecstacy/MDMA"
-    3: "Amfetaminer/speed"
-    4: "Relevin"
-    5: "Heroin"
-    6: "GHB/GBL"
-    7: "LSD"
-    8: "Nye rusmidler, ofte kalt â€˜legal highsâ€™ eller â€˜research chemicalsâ€™ (for eksempel syntetiske cannabinoider eller katinoner)"
-    9: "Sopp/psilocybin"
-    10: "Ketamin"
-    11: "Andre"
-    98: "Ã˜nsker ikke Ã¥ svare"
-    99: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 98
-    - 99
-
-ans2_6:
-  colnames: ["skjema.SpmNarko_2.Ans2[6]"]
-  keywords: [ans2_6]
-  type: integer
-  label: "Hvilke stoffer har du prÃ¸vd?"
-  value:
-    1: "Kokain"
-    2: "Ecstacy/MDMA"
-    3: "Amfetaminer/speed"
-    4: "Relevin"
-    5: "Heroin"
-    6: "GHB/GBL"
-    7: "LSD"
-    8: "Nye rusmidler, ofte kalt â€˜legal highsâ€™ eller â€˜research chemicalsâ€™ (for eksempel syntetiske cannabinoider eller katinoner)"
-    9: "Sopp/psilocybin"
-    10: "Ketamin"
-    11: "Andre"
-    98: "Ã˜nsker ikke Ã¥ svare"
-    99: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 98
-    - 99
-
-ans2_7:
-  colnames: ["skjema.SpmNarko_2.Ans2[7]"]
-  keywords: [ans2_7]
-  type: integer
-  label: "Hvilke stoffer har du prÃ¸vd?"
-  value:
-    1: "Kokain"
-    2: "Ecstacy/MDMA"
-    3: "Amfetaminer/speed"
-    4: "Relevin"
-    5: "Heroin"
-    6: "GHB/GBL"
-    7: "LSD"
-    8: "Nye rusmidler, ofte kalt â€˜legal highsâ€™ eller â€˜research chemicalsâ€™ (for eksempel syntetiske cannabinoider eller katinoner)"
-    9: "Sopp/psilocybin"
-    10: "Ketamin"
-    11: "Andre"
-    98: "Ã˜nsker ikke Ã¥ svare"
-    99: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 98
-    - 99
-
-ans2_8:
-  colnames: ["skjema.SpmNarko_2.Ans2[8]"]
-  keywords: [ans2_8]
-  type: integer
-  label: "Hvilke stoffer har du prÃ¸vd?"
-  value:
-    1: "Kokain"
-    2: "Ecstacy/MDMA"
-    3: "Amfetaminer/speed"
-    4: "Relevin"
-    5: "Heroin"
-    6: "GHB/GBL"
-    7: "LSD"
-    8: "Nye rusmidler, ofte kalt â€˜legal highsâ€™ eller â€˜research chemicalsâ€™ (for eksempel syntetiske cannabinoider eller katinoner)"
-    9: "Sopp/psilocybin"
-    10: "Ketamin"
-    11: "Andre"
-    98: "Ã˜nsker ikke Ã¥ svare"
-    99: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 98
-    - 99
-
-ans2_9:
-  colnames: ["skjema.SpmNarko_2.Ans2[9]"]
-  keywords: [ans2_9]
-  type: integer
-  label: "Hvilke stoffer har du prÃ¸vd?"
-  value:
-    1: "Kokain"
-    2: "Ecstacy/MDMA"
-    3: "Amfetaminer/speed"
-    4: "Relevin"
-    5: "Heroin"
-    6: "GHB/GBL"
-    7: "LSD"
-    8: "Nye rusmidler, ofte kalt â€˜legal highsâ€™ eller â€˜research chemicalsâ€™ (for eksempel syntetiske cannabinoider eller katinoner)"
-    9: "Sopp/psilocybin"
-    10: "Ketamin"
-    11: "Andre"
-    98: "Ã˜nsker ikke Ã¥ svare"
-    99: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 98
-    - 99
-
-ans2_10:
-  colnames: ["skjema.SpmNarko_2.Ans2[10]"]
-  keywords: [ans2_10]
-  type: integer
-  label: "Hvilke stoffer har du prÃ¸vd?"
-  value:
-    1: "Kokain"
-    2: "Ecstacy/MDMA"
-    3: "Amfetaminer/speed"
-    4: "Relevin"
-    5: "Heroin"
-    6: "GHB/GBL"
-    7: "LSD"
-    8: "Nye rusmidler, ofte kalt â€˜legal highsâ€™ eller â€˜research chemicalsâ€™ (for eksempel syntetiske cannabinoider eller katinoner)"
-    9: "Sopp/psilocybin"
-    10: "Ketamin"
-    11: "Andre"
-    98: "Ã˜nsker ikke Ã¥ svare"
-    99: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 98
-    - 99
-
-ans2_11:
-  colnames: ["skjema.SpmNarko_2.Ans2[11]"]
-  keywords: [ans2_11]
-  type: integer
-  label: "Hvilke stoffer har du prÃ¸vd?"
-  value:
-    1: "Kokain"
-    2: "Ecstacy/MDMA"
-    3: "Amfetaminer/speed"
-    4: "Relevin"
-    5: "Heroin"
-    6: "GHB/GBL"
-    7: "LSD"
-    8: "Nye rusmidler, ofte kalt â€˜legal highsâ€™ eller â€˜research chemicalsâ€™ (for eksempel syntetiske cannabinoider eller katinoner)"
-    9: "Sopp/psilocybin"
-    10: "Ketamin"
-    11: "Andre"
-    98: "Ã˜nsker ikke Ã¥ svare"
-    99: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 98
-    - 99
-
-ans2_elm_1:
-  colnames: ["skjema.SpmNarko_2.Ans2_ELM_1"]
-  keywords: [ans2_elm_1]
-  type: integer
-  label: "Kokain (Code 1)"
-  value: ~
-  recode: ~
-  missing:
-    - NA
-
-ans2_elm_2:
-  colnames: ["skjema.SpmNarko_2.Ans2_ELM_2"]
-  keywords: [ans2_elm_2]
-  type: integer
-  label: "Ecstacy/MDMA (Code 2)"
-  value: ~
-  recode: ~
-  missing:
-    - NA
-
-ans2_elm_3:
-  colnames: ["skjema.SpmNarko_2.Ans2_ELM_3"]
-  keywords: [ans2_elm_3]
-  type: integer
-  label: "Amfetaminer/speed (Code 3)"
-  value: ~
-  recode: ~
-  missing:
-    - NA
-
-ans2_elm_4:
-  colnames: ["skjema.SpmNarko_2.Ans2_ELM_4"]
-  keywords: [ans2_elm_4]
-  type: integer
-  label: "Relevin (Code 4)"
-  value: ~
-  recode: ~
-  missing:
-    - NA
-
-ans2_elm_5:
-  colnames: ["skjema.SpmNarko_2.Ans2_ELM_5"]
-  keywords: [ans2_elm_5]
-  type: integer
-  label: "Heroin (Code 5)"
-  value: ~
-  recode: ~
-  missing:
-    - NA
-
-ans2_elm_6:
-  colnames: ["skjema.SpmNarko_2.Ans2_ELM_6"]
-  keywords: [ans2_elm_6]
-  type: integer
-  label: "GHB/GBL (Code 6)"
-  value: ~
-  recode: ~
-  missing:
-    - NA
-
-ans2_elm_7:
-  colnames: ["skjema.SpmNarko_2.Ans2_ELM_7"]
-  keywords: [ans2_elm_7]
-  type: integer
-  label: "LSD (Code 7)"
-  value: ~
-  recode: ~
-  missing:
-    - NA
-
-ans2_elm_8:
-  colnames: ["skjema.SpmNarko_2.Ans2_ELM_8"]
-  keywords: [ans2_elm_8]
-  type: integer
-  label: "Nye rusmidler, ofte kalt â€˜legal highsâ€™ eller â€˜research chemicalsâ€™ (for eksempel syntetiske cannabinoider eller katinoner) (Code 8)"
-  value: ~
-  recode: ~
-  missing:
-    - NA
-
-ans2_elm_9:
-  colnames: ["skjema.SpmNarko_2.Ans2_ELM_9"]
-  keywords: [ans2_elm_9]
-  type: integer
-  label: "Sopp/psilocybin (Code 9)"
-  value: ~
-  recode: ~
-  missing:
-    - NA
-
-ans2_elm_10:
-  colnames: ["skjema.SpmNarko_2.Ans2_ELM_10"]
-  keywords: [ans2_elm_10]
-  type: integer
-  label: "Ketamin (Code 10)"
-  value: ~
-  recode: ~
-  missing:
-    - NA
-
-ans2_elm_11:
-  colnames: ["skjema.SpmNarko_2.Ans2_ELM_11"]
-  keywords: [ans2_elm_11]
-  type: integer
-  label: "Andre (Code 11)"
-  value: ~
-  recode: ~
-  missing:
-    - NA
-
-ans3_z:
-  colnames: ["skjema.SpmNarko_2.Ans3_z"]
-  keywords: [ans3_z]
-  type: integer
-  label: "Brukt LSD siste 12 mÃ¥nedene?"
-  value:
-    1: "Ja"
-    2: "Nei"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
-
-ans3_8a:
-  colnames: ["skjema.SpmNarko_2.Ans3_8a"]
-  keywords: [ans3_8a]
-  type: integer
-  label: "Brukt andre stoffer siste 12 mÃ¥nedene?"
-  value:
-    1: "Ja"
-    2: "Nei"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
-
-ans3_8b:
-  colnames: ["skjema.SpmNarko_2.Ans3_8b"]
-  keywords: [ans3_8b]
-  type: integer
-  label: "Brukt andre stoffer siste 12 mÃ¥nedene?"
-  value:
-    1: "Ja"
-    2: "Nei"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
-
-ans3_8c:
-  colnames: ["skjema.SpmNarko_2.Ans3_8c"]
-  keywords: [ans3_8c]
-  type: integer
-  label: "Brukt andre stoffer siste 12 mÃ¥nedene?"
-  value:
-    1: "Ja"
-    2: "Nei"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
-
-lyst1:
-  colnames: ["skjema.SpmNarko_2.lyst1"]
-  keywords: [lyst1]
-  type: integer
-  label: "Har du noen gang prÃ¸vd eller brukt lystgass for Ã¥ ruse deg"
-  value:
-    1: "Nei, aldri"
-    2: "Ja, men ikke de siste 12 mÃ¥nedene"
-    3: "Ja, 1-6 ganger de siste 12 mÃ¥nedene"
-    4: "Ja, 7-12 ganger de siste 12 mÃ¥nedene"
-    5: "Ja, mer enn 12 ganger de siste 12 mÃ¥nedene"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
-
-paaror1b_1:
-  colnames: ["skjema.SpmKonsekvenser.paaror1b[1]"]
-  keywords: [paaror1b_1]
-  type: integer
-  label: "Hvilke typer rusmidler dreier det seg om"
-  value:
-    1: "Alkohol"
-    2: "Reseptbelagte legemidler/piller"
-    3: "Cannabis eller andre ulovlige rusmidler"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
-
-paaror1b_2:
-  colnames: ["skjema.SpmKonsekvenser.paaror1b[2]"]
-  keywords: [paaror1b_2]
-  type: integer
-  label: "Hvilke typer rusmidler dreier det seg om"
-  value:
-    1: "Alkohol"
-    2: "Reseptbelagte legemidler/piller"
-    3: "Cannabis eller andre ulovlige rusmidler"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
-
-paaror1b_3:
-  colnames: ["skjema.SpmKonsekvenser.paaror1b[3]"]
-  keywords: [paaror1b_3]
-  type: integer
-  label: "Hvilke typer rusmidler dreier det seg om"
-  value:
-    1: "Alkohol"
-    2: "Reseptbelagte legemidler/piller"
-    3: "Cannabis eller andre ulovlige rusmidler"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
-
-paaror1b_elm_1:
-  colnames: ["skjema.SpmKonsekvenser.paaror1b_ELM_1"]
-  keywords: [paaror1b_elm_1]
-  type: integer
-  label: "Alkohol (Code 1)"
-  value: ~
-  recode: ~
-  missing:
-    - NA
-
-paaror1b_elm_2:
-  colnames: ["skjema.SpmKonsekvenser.paaror1b_ELM_2"]
-  keywords: [paaror1b_elm_2]
-  type: integer
-  label: "Reseptbelagte legemidler/piller (Code 2)"
-  value: ~
-  recode: ~
-  missing:
-    - NA
-
-paaror1b_elm_3:
-  colnames: ["skjema.SpmKonsekvenser.paaror1b_ELM_3"]
-  keywords: [paaror1b_elm_3]
-  type: integer
-  label: "Cannabis eller andre ulovlige rusmidler (Code 3)"
-  value: ~
-  recode: ~
-  missing:
-    - NA
-
-paaror2_1:
-  colnames: ["skjema.SpmKonsekvenser.paaror2[1]"]
-  keywords: [paaror2_1]
-  type: integer
-  label: "Hvilken familierelasjon har du til den eller de du er pÃ¥rÃ¸rende til"
-  value:
-    1: "Jeg er ektefelle/partner/kjÃ¦reste"
-    2: "Jeg er mor eller far"
-    3: "Jeg er sÃ¸nn eller datter"
-    4: "Jeg er sÃ¸ster eller bror"
-    5: "Jeg har en annen relasjon til personen(e)"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
-
-paaror2_2:
-  colnames: ["skjema.SpmKonsekvenser.paaror2[2]"]
-  keywords: [paaror2_2]
-  type: integer
-  label: "Hvilken familierelasjon har du til den eller de du er pÃ¥rÃ¸rende til"
-  value:
-    1: "Jeg er ektefelle/partner/kjÃ¦reste"
-    2: "Jeg er mor eller far"
-    3: "Jeg er sÃ¸nn eller datter"
-    4: "Jeg er sÃ¸ster eller bror"
-    5: "Jeg har en annen relasjon til personen(e)"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
-
-paaror2_3:
-  colnames: ["skjema.SpmKonsekvenser.paaror2[3]"]
-  keywords: [paaror2_3]
-  type: integer
-  label: "Hvilken familierelasjon har du til den eller de du er pÃ¥rÃ¸rende til"
-  value:
-    1: "Jeg er ektefelle/partner/kjÃ¦reste"
-    2: "Jeg er mor eller far"
-    3: "Jeg er sÃ¸nn eller datter"
-    4: "Jeg er sÃ¸ster eller bror"
-    5: "Jeg har en annen relasjon til personen(e)"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
-
-paaror2_4:
-  colnames: ["skjema.SpmKonsekvenser.paaror2[4]"]
-  keywords: [paaror2_4]
-  type: integer
-  label: "Hvilken familierelasjon har du til den eller de du er pÃ¥rÃ¸rende til"
-  value:
-    1: "Jeg er ektefelle/partner/kjÃ¦reste"
-    2: "Jeg er mor eller far"
-    3: "Jeg er sÃ¸nn eller datter"
-    4: "Jeg er sÃ¸ster eller bror"
-    5: "Jeg har en annen relasjon til personen(e)"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
-
-paaror2_5:
-  colnames: ["skjema.SpmKonsekvenser.paaror2[5]"]
-  keywords: [paaror2_5]
-  type: integer
-  label: "Hvilken familierelasjon har du til den eller de du er pÃ¥rÃ¸rende til"
-  value:
-    1: "Jeg er ektefelle/partner/kjÃ¦reste"
-    2: "Jeg er mor eller far"
-    3: "Jeg er sÃ¸nn eller datter"
-    4: "Jeg er sÃ¸ster eller bror"
-    5: "Jeg har en annen relasjon til personen(e)"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
-
-paaror2_elm_1:
-  colnames: ["skjema.SpmKonsekvenser.paaror2_ELM_1"]
-  keywords: [paaror2_elm_1]
-  type: integer
-  label: "Jeg er ektefelle/partner/kjÃ¦reste (Code 1)"
-  value: ~
-  recode: ~
-  missing:
-    - NA
-
-paaror2_elm_2:
-  colnames: ["skjema.SpmKonsekvenser.paaror2_ELM_2"]
-  keywords: [paaror2_elm_2]
-  type: integer
-  label: "Jeg er mor eller far (Code 2)"
-  value: ~
-  recode: ~
-  missing:
-    - NA
-
-paaror2_elm_3:
-  colnames: ["skjema.SpmKonsekvenser.paaror2_ELM_3"]
-  keywords: [paaror2_elm_3]
-  type: integer
-  label: "Jeg er sÃ¸nn eller datter (Code 3)"
-  value: ~
-  recode: ~
-  missing:
-    - NA
-
-paaror2_elm_4:
-  colnames: ["skjema.SpmKonsekvenser.paaror2_ELM_4"]
-  keywords: [paaror2_elm_4]
-  type: integer
-  label: "Jeg er sÃ¸ster eller bror (Code 4)"
-  value: ~
-  recode: ~
-  missing:
-    - NA
-
-paaror2_elm_5:
-  colnames: ["skjema.SpmKonsekvenser.paaror2_ELM_5"]
-  keywords: [paaror2_elm_5]
-  type: integer
-  label: "Jeg har en annen relasjon til personen(e) (Code 5)"
-  value: ~
-  recode: ~
-  missing:
-    - NA
-
-paaror6_1:
-  colnames: ["skjema.SpmKonsekvenser.paaror6[1]"]
-  keywords: [paaror6_1]
-  type: integer
-  label: "Hvilken familierelasjon har du til den eller de du er pÃ¥rÃ¸rende til"
-  value:
-    1: "Jeg er ektefelle/partner/kjÃ¦reste"
-    2: "Jeg er mor eller far"
-    3: "Jeg er sÃ¸nn eller datter"
-    4: "Jeg er sÃ¸ster eller bror"
-    5: "Jeg har en annen relasjon til personen(e)"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
-
-paaror6_2:
-  colnames: ["skjema.SpmKonsekvenser.paaror6[2]"]
-  keywords: [paaror6_2]
-  type: integer
-  label: "Hvilken familierelasjon har du til den eller de du er pÃ¥rÃ¸rende til"
-  value:
-    1: "Jeg er ektefelle/partner/kjÃ¦reste"
-    2: "Jeg er mor eller far"
-    3: "Jeg er sÃ¸nn eller datter"
-    4: "Jeg er sÃ¸ster eller bror"
-    5: "Jeg har en annen relasjon til personen(e)"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
-
-paaror6_3:
-  colnames: ["skjema.SpmKonsekvenser.paaror6[3]"]
-  keywords: [paaror6_3]
-  type: integer
-  label: "Hvilken familierelasjon har du til den eller de du er pÃ¥rÃ¸rende til"
-  value:
-    1: "Jeg er ektefelle/partner/kjÃ¦reste"
-    2: "Jeg er mor eller far"
-    3: "Jeg er sÃ¸nn eller datter"
-    4: "Jeg er sÃ¸ster eller bror"
-    5: "Jeg har en annen relasjon til personen(e)"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
-
-paaror6_4:
-  colnames: ["skjema.SpmKonsekvenser.paaror6[4]"]
-  keywords: [paaror6_4]
-  type: integer
-  label: "Hvilken familierelasjon har du til den eller de du er pÃ¥rÃ¸rende til"
-  value:
-    1: "Jeg er ektefelle/partner/kjÃ¦reste"
-    2: "Jeg er mor eller far"
-    3: "Jeg er sÃ¸nn eller datter"
-    4: "Jeg er sÃ¸ster eller bror"
-    5: "Jeg har en annen relasjon til personen(e)"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
-
-paaror6_5:
-  colnames: ["skjema.SpmKonsekvenser.paaror6[5]"]
-  keywords: [paaror6_5]
-  type: integer
-  label: "Hvilken familierelasjon har du til den eller de du er pÃ¥rÃ¸rende til"
-  value:
-    1: "Jeg er ektefelle/partner/kjÃ¦reste"
-    2: "Jeg er mor eller far"
-    3: "Jeg er sÃ¸nn eller datter"
-    4: "Jeg er sÃ¸ster eller bror"
-    5: "Jeg har en annen relasjon til personen(e)"
-    8: "Ã˜nsker ikke Ã¥ svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
-
-paaror6_elm_1:
-  colnames: ["skjema.SpmKonsekvenser.paaror6_ELM_1"]
-  keywords: [paaror6_elm_1]
-  type: integer
-  label: "Jeg er ektefelle/partner/kjÃ¦reste (Code 1)"
-  value: ~
-  recode: ~
-  missing:
-    - NA
-
-paaror6_elm_2:
-  colnames: ["skjema.SpmKonsekvenser.paaror6_ELM_2"]
-  keywords: [paaror6_elm_2]
-  type: integer
-  label: "Jeg er mor eller far (Code 2)"
-  value: ~
-  recode: ~
-  missing:
-    - NA
-
-paaror6_elm_3:
-  colnames: ["skjema.SpmKonsekvenser.paaror6_ELM_3"]
-  keywords: [paaror6_elm_3]
-  type: integer
-  label: "Jeg er sÃ¸nn eller datter (Code 3)"
-  value: ~
-  recode: ~
-  missing:
-    - NA
-
-paaror6_elm_4:
-  colnames: ["skjema.SpmKonsekvenser.paaror6_ELM_4"]
-  keywords: [paaror6_elm_4]
-  type: integer
-  label: "Jeg er sÃ¸ster eller bror (Code 4)"
-  value: ~
-  recode: ~
-  missing:
-    - NA
-
-paaror6_elm_5:
-  colnames: ["skjema.SpmKonsekvenser.paaror6_ELM_5"]
-  keywords: [paaror6_elm_5]
-  type: integer
-  label: "Jeg har en annen relasjon til personen(e) (Code 5)"
-  value: ~
-  recode: ~
-  missing:
-    - NA
-
-aldersgruppe:
-  colnames: ["aldersgruppe"]
-  keywords: [aldersgruppe]
-  type: integer
-  label: "Alder gruppert"
-  value:
-    1: "16 - 24 Ã¥r"
-    2: "25 - 44 Ã¥r"
-    3: "45 - 66 Ã¥r"
-    4: "67 - 79 Ã¥r"
-    5: "over 80 Ã¥r og over"
-  recode: ~
-  missing:
-    - NA
-
-fylke:
-  colnames: ["fylke"]
-  keywords: [fylke]
-  type: integer
-  label: "Fylke"
-  value:
-    3: "Oslo - Oslove"
-    11: "Rogaland"
-    15: "MÃ¸re og Romsdal"
-    18: "Nordland - NordlÃ¡nnda"
-    31: "Ã˜stfold"
-    32: "Akershus"
-    33: "Buskerud"
-    34: "Innlandet"
-    39: "Vestfold"
-    40: "Telemark"
-    42: "Agder"
-    46: "Vestland"
-    50: "TrÃ¸ndelag - TrÃ¶Ã¶ndelage"
-    55: "Troms - Romsa - Tromssa"
-    56: "Finnmark - FinnmÃ¡rku - Finmarkku"
-    99: "Uoppgitt fra register"
-  recode: ~
-  missing:
-    - NA
-
-landsdel:
-  colnames: ["landsdel"]
-  keywords: [landsdel]
-  type: integer
-  label: "Landsdel"
-  value:
-    1: "Akershus og Oslo"
-    2: "Ã˜stlandet ellers"
-    3: "Agder og Rogaland"
-    4: "Vestlandet"
-    5: "TrÃ¸ndelag"
-    6: "Nord-Norge"
-    9: "Uoppgitt"
-  recode: ~
-  missing:
-    - NA
-
-statsborgerskap_gruppert:
-  colnames: ["statsborgerskap_gruppert"]
-  keywords: [statsborgerskap_gruppert]
-  type: integer
-  label: "Statsborgerskap gruppert"
-  value:
-    1: "Norge"
-    2: "Europa"
-    3: "Asia"
-    4: "Afrika"
-    5: "SÃ¸r- og Mellom-Amerika"
-    6: "Nord-Amerika"
-    7: "Australia/New Zealand/Oceania"
-  recode: ~
-  missing:
-    - NA
-
-fodeland_gruppert:
-  colnames: ["fodeland_gruppert"]
-  keywords: [fodeland_gruppert]
-  type: integer
-  label: "FÃ¸deland gruppert"
-  value:
-    1: "Norge"
-    2: "Europa"
-    3: "Asia"
-    4: "Afrika"
-    5: "SÃ¸r- og Mellom-Amerika"
-    6: "Nord-Amerika"
-    7: "Australia/New Zealand/Oceania"
-  recode: ~
-  missing:
-    - NA
-
-mors_fodeland_gruppert:
-  colnames: ["mors_fodeland_gruppert"]
-  keywords: [mors_fodeland_gruppert]
-  type: integer
-  label: "Mors fodeland gruppert"
-  value:
-    1: "Norge"
-    2: "Europa"
-    3: "Asia"
-    4: "Afrika"
-    5: "SÃ¸r- og Mellom-Amerika"
-    6: "Nord-Amerika"
-    7: "Australia/New Zealand/Oceania"
-  recode: ~
-  missing:
-    - NA
-
-fars_fodeland_gruppert:
-  colnames: ["fars_fodeland_gruppert"]
-  keywords: [fars_fodeland_gruppert]
-  type: integer
-  label: "Fars fodeland gruppert"
-  value:
-    1: "Norge"
-    2: "Europa"
-    3: "Asia"
-    4: "Afrika"
-    5: "SÃ¸r- og Mellom-Amerika"
-    6: "Nord-Amerika"
-    7: "Australia/New Zealand/Oceania"
-  recode: ~
-  missing:
-    - NA
-
-samlet_inntekt_gruppert:
-  colnames: ["samlet_inntekt_gruppert"]
-  keywords: [samlet_inntekt_gruppert]
-  type: integer
-  label: "Bruttoinntekt person gruppert"
-  value:
-    1: "0 - 99 999"
-    2: "100 000 - 149 999"
-    3: "150 000 - 199 999"
-    4: "200 000 - 249 999"
-    5: "250 000 - 299 999"
-    6: "300 000 - 399 999"
-    7: "400 000 - 499 999"
-    8: "500 000 - 599 999"
-    9: "600 000 - 699 999"
-    10: "700 000 - 799 999"
-    11: "800 000 - 899 999"
-    12: "900 000 - 999 999"
-    13: "1 000 000 - 1 099 999"
-    14: "1 100 000 - 1 199 999"
-    15: "1 200 000 - 1 299 999"
-    16: "1 300 000 - 1 399 999"
-    17: "1 400 000 - 1 499 999"
-    18: "1 500 000 eller mer"
-  recode: ~
-  missing:
-    - NA
-
-hush_samlet_inntekt_gruppert:
-  colnames: ["hush_samlet_inntekt_gruppert"]
-  keywords: [hush_samlet_inntekt_gruppert]
-  type: integer
-  label: "Bruttoinntekt husholdning gruppert"
-  value:
-    1: "0 - 99 000"
-    2: "100 000 - 149 999"
-    3: "150 000 - 199 999"
-    4: "200 000 - 249 999"
-    5: "250 000 - 299 999"
-    6: "300 000 - 399 999"
-    7: "400 000 - 499 999"
-    8: "500 000 - 599 999"
-    9: "600 000 - 699 999"
-    10: "700 000 - 799 999"
-    11: "800 000 - 899 999"
-    12: "900 000 - 999 999"
-    13: "1 000 000 - 1 099 000"
-    14: "1 100 000 - 1 199 000"
-    15: "1 200 000 - 1 299 000"
-    16: "1 300 000 - 1 399 000"
-    17: "1 400 000 - 1 499 000"
-    18: "1 500 000 - 1 599 000"
-    19: "1 600 000 - 1 699 000"
-    20: "1 700 000 - 1 799 000"
-    21: "1 800 000 - 1 899 000"
-    22: "1 900 000 - 1 999 000"
-    23: "2 000 000 og mer"
-  recode: ~
-  missing:
-    - NA
-
-hush_ies_eu_gruppert:
-  colnames: ["hush_ies_eu_gruppert"]
-  keywords: [hush_ies_eu_gruppert]
-  type: integer
-  label: "Husholdningens inntekt etter skatt per forbruksenhet, EU-ekvivalensskala, gruppert"
-  value:
-    1: "0 - 99 999"
-    2: "100 000 - 149 999"
-    3: "150 000 - 199 999"
-    4: "200 000 - 249 999"
-    5: "250 000 - 299 999"
-    6: "300 000 - 399 999"
-    7: "400 000 - 499 999"
-    8: "500 000 - 599 999"
-    9: "600 000 - 699 999"
-    10: "700 000 - 799 999"
-    11: "800 000 - 899 999"
-    12: "900 000 - 999 999"
-    13: "1 000 000 eller mer"
-  recode: ~
-  missing:
-    - NA
-
-ts_kode:
-  colnames: ["ts_kode"]
-  keywords: [ts_kode]
-  type: character
-  label: "Tettbygd spredtbygd"
-  value:
-    "t": "Tettbygd"
-    "s": "Spredtbygd"
-  recode: ~
-  missing:
-    - NA
-
-fagfelt:
-  colnames: ["fagfelt"]
-  keywords: [fagfelt]
-  type: integer
-  label: "Fagfelt"
-  value:
-    0: "Allmenne fag"
-    1: "Humanistiske og estetiske fag"
-    2: "LÃ¦rerutdanninger og utdanninger i pedagogikk"
-    3: "Samfunnsfag og juridiske fag"
-    4: "Ã˜konomiske og administrative fag"
-    5: "Naturvitenskapelige fag, hÃ¥ndverksfag og tekniske fag"
-    6: "Helse-, sosial- og idrettsfag"
-    7: "PrimÃ¦rnÃ¦ringsfag"
-    8: "Samferdsels- og sikkerhetsfag og andre servicefag"
-    9: "Uoppgitt fra register"
-  recode: ~
-  missing:
-    - NA
-
-yrkeskode_samlet:
-  colnames: ["yrkeskode_samlet"]
-  keywords: [yrkeskode_samlet]
-  type: integer
-  label: "Yrke sammenslÃ¥tt fra register og koding"
-  value:
-    0: "MilitÃ¦re yrker og uoppgitt"
-    1: "Ledere"
-    2: "Akademiske yrker"
-    3: "HÃ¸yskoleyrker"
-    4: "Kontoryrker"
-    5: "Salg- og serviceyrker"
-    6: "BÃ¸nder, fiskere mv."
-    7: "HÃ¥ndverkere"
-    8: "Prosess- og maskinoperatÃ¸rer, transportarbeidere mv."
-    9: "Renholdere, hjelpearbeidere mv."
-  recode: ~
-  missing:
-    - NA

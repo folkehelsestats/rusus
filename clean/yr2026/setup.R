@@ -5,9 +5,9 @@ library(cuci)
 
 source(here::here("folder-path.R"))
 
-file <- file.path(Rususdata, "Rusus_2026/ORG/rus2026_hdir_fhi.parquet")
-filem <- file.path(Rususdata, "Rusus_2026/ORG/rus2026_meta_hdir_fhi.parquet")
-fcsv <- file.path(Rususdata, "Rusus_2026/ORG/rus2026_hdir_fhi.csv")
+file <- file.path(Rususdata, "Rusus_2026/ORG/rus2026_hdir_fhi_v2.parquet")
+filem <- file.path(Rususdata, "Rusus_2026/ORG/rus2026_meta_hdir_fhi_v2.parquet")
+fcsv <- file.path(Rususdata, "Rusus_2026/ORG/rus2026_hdir_fhi_v2.csv")
 
 
 dt <- khtools::read_pq(file)
@@ -20,6 +20,17 @@ dc <- fread(fcsv)
 # rio::export(as.data.frame(names(dr)), file.path(Rususdata, "Rusus_2026/varnames2026.csv"))
 rio::export(dm, file.path(Rususdata, "Rusus_2026/meta2026.csv"), sep = ";")
 rio::export(dm, file.path(Rususdata, "Rusus_2026/meta2026.xlsx"))
+
+## Rename variables from metadata
+## ------------------------------
+
+longVars <- unique(dm[["Varnavn"]])
+shortVars <- unique(dm[["Varnavnkort"]])
+
+data.table::setnames(dr, longVars, shortVars)
+
+data.table::fwrite(dr, file.path(Rususdata, "Rusus_2026/rtu2026.csv"))
+
 
 ## Standardisere
 ## -----------------------------------------------------------------------------
@@ -61,3 +72,22 @@ render_report(
   create_dir = TRUE,
   open_browser = FALSE
 )
+
+
+delnvn <- c("skjema.SpmBakgrunn.", "skjema.SpmTobakk.", "skjema.SpmAlkohol.",
+            "skjema.SpmNarko_1.", "skjema.SpmNarko_2.", "skjema.SpmDoping.",
+            "skjema.SpmKonsekvenser.", "skjema.SpmAudit.","skjema.SpmArb_alko.",
+            "skjema.SpmLegemidler.", "skjema.SpmArbliv.")
+
+# Create a regex matching any prefix in delnvn
+pattern <- paste0("^(", paste(gsub("\\.", "\\\\.", delnvn), collapse = "|"), ")")
+
+# Rename variables
+newnv <- sub(pattern, "", names(dr))
+
+setnames(dr, names(dr), newnv)
+
+# rio::export(dr, file.path(Rususdata, "rtu2026.dta"))
+# rio::export(dr, file.path(Rususdata, "rtu2026.csv"), sep = ",")
+
+data.table::fwrite(dr, file.path(Rususdata, "Rusus_2026", "rtu2026.csv"))
