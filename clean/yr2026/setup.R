@@ -24,12 +24,17 @@ rio::export(dm, file.path(Rususdata, "Rusus_2026/meta2026.xlsx"))
 ## Rename variables from metadata
 ## ------------------------------
 
+dx1 <- copy(dr)
+dx2 <- copy(dr)
+
 longVars <- unique(dm[["Varnavn"]])
 shortVars <- unique(dm[["Varnavnkort"]])
+shortVsml <- tolower(shortVars)
 
-data.table::setnames(dr, longVars, shortVars)
+data.table::setnames(dx1, longVars, shortVars) #stor bokstaver
+data.table::setnames(dx2, longVars, shortVsml) #små bokstaver
 
-data.table::fwrite(dr, file.path(Rususdata, "Rusus_2026/rtu2026.csv"))
+data.table::fwrite(dx2, file.path(Rususdata, "Rusus_2026/rtu2026.csv"))
 
 
 ## Standardisere
