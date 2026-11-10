@@ -58,3 +58,58 @@ library(highdir)
 spec <- hd_spec(kj, "value", "pct", n = "N")
 opts <- hd_opts(title = "kjonn")
 hd_make(spec, "column", opts)
+
+
+## Describe the dataset
+## ----------------
+
+library(data.table)
+library(skimr)
+
+skimr::skim(dx)
+
+skim(dx) |>
+  as.data.table()
+
+describe_dt <- function(dt, n_max_unique = 10, n_show = 5) {
+  stopifnot(data.table::is.data.table(dt) || is.data.frame(dt))
+
+  data.table(
+    variable = names(dt),
+    class = vapply(dt, function(x) class(x)[1], character(1)),
+    n_unique = vapply(dt, function(x) length(unique(x)), integer(1)),
+    values = vapply(dt, function(x) {
+
+      ux <- unique(x)
+
+      if (is.factor(x)) {
+        paste(levels(x), collapse = ", ")
+      } else if (length(ux) <= n_max_unique) {
+        paste(ux, collapse = ", ")
+      } else {
+        paste(head(ux, n_show), collapse = ", ")
+      }
+
+    }, character(1))
+  )
+}
+
+des <- describe_dt(dx)
+fwrite(des, here::here("clean", "yr2026", "dx_variable_descriptions.csv"))
+
+## -----------------------------------------------------------------------------
+## Create report
+## -----------------------------------------------------------------------------
+pak::pak("ekstroem/dataReporter")
+
+dataReporter::makeDataReport(data = dx,
+                             output = "html",
+                             render = TRUE,
+                             mode = c("summarize", "visualize", "check"),
+                             smartNum = TRUE,
+                             file = "rtu_report2026.html",
+                             listChecks = TRUE,
+                             maxProbVals = Inf,
+                             codebook = TRUE,
+                             reportTitle = "Rus- og tobakksundersøkelsen 2026",
+                             includeVariableList = TRUE)
