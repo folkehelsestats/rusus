@@ -76,7 +76,7 @@ add_metadata_labels <- function(
   #------------------------------------------------------------
   # Process one variable at a time
   #------------------------------------------------------------
-  for (var in unique(metadata$Varnavnkort)) {
+  for (var in unique(tolower(metadata$Varnavnkort))) {
 
     # Skip metadata rows for variables not present in data.
     if (!var %in% names(data)) {
@@ -92,7 +92,7 @@ add_metadata_labels <- function(
       next
     }
 
-    md_var <- metadata[metadata$Varnavnkort == var, ]
+    md_var <- metadata[tolower(metadata$Varnavnkort) == var, ]
 
     #----------------------------------------------------------
     # Variable label
