@@ -39,4 +39,4 @@ dx <- add_metadata_labels(
 
 labelled::look_for(dx)
 
-torr::create_codebook(dx)
+torr::create_codebook(dx, save = T)
