@@ -1,3 +1,5 @@
+# if(!require(pak)) install.packages("pak")
+# pak::pkg_install("folkehelsestats/torr")
 
 library(data.table)
 library(khtools)
@@ -40,3 +42,19 @@ dx <- add_metadata_labels(
 labelled::look_for(dx)
 
 torr::create_codebook(dx, save = T)
+
+## Frequency
+## -----------------------------------------------------------------------------
+source(file.path(here::here(), "clean/yr2026/fun-freq-tbl.R"))
+
+kj <- freq_table(dx, "kjonn")
+
+# clean labelled attributes coz it makes troubles
+kj[, (names(kj)) := lapply(.SD, \(x) { attributes(x) <- NULL; x })]
+
+
+
+library(highdir)
+spec <- hd_spec(kj, "value", "pct", n = "N")
+opts <- hd_opts(title = "kjonn")
+hd_make(spec, "column", opts)
