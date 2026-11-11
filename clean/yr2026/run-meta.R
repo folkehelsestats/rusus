@@ -43,6 +43,28 @@ labelled::look_for(dx)
 
 torr::create_codebook(dx, save = T)
 
+## Ensure correct datatype and encoding
+## -----------------------------------------------------------------------------
+library(cuci)
+
+readr::guess_encoding(
+  here::here("clean/yr2026/variable_map.yaml")
+)
+
+path <- here::here("clean/yr2026/variable_map.yaml")
+
+txt <- readLines(path, encoding = "latin1", warn = FALSE)
+
+# Convert to UTF-8 if not
+writeLines(
+  enc2utf8(txt),
+  path,
+  useBytes = TRUE
+)
+
+cfg <- cuci::load_config(here::here("clean/yr2026/variable_map.yaml"))
+
+
 ## Frequency
 ## -----------------------------------------------------------------------------
 source(file.path(here::here(), "clean/yr2026/fun-freq-tbl.R"))
@@ -51,8 +73,6 @@ kj <- freq_table(dx, "kjonn")
 
 # clean labelled attributes coz it makes troubles
 kj[, (names(kj)) := lapply(.SD, \(x) { attributes(x) <- NULL; x })]
-
-
 
 library(highdir)
 spec <- hd_spec(kj, "value", "pct", n = "N")
@@ -68,48 +88,56 @@ library(skimr)
 
 skimr::skim(dx)
 
-skim(dx) |>
-  as.data.table()
-
-describe_dt <- function(dt, n_max_unique = 10, n_show = 5) {
-  stopifnot(data.table::is.data.table(dt) || is.data.frame(dt))
-
-  data.table(
-    variable = names(dt),
-    class = vapply(dt, function(x) class(x)[1], character(1)),
-    n_unique = vapply(dt, function(x) length(unique(x)), integer(1)),
-    values = vapply(dt, function(x) {
-
-      ux <- unique(x)
-
-      if (is.factor(x)) {
-        paste(levels(x), collapse = ", ")
-      } else if (length(ux) <= n_max_unique) {
-        paste(ux, collapse = ", ")
-      } else {
-        paste(head(ux, n_show), collapse = ", ")
-      }
-
-    }, character(1))
-  )
-}
-
-des <- describe_dt(dx)
-fwrite(des, here::here("clean", "yr2026", "dx_variable_descriptions.csv"))
-
 ## -----------------------------------------------------------------------------
 ## Create report
 ## -----------------------------------------------------------------------------
-pak::pak("ekstroem/dataReporter")
+pak::pak("ybkamaleri/dataReporter@flip")
+library(dataReporter)
+
+check(dx$alder)
+check(dx)
+allCheckFunctions()
+
+identifyMissing(dx$alder)
+
+
+summarize(dx[, c("alder", "aldersgruppe")])
+
+visualize(dx$alder)
+visualize(dx[, c("alder", "aldersgruppe")])
+
+makeCodebook(dx,
+             reportTitle = "Rus- og tobakksundersøkelsen 2026",
+             file = "rtu_check2026.html")
 
 dataReporter::makeDataReport(data = dx,
+                             vol = 1,
                              output = "html",
                              render = TRUE,
                              mode = c("summarize", "visualize", "check"),
                              smartNum = TRUE,
-                             file = "rtu_report2026.html",
+                             file = file.path(here::here("clean/yr2026/rtu_report2026.html")),
                              listChecks = TRUE,
                              maxProbVals = Inf,
                              codebook = TRUE,
+                             visuals = setVisuals(all = "standardVisual"), #basicVisual (base R) or standardVisual (ggplot2)
                              reportTitle = "Rus- og tobakksundersøkelsen 2026",
-                             includeVariableList = TRUE)
+                             includeVariableList = TRUE,
+                             rename = TRUE)
+
+## Curiousity
+## ---------
+
+myvar <- 1:10
+manyVars <- dx[, c("kjonn", "alder", "aldersgruppe")]
+
+basicVisual(dx$kjonn, "Kjønn")
+standardVisual(myvar, "MyTest")
+
+visualize(manyVars)
+visualize(manyVars, setVisuals(character = "basicVisual", factor = "standardVisual"))
+
+basicVisual(myvar, "MyTest", doEval = F)
+standardVisual(myvar, "MyTest", doEval = F)
+
+allVisualFunctions()
