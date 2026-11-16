@@ -34,7 +34,8 @@ shortVsml <- tolower(shortVars)
 data.table::setnames(dx1, longVars, shortVars) #stor bokstaver
 data.table::setnames(dx2, longVars, shortVsml) #små bokstaver
 
-data.table::fwrite(dx2, file.path(Rususdata, "Rusus_2026/rtu2026.csv"))
+# data.table::fwrite(dx2, file.path(Rususdata, "Rusus_2026/rtu2026.csv"))
+ds <- data.table::fread(file.path(Rususdata, "Rusus_2026/rtu2026.csv"))
 
 
 ## Standardisere
@@ -43,10 +44,20 @@ data.table::fwrite(dx2, file.path(Rususdata, "Rusus_2026/rtu2026.csv"))
 # rtu <- "O:\\Prosjekt\\Rusdata\\Rusundersokelsen\\Datasets\\variable_map.yaml"
 rtu <- "C:\\Users\\ykama\\Git-hdir\\rusus\\config\\variable_map.yaml"
 
+readr::guess_encoding(rtu)
+
+writeLines(
+  iconv(readLines(rtu, encoding = "ISO-8859-1", warn = FALSE),
+        from = "ISO-8859-1",
+        to = "UTF-8"),
+  rtu,
+  useBytes = TRUE
+)
+
 config <- load_config(rtu)
 
 out <- clean_dataset(
-  dt            = dr,
+  dt            = dx2,
   config        = config,
   year_tag      = 2026L,
   dataset_label = "rtu2026.csv",
@@ -57,10 +68,11 @@ out$data
 out$issues
 
 
+fsmall <- file.path(Rususdata, "Rusus_2026/rtu2026.csv")
 
 # Returns a named list - one cleaned data.table per file
 results <- run_pipeline(
-  file_manifest = data.frame(path = fcsv, year_tag = 2026),
+  file_manifest = data.frame(path = fsmall, year_tag = 2026),
   config_file   = rtu,
   log_dir       = "logs/matching",
   output_path   = "data/clean",      # directory: one CSV per file
