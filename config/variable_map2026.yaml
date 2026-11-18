@@ -2390,7 +2390,7 @@ can6b:
     - 9
 
 can7_a:
-  colnames: [Can7_a]
+  colnames: [Can7_a, skjema.SpmNarko_1.Can7_ELM_1, Can7_ELM_1]
   keywords: [can7_a]
   type: integer
   label: "Brukt Hasj siste 12 mnd?"
@@ -2398,12 +2398,13 @@ can7_a:
     1: "Ja"
     2: "Nei"
   recode:
+    0: 2
   missing:
     - NA
     - 9
 
 can7_b:
-  colnames: [Can7_b]
+  colnames: [Can7_b, skjema.SpmNarko_1.Can7_ELM_2, Can7_ELM_2]
   keywords: [can7_b]
   type: integer
   label: "Brukt Marihuana siste 12 mnd?"
@@ -2411,12 +2412,13 @@ can7_b:
     1: "Ja"
     2: "Nei"
   recode:
+    0: 2
   missing:
     - NA
     - 9
 
 can7_c:
-  colnames: [Can7_c]
+  colnames: [Can7_c, skjema.SpmNarko_1.Can7_ELM_3, Can7_ELM_3]
   keywords: [can7_c]
   type: integer
   label: "Brukt Cannabisolje siste 12 mnd?"
@@ -2424,12 +2426,13 @@ can7_c:
     1: "Ja"
     2: "Nei"
   recode:
+    0: 2
   missing:
     - NA
     - 9
 
 can7_d:
-  colnames: [Can7_d]
+  colnames: [Can7_d, skjema.SpmNarko_1.Can7_ELM_4, Can7_ELM_4]
   keywords: [can7_d]
   type: integer
   label: "Brukt spiselige produkter (edibles) siste 12 mnd?"
@@ -2437,12 +2440,13 @@ can7_d:
     1: "Ja"
     2: "Nei"
   recode:
+    0: 2
   missing:
     - NA
     - 9
 
 can7_e:
-  colnames: [Can7_e]
+  colnames: [Can7_e, skjema.SpmNarko_1.Can7_ELM_6, Can7_ELM_6]
   keywords: [can7_e]
   type: integer
   label: "Brukt annen type cannabis siste 12 mnd?"
@@ -2450,6 +2454,21 @@ can7_e:
     1: "Ja"
     2: "Nei"
   recode:
+    0: 2
+  missing:
+    - NA
+    - 9
+
+can7_f:
+  colnames: [skjema.SpmNarko_1.Can7_ELM_5, Can7_ELM_5]
+  keywords: [can7_elm_5]
+  type: interger
+  label: "Brukt i vape eller e-sigaretter siste 12 mnd?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+    0: 2
   missing:
     - NA
     - 9
@@ -4210,10 +4229,100 @@ arb_alk1_ny:
     - NA
 
 can7_1:
-  colnames: ["skjema.SpmNarko_1.Can7[1]"]
+  colnames: ["skjema.SpmNarko_1.Can7[1]", Can7_1]
   keywords: [can7_1]
   type: integer
-  label: "Hvilke typer brukt siste 12 mnd"
+  label: "Hvilke typer brukt siste 12 mnd (et svar)"
+  value:
+    1: "Hasj"
+    2: "Marihuana"
+    3: "Cannabisolje/ekstrakt"
+    4: "Spiselige produkter"
+    5: "I vape/e-sigaretter"
+    6: "Andre typer cannabis"
+  recode: ~
+  missing:
+    - NA
+    - 8
+    - 9
+
+can7_2:
+  colnames: ["skjema.SpmNarko_1.Can7[2]", Can7_2]
+  keywords: [can7_2]
+  type: integer
+  label: "Hvilke typer brukt siste 12 mnd (2 svar)"
+  value:
+    1: "Hasj"
+    2: "Marihuana"
+    3: "Cannabisolje/ekstrakt"
+    4: "Spiselige produkter"
+    5: "I vape/e-sigaretter"
+    6: "Andre typer cannabis"
+  recode: ~
+  missing:
+    - NA
+    - 8
+    - 9
+
+can7_3:
+  colnames: ["skjema.SpmNarko_1.Can7[3]", Can7_3]
+  keywords: [can7_3]
+  type: integer
+  label: "Hvilke typer brukt siste 12 mnd (3 svar)"
+  value:
+    1: "Hasj"
+    2: "Marihuana"
+    3: "Cannabisolje/ekstrakt"
+    4: "Spiselige produkter"
+    5: "I vape/e-sigaretter"
+    6: "Andre typer cannabis"
+  recode: ~
+  missing:
+    - NA
+    - 8
+    - 9
+
+can7_4:
+  colnames: ["skjema.SpmNarko_1.Can7[4]", Can7_4]
+  keywords: [can7_4]
+  type: integer
+  label: "Hvilke typer brukt siste 12 mnd (4 svar)"
+  value:
+    1: "Hasj"
+    2: "Marihuana"
+    3: "Cannabisolje/ekstrakt"
+    4: "Spiselige produkter"
+    5: "I vape/e-sigaretter"
+    6: "Andre typer cannabis"
+  recode: ~
+  missing:
+    - NA
+    - 8
+    - 9
+
+can7_5:
+  colnames: ["skjema.SpmNarko_1.Can7[5]", Can7_5]
+  keywords: [can7_5]
+  type: integer
+  label: "Hvilke typer brukt siste 12 mnd (5 svar)"
+  value:
+    1: "Hasj"
+    2: "Marihuana"
+    3: "Cannabisolje/ekstrakt"
+    4: "Spiselige produkter"
+    5: "I vape/e-sigaretter"
+    6: "Andre typer cannabis"
+  recode: ~
+  missing:
+    - NA
+    - 8
+    - 9
+
+can7_6:
+  colnames: ["skjema.SpmNarko_1.Can7[6]", Can7_6]
+  keywords: [can7_6]
+  type: integer
+  label: "Hvilke typer brukt siste 12 mnd (6 svar)"
   value:
     1: "Hasj"
     2: "Marihuana"
