@@ -2580,6 +2580,128 @@ can14:
     - 8
     - 9
 
+holdn1:
+  colnames: [holdn1, skjema.SpmNarko_1.holdn1]
+  keywords: [holdn1]
+  type: integer
+  label: "Bør bruk av cannabis generelt bli staffefritt i Norge"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+  missing:
+    - 8
+    - 9
+
+holdn2:
+  colnames: [holdn2, skjema.SpmNarko_1.holdn2]
+  keywords: [holdn2]
+  type: integer
+  label: "Bør salg av cannabis generelt bli tillatt i Norge"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+  missing:
+    - 8
+    - 9
+
+cast1:
+  colnames: [skjema.SpmNarko_1.cast1, cast1]
+  keywords: [cast1]
+  type: integer
+  label: "Har du røykt cannabis på formiddagen, før klokken 12"
+  value:
+    1: Aldri
+    2: Sjelden
+    3: "Av og til"
+    4: "Ganske ofte"
+    5: Ofte
+  recode:
+  missing:
+    - 8
+    - 9
+
+cast2:
+  colnames: [skjema.SpmNarko_1.cast2, cast2]
+  keywords: [cast2]
+  type: integer
+  label: "Har du røykt cannabis når du har vært alene"
+  value:
+    1: Aldri
+    2: Sjelden
+    3: "Av og til"
+    4: "Ganske ofte"
+    5: Ofte
+  recode:
+  missing:
+    - 8
+    - 9
+
+cast3:
+  colnames: [skjema.SpmNarko_1.cast3, cast3]
+  keywords: [cast3]
+  type: integer
+  label: "Har du hatt problemer med hukommelsen når du har røykt cannabis"
+  value:
+    1: Aldri
+    2: Sjelden
+    3: "Av og til"
+    4: "Ganske ofte"
+    5: Ofte
+  recode:
+  missing:
+    - 8
+    - 9
+
+cast4:
+  colnames: [skjema.SpmNarko_1.cast4, cast4]
+  keywords: [cast4]
+  type: integer
+  label: "Har venner eller familie sagt til deg at du bør redusere eller slutte å bruke cannabis"
+  value:
+    1: Aldri
+    2: Sjelden
+    3: "Av og til"
+    4: "Ganske ofte"
+    5: Ofte
+  recode:
+  missing:
+    - 8
+    - 9
+
+cast5:
+  colnames: [skjema.SpmNarko_1.cast5, cast5]
+  keywords: [cast5]
+  type: integer
+  label: "Har du forsøkt å redusere eller slutte å bruke cannabis uten å lykkes"
+  value:
+    1: Aldri
+    2: Sjelden
+    3: "Av og til"
+    4: "Ganske ofte"
+    5: Ofte
+  recode:
+  missing:
+    - 8
+    - 9
+
+cast6:
+  colnames: [skjema.SpmNarko_1.cast6, cast6]
+  keywords: [cast6]
+  type: integer
+  label: "Har du hatt problemer på grunn av din cannabisbruk"
+  value:
+    1: Aldri
+    2: Sjelden
+    3: "Av og til"
+    4: "Ganske ofte"
+    5: Ofte
+  recode:
+  missing:
+    - 8
+    - 9
+
 ans1:
   colnames: [Ans1, skjema.SpmNarko_2.Ans1]
   keywords: [ans1]
@@ -2604,49 +2726,52 @@ ans2sps:
     - NA
 
 ans2_a:
-  colnames: [Ans2_a]
-  keywords: [ans2_a]
+  colnames: [Ans2_a, "skjema.SpmNarko_2.Ans2_ELM_1", Ans2_ELM_1]
+  keywords: [ans2_a, ans2_elm_1]
   type: integer
   label: "Brukt Kokain noen gang"
   value:
     1: "Ja"
     2: "Nei"
   recode:
+    0: 2
   missing:
     - NA
-    - 8
-    - 9
+    - 98
+    - 99
 
 ans2_b:
-  colnames: [Ans2_b]
-  keywords: [ans2_b]
+  colnames: [Ans2_b, "skjema.SpmNarko_2.Ans2_ELM_2", Ans2_ELM_2]
+  keywords: [ans2_b, ans2_elm_2]
   type: integer
   label: "Brukt Ecstasy noen gang"
   value:
     1: "Ja"
     2: "Nei"
   recode:
+    0: 2
   missing:
     - NA
-    - 8
-    - 9
+    - 98
+    - 99
 
 ans2_c:
-  colnames: [Ans2_c]
-  keywords: [ans2_c]
+  colnames: [Ans2_c, "skjema.SpmNarko_2.Ans2_ELM_3", Ans2_ELM_3]
+  keywords: [ans2_c, ans2_elm_3]
   type: integer
   label: "Brukt Amfetaminer noen gang"
   value:
     1: "Ja"
     2: "Nei"
   recode:
+    0: 2
   missing:
     - NA
-    - 8
-    - 9
+    - 98
+    - 99
 
 ans2_d:
-  colnames: [Ans2_d]
+  colnames: [Ans2_d, "skjema.SpmNarko_2.Ans2_ELM_4", Ans2_ELM_4]
   keywords: [ans2_d]
   type: integer
   label: "Brukt Relevin noen gang"
@@ -2654,13 +2779,14 @@ ans2_d:
     1: "Ja"
     2: "Nei"
   recode:
+    0: 2
   missing:
     - NA
-    - 8
-    - 9
+    - 98
+    - 99
 
 ans2_e:
-  colnames: [Ans2_e]
+  colnames: [Ans2_e, "skjema.SpmNarko_2.Ans2_ELM_5", Ans2_ELM_5]
   keywords: [ans2_e]
   type: integer
   label: "Brukt Heroin noen gang"
@@ -2668,13 +2794,14 @@ ans2_e:
     1: "Ja"
     2: "Nei"
   recode:
+    0: 2
   missing:
     - NA
-    - 8
-    - 9
+    - 98
+    - 99
 
 ans2_f:
-  colnames: [Ans2_f]
+  colnames: [Ans2_f, "skjema.SpmNarko_2.Ans2_ELM_6", Ans2_ELM_6]
   keywords: [ans2_f]
   type: integer
   label: "Brukt GHB/GBL noen gang"
@@ -2682,13 +2809,14 @@ ans2_f:
     1: "Ja"
     2: "Nei"
   recode:
+    0: 2
   missing:
     - NA
-    - 8
-    - 9
+    - 98
+    - 99
 
 ans2_g:
-  colnames: [Ans2_g]
+  colnames: [Ans2_g, "skjema.SpmNarko_2.Ans2_ELM_7", Ans2_ELM_7]
   keywords: [ans2_g]
   type: integer
   label: "Brukt LSD noen gang"
@@ -2696,13 +2824,14 @@ ans2_g:
     1: "Ja"
     2: "Nei"
   recode:
+    0: 2
   missing:
     - NA
-    - 8
-    - 9
+    - 98
+    - 99
 
 ans2_x:
-  colnames: [Ans2_x]
+  colnames: [Ans2_x, "skjema.SpmNarko_2.Ans2_ELM_8", Ans2_ELM_8]
   keywords: [ans2_x]
   type: integer
   label: "Brukt nye rusmidler noen gang"
@@ -2710,13 +2839,14 @@ ans2_x:
     1: "Ja"
     2: "Nei"
   recode:
+    0: 2
   missing:
     - NA
-    - 8
-    - 9
+    - 98
+    - 99
 
 ans2_y:
-  colnames: [Ans2_y]
+  colnames: [Ans2_y, "skjema.SpmNarko_2.Ans2_ELM_9", Ans2_ELM_9]
   keywords: [ans2_y]
   type: integer
   label: "Brukt sopp/psilocybin noen gang"
@@ -2724,13 +2854,27 @@ ans2_y:
     1: "Ja"
     2: "Nei"
   recode:
+    0: 2
   missing:
     - NA
-    - 8
-    - 9
+    - 98
+    - 99
+
+ans2_i:
+  colnames: ["skjema.SpmNarko_2.Ans2_ELM_10", Ans2_ELM_10]
+  keywords:
+  type: integer
+  label: "Brukt ketamin noen gang"
+  value:
+    0: Nei
+    1: Ja
+  recode:
+  missing:
+    - 98
+    - 99
 
 ans2_h:
-  colnames: [Ans2_h]
+  colnames: [Ans2_h, "skjema.SpmNarko_2.Ans2_ELM_11", Ans2_ELM_11]
   keywords: [ans2_h]
   type: integer
   label: "Brukt andre stoffer noen gang"
@@ -2738,10 +2882,11 @@ ans2_h:
     1: "Ja"
     2: "Nei"
   recode:
+    0: 2
   missing:
     - NA
-    - 8
-    - 9
+    - 98
+    - 99
 
 ans3_1:
   colnames: [Ans3_1, skjema.SpmNarko_2.Ans3_1]
