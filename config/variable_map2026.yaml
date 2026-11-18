@@ -4480,3 +4480,26 @@ can7_6:
     - NA
     - 8
     - 9
+
+ans2_1:
+  colnames: ["skjema.SpmNarko_2.Ans2[1]", Ans2_1]
+  keywords:
+  type: integer
+  label: "Hvilke stoffer har du prøvd?"
+  value:
+    1: Kokain
+    2: Ecstacy/MDMA
+    3: Amfetaminer/speed
+    4: Relevin
+    5: Heroin
+    6: GHB/GBL
+    7: LSD
+    8: Nye rusmidler
+    9: Sopp/psilocybin
+    10: Ketamin
+    11: Andre
+  recode: ~
+  missing:
+    - NA
+    - 98
+    - 99
