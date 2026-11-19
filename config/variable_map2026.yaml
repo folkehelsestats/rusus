@@ -4058,11 +4058,11 @@ tett_spredt:
   missing:
     - NA
 
-fodeland_io:
-  colnames: [fodeland_IO]
+fodeland:
+  colnames: [fodeland_IO, fodeland_gruppert]
   keywords: [fodeland_io, fodeland]
   type: integer
-  label: "fodeland_IO"
+  label: "Fødeland"
   value:
     1: "Norge"
     2: "Europa"
@@ -4077,10 +4077,10 @@ fodeland_io:
     - NA
 
 fodeland_far:
-  colnames: [fodeland_far]
+  colnames: [fodeland_far, fars_fodeland_gruppert]
   keywords: [fodeland_far, fodeland, far]
   type: integer
-  label: "fodeland_far"
+  label: "Fødeland far"
   value:
     1: "Norge"
     2: "Europa"
@@ -4095,10 +4095,10 @@ fodeland_far:
     - NA
 
 fodeland_mor:
-  colnames: [fodeland_mor]
+  colnames: [fodeland_mor, mors_fodeland_gruppert]
   keywords: [fodeland_mor, fodeland, mor]
   type: integer
-  label: "fodeland_mor"
+  label: "Fødeland mor"
   value:
     1: "Norge"
     2: "Europa"
@@ -4116,7 +4116,7 @@ innt_hush:
   colnames: [innt_hush]
   keywords: [innt_hush]
   type: integer
-  label: "Husholdets bruttoinntekt,  Gruppert"
+  label: "Husholdets bruttoinntekt Gruppert"
   value: ~
   recode: ~
   missing:
@@ -4126,11 +4126,73 @@ innt_person:
   colnames: [innt_person]
   keywords: [innt_person]
   type: integer
-  label: "IOs bruttoinntekt,   Gruppert"
+  label: "IOs bruttoinntekt Gruppert"
   value: ~
   recode: ~
   missing:
     - 8
+
+inntekt:
+  colnames: [samlet_inntekt_gruppert]
+  keywords: ~
+  type: integer
+  label: "Bruttoinntekt person gruppert"
+  value:
+     1: 0 - 99 999
+     2: 100 000 - 149 999
+     3: 150 000 - 199 999
+     4: 200 000 - 249 999
+     5: 250 000 - 299 999
+     6: 300 000 - 399 999
+     7: 400 000 - 499 999
+     8: 500 000 - 599 999
+     9: 600 000 - 699 999
+    10: 700 000 - 799 999
+    11: 800 000 - 899 999
+    12: 900 000 - 999 999
+    13: 1 000 000 - 1 099 999
+    14: 1 100 000 - 1 199 999
+    15: 1 200 000 - 1 299 999
+    16: 1 300 000 - 1 399 999
+    17: 1 400 000 - 1 499 999
+    18: 1 500 000 eller mer
+  recode: ~
+  comments:
+    Starter fra 2026
+
+samlet_inntekt:
+  colnames: [hush_samlet_inntekt_gruppert]
+  keywords: ~
+  type: integer
+  label: "Bruttoinntekt husholdning gruppert"
+  value:
+     1: 0 - 99 000
+     2: 100 000 - 149 999
+     3: 150 000 - 199 999
+     4: 200 000 - 249 999
+     5: 250 000 - 299 999
+     6: 300 000 - 399 999
+     7: 400 000 - 499 999
+     8: 500 000 - 599 999
+     9: 600 000 - 699 999
+    10: 700 000 - 799 999
+    11: 800 000 - 899 999
+    12: 900 000 - 999 999
+    13: 1 000 000 - 1 099 000
+    14: 1 100 000 - 1 199 000
+    15: 1 200 000 - 1 299 000
+    16: 1 300 000 - 1 399 000
+    17: 1 400 000 - 1 499 000
+    18: 1 500 000 - 1 599 000
+    19: 1 600 000 - 1 699 000
+    20: 1 700 000 - 1 799 000
+    21: 1 800 000 - 1 899 000
+    22: 1 900 000 - 1 999 000
+    23: 2 000 000 og mer
+  recode: ~
+  missing: ~
+  comments:
+    Starter fra 2026
 
 utdann_4gr:
   colnames: [Utdann_4gr]

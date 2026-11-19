@@ -106,7 +106,8 @@ summarize(dx[, c("alder", "aldersgruppe")])
 visualize(dx$alder)
 visualize(dx[, c("alder", "aldersgruppe")])
 
-makeCodebook(dx,
+# Codebook in PDF
+makeCodebook(dx, vol = 2,
              reportTitle = "Rus- og tobakksundersøkelsen 2026",
              file = "rtu_check2026.html")
 
