@@ -3181,6 +3181,252 @@ paaror1a:
     - 8
     - 9
 
+paaror1b_1:
+  colnames: [paaror1b_1, "skjema.SpmKonsekvenser.paaror1b[1]"]
+  keywords:
+  type: integer
+  label: "Hvilke typer rusmidler dreier det seg om (1 svar)"
+  value:
+    1: Alkohol
+    2: Reseptbelagte legemidler/piller
+    3: Cannabis eller andre ulovlige rusmidler
+    8: Ønsker ikke å svare
+    9: Vet ikke
+  recode: ~
+  missing:
+    - NA
+    - 8
+    - 9
+
+paaror1b_2:
+  colnames: [paaror1b_2, "skjema.SpmKonsekvenser.paaror1b[2]"]
+  keywords:
+  type: integer
+  label: "Hvilke typer rusmidler dreier det seg om (2 svar)"
+  value:
+    1: Alkohol
+    2: Reseptbelagte legemidler/piller
+    3: Cannabis eller andre ulovlige rusmidler
+    8: Ønsker ikke å svare
+    9: Vet ikke
+  recode: ~
+  missing:
+    - NA
+    - 8
+    - 9
+
+paaror1b_3:
+  colnames: [paaror1b_3, "skjema.SpmKonsekvenser.paaror1b[3]"]
+  keywords:
+  type: integer
+  label: "Hvilke typer rusmidler dreier det seg om (3 svar)"
+  value:
+    1: Alkohol
+    2: Reseptbelagte legemidler/piller
+    3: Cannabis eller andre ulovlige rusmidler
+    8: Ønsker ikke å svare
+    9: Vet ikke
+  recode: ~
+  missing:
+    - NA
+    - 8
+    - 9
+
+paaror1b_elm_1:
+  colnames: [paaror1b_elm_1, "skjema.SpmKonsekvenser.paaror1b_ELM_1"]
+  keywords:
+  type: integer
+  label: "Pga. alkohol"
+  value:
+    1: Ja
+    2: Nei
+  recode:
+    0: 2
+  missing:
+    - NA
+    - 8
+    - 9
+
+paaror1b_elm_2:
+  colnames: [paaror1b_elm_2, "skjema.SpmKonsekvenser.paaror1b_ELM_2"]
+  keywords:
+  type: integer
+  label: "Pga. reseptbelagte legemidler/piller"
+  value:
+    1: Ja
+    2: Nei
+  recode:
+    0: 2
+  missing:
+    - NA
+    - 8
+    - 9
+
+paaror1b_elm_3:
+  colnames: [paaror1b_elm_3, "skjema.SpmKonsekvenser.paaror1b_ELM_3"]
+  keywords:
+  type: integer
+  label: "Pga. cannabis eller andre ulovlige rusmidler"
+  value:
+    1: Ja
+    2: Nei
+  recode:
+    0: 2
+  missing:
+    - NA
+    - 8
+    - 9
+
+paaror2_1:
+  colnames: [paaror2_1, "skjema.SpmKonsekvenser.paaror2[1]"]
+  keywords: ~
+  type: integer
+  label: "Hvilken familierelasjon har du til den eller de du er pårørende til (1 svar)"
+  value:
+    1: Jeg er ektefelle/partner/kjæreste
+    2: Jeg er mor eller far
+    3: Jeg er sønn eller datter
+    4: Jeg er søster eller bror
+    5: Jeg har en annen relasjon til personen(e)
+  recode: ~
+  missing:
+    - 8
+    - 9
+
+paaror2_2:
+  colnames: [paaror2_2, "skjema.SpmKonsekvenser.paaror2[2]"]
+  keywords: ~
+  type: integer
+  label: "Hvilken familierelasjon har du til den eller de du er pårørende til (2 svar)"
+  value:
+    1: Jeg er ektefelle/partner/kjæreste
+    2: Jeg er mor eller far
+    3: Jeg er sønn eller datter
+    4: Jeg er søster eller bror
+    5: Jeg har en annen relasjon til personen(e)
+  recode: ~
+  missing:
+    - 8
+    - 9
+
+paaror2_3:
+  colnames: [paaror2_3, "skjema.SpmKonsekvenser.paaror2[3]"]
+  keywords: ~
+  type: integer
+  label: "Hvilken familierelasjon har du til den eller de du er pårørende til (3 svar)"
+  value:
+    1: Jeg er ektefelle/partner/kjæreste
+    2: Jeg er mor eller far
+    3: Jeg er sønn eller datter
+    4: Jeg er søster eller bror
+    5: Jeg har en annen relasjon til personen(e)
+  recode: ~
+  missing:
+    - 8
+    - 9
+
+paaror2_4:
+  colnames: [paaror2_4, "skjema.SpmKonsekvenser.paaror2[4]"]
+  keywords: ~
+  type: integer
+  label: "Hvilken familierelasjon har du til den eller de du er pårørende til (4 svar)"
+  value:
+    1: Jeg er ektefelle/partner/kjæreste
+    2: Jeg er mor eller far
+    3: Jeg er sønn eller datter
+    4: Jeg er søster eller bror
+    5: Jeg har en annen relasjon til personen(e)
+  recode: ~
+  missing:
+    - 8
+    - 9
+
+paaror2_5:
+  colnames: [paaror2_5, "skjema.SpmKonsekvenser.paaror2[5]"]
+  keywords: ~
+  type: integer
+  label: "Hvilken familierelasjon har du til den eller de du er pårørende til (5 svar)"
+  value:
+    1: Jeg er ektefelle/partner/kjæreste
+    2: Jeg er mor eller far
+    3: Jeg er sønn eller datter
+    4: Jeg er søster eller bror
+    5: Jeg har en annen relasjon til personen(e)
+  recode: ~
+  missing:
+    - 8
+    - 9
+
+paaror2_elm_1:
+  colnames: [paaror2_ELM_1, "skjema.SpmKonsekvenser.paaror2_ELM_1"]
+  keywords: ~
+  type: integer
+  label: "Jeg er ektefelle/partner/kjæreste (Code 1)"
+  value:
+    1: Ja
+    2: Nei
+  recode:
+    0: 2
+  missing:
+    - 8
+    - 9
+
+paaror2_elm_2:
+  colnames: [paaror2_ELM_2, "skjema.SpmKonsekvenser.paaror2_ELM_2"]
+  keywords: ~
+  type: integer
+  label: "Jeg er mor eller far (Code 2)"
+  value:
+    1: Ja
+    2: Nei
+  recode:
+    0: 2
+  missing:
+    - 8
+    - 9
+
+paaror2_elm_3:
+  colnames: [paaror2_ELM_3, "skjema.SpmKonsekvenser.paaror2_ELM_3"]
+  keywords: ~
+  type: integer
+  label: "Jeg er sønn eller datter (Code 3)"
+  value:
+    1: Ja
+    2: Nei
+  recode:
+    0: 2
+  missing:
+    - 8
+    - 9
+
+paaror2_elm_4:
+  colnames: [paaror2_ELM_4, "skjema.SpmKonsekvenser.paaror2_ELM_4"]
+  keywords: ~
+  type: integer
+  label: "Jeg er søster eller bror (Code 4)"
+  value:
+    1: Ja
+    2: Nei
+  recode:
+    0: 2
+  missing:
+    - 8
+    - 9
+
+paaror2_elm_5:
+  colnames: [paaror2_ELM_5, "skjema.SpmKonsekvenser.paaror2_ELM_5"]
+  keywords: ~
+  type: integer
+  label: "Jeg har en annen relasjon til personen(e) (Code 5)"
+  value:
+    1: Ja
+    2: Nei
+  recode:
+    0: 2
+  missing:
+    - 8
+    - 9
+
 paaror3:
   colnames: [paaror3, skjema.SpmKonsekvenser.paaror3]
   keywords: [paaror3]
@@ -3223,6 +3469,166 @@ paaror5:
   recode:
   missing:
     - 8
+
+paaror6_1:
+  colnames: [paaror6_1, "skjema.SpmKonsekvenser.paaror6[1]"]
+  keywords: ~
+  type: integer
+  label: "Hvilken familierelasjon har du til den eller de du er pårørende til (1 svar)"
+  value:
+    1: Jeg er ektefelle/partner/kjæreste
+    2: Jeg er mor eller far
+    3: Jeg er sønn eller datter
+    4: Jeg er søster eller bror
+    5: Jeg har en annen relasjon til personen(e)
+    8: Ønsker ikke å svare
+    9: Vet ikke
+  recode: ~
+  missing:
+    - 8
+    - 9
+
+paaror6_2:
+  colnames: [paaror6_2, "skjema.SpmKonsekvenser.paaror6[2]"]
+  keywords: ~
+  type: integer
+  label: "Hvilken familierelasjon har du til den eller de du er pårørende til (2 svar)"
+  value:
+    1: Jeg er ektefelle/partner/kjæreste
+    2: Jeg er mor eller far
+    3: Jeg er sønn eller datter
+    4: Jeg er søster eller bror
+    5: Jeg har en annen relasjon til personen(e)
+    8: Ønsker ikke å svare
+    9: Vet ikke
+  recode: ~
+  missing:
+    - 8
+    - 9
+
+paaror6_3:
+  colnames: [paaror6_3, "skjema.SpmKonsekvenser.paaror6[3]"]
+  keywords: ~
+  type: integer
+  label: "Hvilken familierelasjon har du til den eller de du er pårørende til (3 svar)"
+  value:
+    1: Jeg er ektefelle/partner/kjæreste
+    2: Jeg er mor eller far
+    3: Jeg er sønn eller datter
+    4: Jeg er søster eller bror
+    5: Jeg har en annen relasjon til personen(e)
+    8: Ønsker ikke å svare
+    9: Vet ikke
+  recode: ~
+  missing:
+    - 8
+    - 9
+
+paaror6_4:
+  colnames: [paaror6_4, "skjema.SpmKonsekvenser.paaror6[4]"]
+  keywords: ~
+  type: integer
+  label: "Hvilken familierelasjon har du til den eller de du er pårørende til (4 svar)"
+  value:
+    1: Jeg er ektefelle/partner/kjæreste
+    2: Jeg er mor eller far
+    3: Jeg er sønn eller datter
+    4: Jeg er søster eller bror
+    5: Jeg har en annen relasjon til personen(e)
+    8: Ønsker ikke å svare
+    9: Vet ikke
+  recode: ~
+  missing:
+    - 8
+    - 9
+
+paaror6_5:
+  colnames: [paaror6_5, "skjema.SpmKonsekvenser.paaror6[5]"]
+  keywords: ~
+  type: integer
+  label: "Hvilken familierelasjon har du til den eller de du er pårørende til (5 svar)"
+  value:
+    1: Jeg er ektefelle/partner/kjæreste
+    2: Jeg er mor eller far
+    3: Jeg er sønn eller datter
+    4: Jeg er søster eller bror
+    5: Jeg har en annen relasjon til personen(e)
+    8: Ønsker ikke å svare
+    9: Vet ikke
+  recode: ~
+  missing:
+    - 8
+    - 9
+
+paaror6_elm_1:
+  colnames: [paaror6_elm_1, "skjema.SpmKonsekvenser.paaror6_ELM_1"]
+  keywords: ~
+  type: integer
+  label: "Jeg er ektefelle/partner/kjæreste (Code 1)"
+  value:
+    1: Ja
+    2: Nei
+  recode:
+    0: 2
+  missing:
+    - 8
+    - 9
+
+paaror6_elm_2:
+  colnames: [paaror6_elm_2, "skjema.SpmKonsekvenser.paaror6_ELM_2"]
+  keywords: ~
+  type: integer
+  label: "Jeg er mor eller far (Code 2)"
+  value:
+    1: Ja
+    2: Nei
+  recode:
+    0: 2
+  missing:
+    - 8
+    - 9
+
+paaror6_elm_3:
+  colnames: [paaror6_elm_3, "skjema.SpmKonsekvenser.paaror6_ELM_3"]
+  keywords: ~
+  type: integer
+  label: "Jeg er sønn eller datter (Code 3)"
+  value:
+    1: Ja
+    2: Nei
+  recode:
+    0: 2
+  missing:
+    - 8
+    - 9
+
+paaror6_elm_4:
+  colnames: [paaror6_elm_4, "skjema.SpmKonsekvenser.paaror6_ELM_4"]
+  keywords: ~
+  type: integer
+  label: "Jeg er søster eller bror (Code 4)"
+  value:
+    1: Ja
+    2: Nei
+  recode:
+    0: 2
+  missing:
+    - 8
+    - 9
+
+paaror6_elm_5:
+  colnames: [paaror6_elm_5, "skjema.SpmKonsekvenser.paaror6_ELM_5"]
+  keywords: ~
+  type: integer
+  label: "Jeg har en annen relasjon til personen(e) (Code 5)"
+  value:
+    1: Ja
+    2: Nei
+  recode:
+    0: 2
+  missing:
+    - 8
+    - 9
 
 avslutt:
   colnames: [Avslutt]
