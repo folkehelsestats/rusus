@@ -4157,8 +4157,6 @@ inntekt:
     17: 1 400 000 - 1 499 999
     18: 1 500 000 eller mer
   recode: ~
-  comments:
-    Starter fra 2026
 
 samlet_inntekt:
   colnames: [hush_samlet_inntekt_gruppert]
@@ -4191,8 +4189,6 @@ samlet_inntekt:
     23: 2 000 000 og mer
   recode: ~
   missing: ~
-  comments:
-    Starter fra 2026
 
 utdann_4gr:
   colnames: [Utdann_4gr]
