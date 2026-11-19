@@ -4485,7 +4485,237 @@ ans2_1:
   colnames: ["skjema.SpmNarko_2.Ans2[1]", Ans2_1]
   keywords:
   type: integer
-  label: "Hvilke stoffer har du prøvd?"
+  label: "Hvilke stoffer har du prøvd? (1 svar)"
+  value:
+    1: Kokain
+    2: Ecstacy/MDMA
+    3: Amfetaminer/speed
+    4: Relevin
+    5: Heroin
+    6: GHB/GBL
+    7: LSD
+    8: Nye rusmidler
+    9: Sopp/psilocybin
+    10: Ketamin
+    11: Andre
+  recode: ~
+  missing:
+    - NA
+    - 98
+    - 99
+
+ans2_2:
+  colnames: ["skjema.SpmNarko_2.Ans2[2]", Ans2_2]
+  keywords:
+  type: integer
+  label: "Hvilke stoffer har du prøvd? (2 svar)"
+  value:
+    1: Kokain
+    2: Ecstacy/MDMA
+    3: Amfetaminer/speed
+    4: Relevin
+    5: Heroin
+    6: GHB/GBL
+    7: LSD
+    8: Nye rusmidler
+    9: Sopp/psilocybin
+    10: Ketamin
+    11: Andre
+  recode: ~
+  missing:
+    - NA
+    - 98
+    - 99
+
+ans2_3:
+  colnames: ["skjema.SpmNarko_2.Ans2[3]", Ans2_3]
+  keywords:
+  type: integer
+  label: "Hvilke stoffer har du prøvd? (3 svar)"
+  value:
+    1: Kokain
+    2: Ecstacy/MDMA
+    3: Amfetaminer/speed
+    4: Relevin
+    5: Heroin
+    6: GHB/GBL
+    7: LSD
+    8: Nye rusmidler
+    9: Sopp/psilocybin
+    10: Ketamin
+    11: Andre
+  recode: ~
+  missing:
+    - NA
+    - 98
+    - 99
+
+ans2_4:
+  colnames: ["skjema.SpmNarko_2.Ans2[4]", Ans2_4]
+  keywords:
+  type: integer
+  label: "Hvilke stoffer har du prøvd? (4 svar)"
+  value:
+    1: Kokain
+    2: Ecstacy/MDMA
+    3: Amfetaminer/speed
+    4: Relevin
+    5: Heroin
+    6: GHB/GBL
+    7: LSD
+    8: Nye rusmidler
+    9: Sopp/psilocybin
+    10: Ketamin
+    11: Andre
+  recode: ~
+  missing:
+    - NA
+    - 98
+    - 99
+
+ans2_5:
+  colnames: ["skjema.SpmNarko_2.Ans2[5]", Ans2_5]
+  keywords:
+  type: integer
+  label: "Hvilke stoffer har du prøvd? (5 svar)"
+  value:
+    1: Kokain
+    2: Ecstacy/MDMA
+    3: Amfetaminer/speed
+    4: Relevin
+    5: Heroin
+    6: GHB/GBL
+    7: LSD
+    8: Nye rusmidler
+    9: Sopp/psilocybin
+    10: Ketamin
+    11: Andre
+  recode: ~
+  missing:
+    - NA
+    - 98
+    - 99
+
+ans2_6:
+  colnames: ["skjema.SpmNarko_2.Ans2[6]", Ans2_6]
+  keywords:
+  type: integer
+  label: "Hvilke stoffer har du prøvd? (6 svar)"
+  value:
+    1: Kokain
+    2: Ecstacy/MDMA
+    3: Amfetaminer/speed
+    4: Relevin
+    5: Heroin
+    6: GHB/GBL
+    7: LSD
+    8: Nye rusmidler
+    9: Sopp/psilocybin
+    10: Ketamin
+    11: Andre
+  recode: ~
+  missing:
+    - NA
+    - 98
+    - 99
+
+ans2_7:
+  colnames: ["skjema.SpmNarko_2.Ans2[7]", Ans2_7]
+  keywords:
+  type: integer
+  label: "Hvilke stoffer har du prøvd? (7 svar)"
+  value:
+    1: Kokain
+    2: Ecstacy/MDMA
+    3: Amfetaminer/speed
+    4: Relevin
+    5: Heroin
+    6: GHB/GBL
+    7: LSD
+    8: Nye rusmidler
+    9: Sopp/psilocybin
+    10: Ketamin
+    11: Andre
+  recode: ~
+  missing:
+    - NA
+    - 98
+    - 99
+
+ans2_8:
+  colnames: ["skjema.SpmNarko_2.Ans2[8]", Ans2_8]
+  keywords:
+  type: integer
+  label: "Hvilke stoffer har du prøvd? (8 svar)"
+  value:
+    1: Kokain
+    2: Ecstacy/MDMA
+    3: Amfetaminer/speed
+    4: Relevin
+    5: Heroin
+    6: GHB/GBL
+    7: LSD
+    8: Nye rusmidler
+    9: Sopp/psilocybin
+    10: Ketamin
+    11: Andre
+  recode: ~
+  missing:
+    - NA
+    - 98
+    - 99
+
+ans2_9:
+  colnames: ["skjema.SpmNarko_2.Ans2[9]", Ans2_9]
+  keywords:
+  type: integer
+  label: "Hvilke stoffer har du prøvd? (9 svar)"
+  value:
+    1: Kokain
+    2: Ecstacy/MDMA
+    3: Amfetaminer/speed
+    4: Relevin
+    5: Heroin
+    6: GHB/GBL
+    7: LSD
+    8: Nye rusmidler
+    9: Sopp/psilocybin
+    10: Ketamin
+    11: Andre
+  recode: ~
+  missing:
+    - NA
+    - 98
+    - 99
+
+ans2_10:
+  colnames: ["skjema.SpmNarko_2.Ans2[10]", Ans2_10]
+  keywords:
+  type: integer
+  label: "Hvilke stoffer har du prøvd? (10 svar)"
+  value:
+    1: Kokain
+    2: Ecstacy/MDMA
+    3: Amfetaminer/speed
+    4: Relevin
+    5: Heroin
+    6: GHB/GBL
+    7: LSD
+    8: Nye rusmidler
+    9: Sopp/psilocybin
+    10: Ketamin
+    11: Andre
+  recode: ~
+  missing:
+    - NA
+    - 98
+    - 99
+
+ans2_11:
+  colnames: ["skjema.SpmNarko_2.Ans2[11]", Ans2_11]
+  keywords:
+  type: integer
+  label: "Hvilke stoffer har du prøvd? (11 svar)"
   value:
     1: Kokain
     2: Ecstacy/MDMA
