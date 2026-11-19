@@ -42,7 +42,8 @@ ds <- data.table::fread(file.path(Rususdata, "Rusus_2026/rtu2026.csv"))
 ## -----------------------------------------------------------------------------
 # rtu <- "https://raw.githubusercontent.com/folkehelsestats/rusus/refs/heads/main/config/variable_map.yaml"
 # rtu <- "O:\\Prosjekt\\Rusdata\\Rusundersokelsen\\Datasets\\variable_map.yaml"
-rtu <- "C:\\Users\\ykama\\Git-hdir\\rusus\\config\\variable_map.yaml"
+
+rtu <- "C:\\Users\\ykama\\Git-hdir\\rusus\\config\\variable_map2026.yaml"
 
 readr::guess_encoding(rtu)
 
