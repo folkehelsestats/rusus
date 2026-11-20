@@ -3782,60 +3782,154 @@ paaror2_e:
   missing:
     - 8
 
+tobsit_1:
+  colnames: ["skjema.SpmTobakk.tobsit[1]", tobsit_1]
+  keywords: ~
+  type: integer
+  label: "I hvilke situasjoner røyker du vanligvis (1 svar)"
+  value:
+    1: I sosiale sammenkomster med andre
+    2: I ferien
+    3: Når jeg drikker alkohol
+    4: Når jeg har lyst. Det er ingen spesiell foranledning
+    5: Annet
+    8: Ønsker ikke å svare
+    9: Vet ikke
+  recode: ~
+  missing:
+    - 8
+    - 9
+
+tobsit_2:
+  colnames: ["skjema.SpmTobakk.tobsit[2]", tobsit_2]
+  keywords: ~
+  type: integer
+  label: "I hvilke situasjoner røyker du vanligvis (2 svar)"
+  value:
+    1: I sosiale sammenkomster med andre
+    2: I ferien
+    3: Når jeg drikker alkohol
+    4: Når jeg har lyst. Det er ingen spesiell foranledning
+    5: Annet
+    8: Ønsker ikke å svare
+    9: Vet ikke
+  recode: ~
+  missing:
+    - 8
+    - 9
+
+tobsit_3:
+  colnames: ["skjema.SpmTobakk.tobsit[3]", tobsit_3]
+  keywords: ~
+  type: integer
+  label: "I hvilke situasjoner røyker du vanligvis (3 svar)"
+  value:
+    1: I sosiale sammenkomster med andre
+    2: I ferien
+    3: Når jeg drikker alkohol
+    4: Når jeg har lyst. Det er ingen spesiell foranledning
+    5: Annet
+    8: Ønsker ikke å svare
+    9: Vet ikke
+  recode: ~
+  missing:
+    - 8
+    - 9
+
+tobsit_4:
+  colnames: ["skjema.SpmTobakk.tobsit[4]", tobsit_4]
+  keywords: ~
+  type: integer
+  label: "I hvilke situasjoner røyker du vanligvis (4 svar)"
+  value:
+    1: I sosiale sammenkomster med andre
+    2: I ferien
+    3: Når jeg drikker alkohol
+    4: Når jeg har lyst. Det er ingen spesiell foranledning
+    5: Annet
+    8: Ønsker ikke å svare
+    9: Vet ikke
+  recode: ~
+  missing:
+    - 8
+    - 9
+
+tobsit_5:
+  colnames: ["skjema.SpmTobakk.tobsit[5]", tobsit_5]
+  keywords: ~
+  type: integer
+  label: "I hvilke situasjoner røyker du vanligvis (5 svar)"
+  value:
+    1: I sosiale sammenkomster med andre
+    2: I ferien
+    3: Når jeg drikker alkohol
+    4: Når jeg har lyst. Det er ingen spesiell foranledning
+    5: Annet
+    8: Ønsker ikke å svare
+    9: Vet ikke
+  recode: ~
+  missing:
+    - 8
+    - 9
+
 tobsit_a:
-  colnames: [tobsit_a]
-  keywords: [tobsit_a]
+  colnames: [tobsit_a, skjema.SpmTobakk.tobsit_ELM_1, tobsit_ELM_1]
+  keywords: [tobsit_a, tobsit_elm_1]
   type: integer
   label: "Røyker vanligvis: I sosiale sammenkomster med andre"
   value:
     1: "Ja"
     2: "Nei"
   recode:
+    0: 2
   missing:
     - 8
     - 9
 
 tobsit_b:
-  colnames: [tobsit_b]
-  keywords: [tobsit_b]
+  colnames: [tobsit_b, skjema.SpmTobakk.tobsit_ELM_2, tobsit_ELM_2]
+  keywords: [tobsit_b, tobsit_elm_1]
   type: integer
   label: "Røyker vanligvis: I ferien"
   value:
     1: "Ja"
     2: "Nei"
   recode:
+    0: 2
   missing:
     - 8
     - 9
 
 tobsit_c:
-  colnames: [tobsit_c]
-  keywords: [tobsit_c]
+  colnames: [tobsit_c, skjema.SpmTobakk.tobsit_ELM_3, tobsit_ELM_3]
+  keywords: [tobsit_c, tobsit_ELM_3]
   type: integer
   label: "Røyker vanligvis: Når jeg drikker alkohol"
   value:
     1: "Ja"
     2: "Nei"
   recode:
+    0: 2
   missing:
     - 8
     - 9
 
 tobsit_d:
-  colnames: [tobsit_d]
-  keywords: [tobsit_d]
+  colnames: [tobsit_d, skjema.SpmTobakk.tobsit_ELM_4, tobsit_ELM_4]
+  keywords: [tobsit_d, tobsit_elm_4]
   type: integer
   label: "Røyker vanligvis: Når jeg har lyst. Det er ingen spesiell foranledning"
   value:
     1: "Ja"
     2: "Nei"
   recode:
+    0: 2
   missing:
     - 8
     - 9
 
 tobsit_e:
-  colnames: [tobsit_e]
+  colnames: [tobsit_e, skjema.SpmTobakk.tobsit_ELM_5, tobsit_ELM_5]
   keywords: [tobsit_e]
   type: integer
   label: "Røyker vanligvis: Annet"
@@ -3843,6 +3937,7 @@ tobsit_e:
     1: "Ja"
     2: "Nei"
   recode:
+    0: 2
   missing:
     - 8
     - 9
@@ -4132,6 +4227,8 @@ innt_person:
   missing:
     - 8
 
+# New in 2026 ------------------------------------------------------------------
+
 inntekt:
   colnames: [samlet_inntekt_gruppert]
   keywords: ~
@@ -4189,6 +4286,8 @@ samlet_inntekt:
     23: 2 000 000 og mer
   recode: ~
   missing: ~
+
+# ------------------------------------------------------------------------------
 
 utdann_4gr:
   colnames: [Utdann_4gr]
@@ -4249,8 +4348,6 @@ sentralitet:
   recode:
   missing:
     - NA
-
-# ---- Added from meta2026.csv (variables not already present in this file) ----
 
 what:
   colnames: ["what"]
