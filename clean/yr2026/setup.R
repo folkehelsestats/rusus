@@ -37,6 +37,17 @@ data.table::setnames(dx2, longVars, shortVsml) #små bokstaver
 # data.table::fwrite(dx2, file.path(Rususdata, "Rusus_2026/rtu2026.csv"))
 ds <- data.table::fread(file.path(Rususdata, "Rusus_2026/rtu2026.csv"))
 
+## Testing
+## -----------------------------------------------------------------------------
+
+test <- "C:\\Users\\ykama\\Git-hdir\\rusus\\config\\test_map.yaml"
+readr::guess_encoding(test)
+
+td <- cuci::fix_encode(test)
+readr::guess_encoding(td)
+
+cuci:::.read_yaml_utf8(test)
+
 
 ## Standardisere
 ## -----------------------------------------------------------------------------
