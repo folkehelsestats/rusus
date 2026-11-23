@@ -1,3 +1,7 @@
+# Install the development version from GitHub
+# install.packages("pak")
+pak::pak("folkehelsestats/cuci")
+
 library(data.table)
 library(khtools)
 library(rio)
@@ -69,10 +73,10 @@ writeLines(
 config <- load_config(rtu)
 
 out <- clean_dataset(
-  dt            = dx2,
+  dt            = ds,
   config        = config,
   year_tag      = 2026L,
-  dataset_label = "rtu2026.csv",
+  dataset_label = "rtu2026v2.csv",
   apply_missing = FALSE              # keep 8/9 as integers for now
 )
 
