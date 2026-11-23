@@ -1524,6 +1524,32 @@ type2c_b:
     - NA
     - 9
 
+type2c_1a:
+  colnames: ["skjema.SpmAlkohol.Type2c[1]", Type2c_1]
+  keyword: [type2c_1]
+  type: integer
+  label: "Månedlig: Glass vin eller heltflasker"
+  value:
+    1: Glass
+    2: Heltflasker
+  recode: ~
+  missing:
+    - 8
+    - 9
+
+type2c_1b:
+  colnames: ["skjema.SpmAlkohol.Type2c[2]", Type2c_2]
+  keyword: [type2c_2]
+  type: integer
+  label: "Månedlig: Glass vin eller heltflasker"
+  value:
+    1: Glass
+    2: Heltflasker
+  recode: ~
+  missing:
+    - 8
+    - 9
+
 type2c_1:
   colnames: ["skjema.SpmAlkohol.Type2c_1", Type2c_12]
   keywords: [type2c_12]
