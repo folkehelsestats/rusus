@@ -1643,6 +1643,32 @@ type3b_b:
     - NA
     - 9
 
+type3b_1a:
+  colnames: ["skjema.SpmAlkohol.Type3b[1]", Type3b_1]
+  keywords: ~
+  type: integer
+  label: "Ukentlig: Drukket drammer eller heltflasker"
+  value:
+    1: Drammer
+    2: Helflasker
+  recode: ~
+  missing:
+    - 8
+    - 9
+
+type3b_1b:
+  colnames: ["skjema.SpmAlkohol.Type3b[2]", Type3b_2]
+  keywords: ~
+  type: integer
+  label: "Ukentlig: Drukket drammer eller heltflasker"
+  value:
+    1: Drammer
+    2: Helflasker
+  recode: ~
+  missing:
+    - 8
+    - 9
+
 type3b_1:
   colnames: ["skjema.SpmAlkohol.Type3b_1", Type3b_12]
   keywords: [type3b_12]
@@ -1692,6 +1718,32 @@ type3c_b:
     0: 2
   missing:
     - NA
+    - 9
+
+type3c_1a:
+  colnames: ["skjema.SpmAlkohol.Type3c[1]", Type3c_1]
+  keywords: ~
+  type: integer
+  label: "Månedling: Drammer eller helflasker"
+  value:
+    1: Drammer
+    2: Helflasker
+  recode: ~
+  missing:
+    - 8
+    - 9
+
+type3c_1b:
+  colnames: ["skjema.SpmAlkohol.Type3c[2]", Type3c_2]
+  keywords: ~
+  type: integer
+  label: "Månedling: Drammer eller helflasker"
+  value:
+    1: Drammer
+    2: Helflasker
+  recode: ~
+  missing:
+    - 8
     - 9
 
 type3c_1:
@@ -1787,6 +1839,32 @@ type4b_b:
     0: 2
   missing:
     - NA
+    - 9
+
+type4b_1a:
+  colnames: ["skjema.SpmAlkohol.Type4b[1]", Type4b_1]
+  keywords: ~
+  type: integer
+  label: "Ukentlig: småflakser 0.33l eller 0,5 l"
+  value:
+    1: "0,33l"
+    2: "0,5l"
+  recode: ~
+  missing:
+    - 8
+    - 9
+
+type4b_1b:
+  colnames: ["skjema.SpmAlkohol.Type4b[2]", Type4b_2]
+  keywords: ~
+  type: integer
+  label: "Ukentlig: småflakser 0.33l eller 0,5 l"
+  value:
+    1: "0,33l"
+    2: "0,5l"
+  recode: ~
+  missing:
+    - 8
     - 9
 
 type4b_1:
@@ -3157,6 +3235,18 @@ ans3_y:
   missing:
     - NA
 
+ans3_z:
+  colnames: [Ans3_z, skjema.SpmNarko_2.Ans3_z]
+  keywords: [ans3_z]
+  type: integer
+  label: "Brukt ketamin siste 12 månedene?"
+  value:
+    1: "Ja"
+    2: "Nei"
+  recode:
+  missing:
+    - NA
+
 ans3_8:
   colnames: [Ans3_8]
   keywords: [ans3_8]
@@ -3197,6 +3287,24 @@ ans9:
   recode:
   missing:
     - NA
+    - 9
+
+lyst1:
+  colnames: ["skjema.SpmNarko_2.lyst1", lyst1]
+  keywords: ~
+  type: integer
+  label: "Har du noen gang prøvd eller brukt lystgass for å ruse deg"
+  value:
+    1: "Nei, aldri"
+    2: "Ja, men ikke de siste 12 månedene"
+    3: "Ja, 1-6 ganger de siste 12 månedene"
+    4: "Ja, 7-12 ganger de siste 12 månedene"
+    5: "Ja, mer enn 12 ganger de siste 12 månedene"
+    8: "Ønsker ikke å svare"
+    9: "Vet ikke"
+  recode: ~
+  missing:
+    - 8
     - 9
 
 dop1:
