@@ -842,6 +842,23 @@ tob60:
     - 8
     - 9
 
+tob64any:
+  colnames: [Tob64aNy, "skjema.SpmTobakk.Tob64aNy"]
+  keywords: [tob64any]
+  type: integer
+  label: "Har du brukt snus tidligere"
+  value:
+    1: "Ja, daglig"
+    2: "Ja, av og til"
+    3: "Nei"
+    8: "Ønsker ikke å svare"
+    9: "Vet ikke"
+  recode: ~
+  missing:
+    - NA
+    - 8
+    - 9
+
 tob64a:
   colnames: [Tob64a]
   keywords: [tob64a]
@@ -4643,23 +4660,6 @@ skjermtype:
   recode: ~
   missing:
     - NA
-
-tob64any:
-  colnames: ["skjema.SpmTobakk.Tob64aNy"]
-  keywords: [tob64any]
-  type: integer
-  label: "Har du brukt snus tidligere"
-  value:
-    1: "Ja, daglig"
-    2: "Ja, av og til"
-    3: "Nei"
-    8: "Ønsker ikke å svare"
-    9: "Vet ikke"
-  recode: ~
-  missing:
-    - NA
-    - 8
-    - 9
 
 audit9_1:
   colnames: [Audit9_1, "skjema.SpmAudit.Audit9[1]"]
