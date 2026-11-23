@@ -1,6 +1,8 @@
 # if(!require(pak)) install.packages("pak")
 # pak::pkg_install("folkehelsestats/torr")
 
+# pak::pkg_install("folkehelsestats/cuci")
+
 library(data.table)
 library(khtools)
 library(rio)
