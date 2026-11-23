@@ -1641,34 +1641,36 @@ type3b_2:
     - 99999
 
 type3c_a:
-  colnames: [Type3c_a]
-  keywords: [type3c_a]
+  colnames: [Type3c_a, "skjema.SpmAlkohol.Type3c_ELM_1", Type3c_ELM_1]
+  keywords: [type3c_a, type3c_elm_1]
   type: integer
   label: "Månedlig: Drukket drammer siste 4 uker"
   value:
     1: "Ja"
     2: "Nei"
   recode:
+    0: 2
   missing:
     - NA
     - 9
 
 type3c_b:
-  colnames: [Type3c_b]
-  keywords: [type3c_b]
+  colnames: [Type3c_b, "skjema.SpmAlkohol.Type3c_ELM_2", Type3c_ELM_2]
+  keywords: [type3c_b, type3c_elm_2]
   type: integer
   label: "Månedlig: Drukket flasker sprit siste 4 uker"
   value:
     1: "Ja"
     2: "Nei"
   recode:
+    0: 2
   missing:
     - NA
     - 9
 
 type3c_1:
-  colnames: [Type3c_1, "skjema.SpmAlkohol.Type3c[1]"]
-  keywords: [type3c_1]
+  colnames: ["skjema.SpmAlkohol.Type3c_1", Type3c_12]
+  keywords: [type3c_12]
   type: numeric
   label: "Månedlig: Antall drammer drukket siste 4 uker?"
   value: ~
@@ -1679,8 +1681,8 @@ type3c_1:
     - 99999
 
 type3c_2:
-  colnames: [Type3c_2, "skjema.SpmAlkohol.Type3c[2]"]
-  keywords: [type3c_2]
+  colnames: ["skjema.SpmAlkohol.Type3c_2", Type3c_22]
+  keywords: [type3c_22]
   type: numeric
   label: "Månedlig: Antall flasker sprit drukket siste 4 uker?"
   value: ~
@@ -1734,34 +1736,36 @@ typ4a_mn:
     - 9
 
 type4b_a:
-  colnames: [Type4b_a]
-  keywords: [type4b_a]
+  colnames: [Type4b_a, "skjema.SpmAlkohol.Type4b_ELM_1", Type4b_ELM_1]
+  keywords: [type4b_a, type4b_elm_1]
   type: integer
   label: "Ukentlig: Drukket småflasker/småbokser siste 4 uker"
   value:
     1: "Ja"
     2: "Nei"
   recode:
+    0: 2
   missing:
     - NA
     - 9
 
 type4b_b:
-  colnames: [Type4b_b]
-  keywords: [type4b_b]
+  colnames: [Type4b_b, "skjema.SpmAlkohol.Type4b_ELM_2", Type4b_ELM_2]
+  keywords: [type4b_b, type4b_elm_2]
   type: integer
   label: "Ukentlig: Drukket 0,5 liter siste 4 uker"
   value:
     1: "Ja"
     2: "Nei"
   recode:
+    0: 2
   missing:
     - NA
     - 9
 
 type4b_1:
-  colnames: [Type4b_1, "skjema.SpmAlkohol.Type4b[1]"]
-  keywords: [type4b_1]
+  colnames: [Type4b_12, "skjema.SpmAlkohol.Type4b_1"]
+  keywords: [type4b_12]
   type: numeric
   label: "Ukentlig: Gjennomsnitt antall småflasker rusbrus/cider drukket siste 4 uker?"
   value: ~
@@ -1770,8 +1774,8 @@ type4b_1:
     - NA
 
 type4b_2:
-  colnames: [Type4b_2, "skjema.SpmAlkohol.Type4b[2]"]
-  keywords: [type4b_2]
+  colnames: [Type4b_22, "skjema.SpmAlkohol.Type4b_2"]
+  keywords: [type4b_22]
   type: numeric
   label: "Ukentlig: Gjennomsnitt antall halvliter rusbrus/cider drukket siste 4 uker?"
   value: ~
@@ -1781,27 +1785,57 @@ type4b_2:
     - 99999
 
 type4c_a:
-  colnames: [Type4c_a]
-  keywords: [type4c_a]
+  colnames: [Type4c_a, "skjema.SpmAlkohol.Type4c_ELM_1", Type4c_ELM_1]
+  keywords: [type4c_a, type4c_elm_1]
   type: integer
   label: "Månedlig: Drukket småflasker/småbokser siste 4 uker"
   value:
     1: "Ja"
     2: "Nei"
   recode:
+    0: 2
   missing:
     - NA
     - 8
     - 9
 
 type4c_b:
-  colnames: [Type4c_b]
-  keywords: [type4c_b]
+  colnames: [Type4c_b, "skjema.SpmAlkohol.Type4c_ELM_2", Type4c_ELM_2]
+  keywords: [type4c_b, type4c_elm_2]
   type: integer
   label: "Månedlig: Drukket 0,5 liter siste 4 uker"
   value:
     1: "Ja"
     2: "Nei"
+  recode:
+    0: 2
+  missing:
+    - NA
+    - 8
+    - 9
+
+type4c_1a:
+  colnames: [Type4c_1, "skjema.SpmAlkohol.Type4c[1]"]
+  keywords: [type4c_1]
+  type: integer
+  label: "0,33 eller 0,5 liter "
+  value:
+    1: "0,33l"
+    2: "0,5l"
+  recode:
+  missing:
+    - NA
+    - 8
+    - 9
+
+type4c_1b:
+  colnames: [Type4c_2, "skjema.SpmAlkohol.Type4c[2]"]
+  keywords: [type4c_2]
+  type: integer
+  label: "0,33 eller 0,5 liter "
+  value:
+    1: "0,33l"
+    2: "0,5l"
   recode:
   missing:
     - NA
@@ -1809,8 +1843,8 @@ type4c_b:
     - 9
 
 type4c_1:
-  colnames: [Type4c_1, "skjema.SpmAlkohol.Type4c[1]"]
-  keywords: [type4c_1]
+  colnames: [Type4c_12, "skjema.SpmAlkohol.Type4c_1"]
+  keywords: [type4c_12]
   type: numeric
   label: "Månedlig: Antall rusbrus/cider drukket siste 4 uker?"
   value: ~
@@ -1821,8 +1855,8 @@ type4c_1:
     - 99999
 
 type4c_2:
-  colnames: [Type4c_2, "skjema.SpmAlkohol.Type4c[2]"]
-  keywords: [type4c_2]
+  colnames: [Type4c_22, "skjema.SpmAlkohol.Type4c_2"]
+  keywords: [type4c_22]
   type: numeric
   label: "Månedlig: Antall halvlitere rusbrus/cider drukket siste 4 uker?"
   value: ~
@@ -4644,10 +4678,10 @@ tobsit_elm_5:
     - 8
 
 audit9_1:
-  colnames: ["skjema.SpmAudit.Audit9[1]"]
+  colnames: [Audit9_1, "skjema.SpmAudit.Audit9[1]"]
   keywords: [audit9_1]
   type: integer
-  label: "Har IO/andre noen gang blitt skadet av IOs alkoholdrikking?"
+  label: "Har IO/andre noen gang blitt skadet av IOs alkoholdrikking? (1 svar)"
   value:
     1: "Nei"
     2: "Ja, blitt skadet selv"
@@ -4661,10 +4695,10 @@ audit9_1:
     - 9
 
 audit9_2:
-  colnames: ["skjema.SpmAudit.Audit9[2]"]
+  colnames: [Audit9_2, "skjema.SpmAudit.Audit9[2]"]
   keywords: [audit9_2]
   type: integer
-  label: "Har IO/andre noen gang blitt skadet av IOs alkoholdrikking?"
+  label: "Har IO/andre noen gang blitt skadet av IOs alkoholdrikking? (2 svar)"
   value:
     1: "Nei"
     2: "Ja, blitt skadet selv"
@@ -4678,10 +4712,10 @@ audit9_2:
     - 9
 
 audit9_3:
-  colnames: ["skjema.SpmAudit.Audit9[3]"]
+  colnames: [Audit9_3, "skjema.SpmAudit.Audit9[3]"]
   keywords: [audit9_3]
   type: integer
-  label: "Har IO/andre noen gang blitt skadet av IOs alkoholdrikking?"
+  label: "Har IO/andre noen gang blitt skadet av IOs alkoholdrikking? (3 svar)"
   value:
     1: "Nei"
     2: "Ja, blitt skadet selv"
